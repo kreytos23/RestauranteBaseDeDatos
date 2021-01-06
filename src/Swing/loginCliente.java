@@ -33,9 +33,9 @@ public class loginCliente extends javax.swing.JPanel {
         btnIngresar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -80,11 +80,6 @@ public class loginCliente extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(394, 621, 152, 28);
 
-        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
-        jLabel2.setText("¿Olvidaste tu contraseña?");
-        add(jLabel2);
-        jLabel2.setBounds(394, 458, 313, 28);
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3);
@@ -94,6 +89,10 @@ public class loginCliente extends javax.swing.JPanel {
         jLabel5.setText("Inicio de sesion");
         add(jLabel5);
         jLabel5.setBounds(563, 186, 300, 47);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Olvidaste_la_contrasena.jpg"))); // NOI18N
+        add(jButton2);
+        jButton2.setBounds(394, 458, 313, 28);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -123,8 +122,8 @@ public class loginCliente extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

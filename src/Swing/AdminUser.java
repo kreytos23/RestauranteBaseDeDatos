@@ -53,9 +53,10 @@ public class AdminUser extends javax.swing.JPanel {
         add(btnCliente);
         btnCliente.setBounds(565, 525, 210, 60);
 
+        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 48)); // NOI18N
         jLabel2.setText("Ingrese como cliente o administrador");
         add(jLabel2);
-        jLabel2.setBounds(259, 187, 200, 14);
+        jLabel2.setBounds(259, 187, 848, 56);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -66,7 +67,7 @@ public class AdminUser extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(430, 515, 110, 100);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/administracion (1).jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/sradministracion.png"))); // NOI18N
         add(jLabel5);
         jLabel5.setBounds(430, 334, 110, 120);
 
