@@ -16,32 +16,33 @@ public class MenuRoles extends javax.swing.JPanel {
     private void initComponents() {
 
         btnIniciarSesion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbFondo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 102));
+        setLayout(null);
 
-        btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/iniciosesion2.JPG"))); // NOI18N
+        btnIniciarSesion.setContentAreaFilled(false);
+        btnIniciarSesion.setOpaque(false);
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
+        add(btnIniciarSesion);
+        btnIniciarSesion.setBounds(1045, 70, 220, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(258, 258, 258)
-                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(969, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(505, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 1366, 147);
+
+        lbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
+        lbFondo.setText("    ");
+        lbFondo.setPreferredSize(new java.awt.Dimension(1366, 768));
+        add(lbFondo);
+        lbFondo.setBounds(0, 0, 1366, 768);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
@@ -55,5 +56,7 @@ public class MenuRoles extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbFondo;
     // End of variables declaration//GEN-END:variables
 }

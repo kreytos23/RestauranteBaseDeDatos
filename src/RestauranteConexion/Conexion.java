@@ -8,7 +8,7 @@ public class Conexion {
     public Connection getConnection(){
         Connection conection = null;
         try {
-            conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/technoteam?serverTimezone=UTC","root","cesar2001=");
+            conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/technoteam?serverTimezone=UTC","root","Voldemort1.");
             if(conection != null){
                 System.out.println("Conexion Exitosa");
             }

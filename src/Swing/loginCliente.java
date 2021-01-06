@@ -31,6 +31,14 @@ public class loginCliente extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         txtPass = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         txtCorreo.setText("Correo");
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
@@ -38,43 +46,59 @@ public class loginCliente extends javax.swing.JPanel {
                 txtCorreoActionPerformed(evt);
             }
         });
+        add(txtCorreo);
+        txtCorreo.setBounds(394, 285, 579, 60);
 
         txtPass.setText("Password");
+        add(txtPass);
+        txtPass.setBounds(394, 376, 579, 60);
 
-        btnIngresar.setText("Ingresar");
+        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Iniciar_sesion.jpg"))); // NOI18N
+        btnIngresar.setContentAreaFilled(false);
+        btnIngresar.setOpaque(false);
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
+        add(btnIngresar);
+        btnIngresar.setBounds(553, 504, 260, 53);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(431, 431, 431)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(508, 508, 508)
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(660, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
-                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(343, Short.MAX_VALUE))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/crearCuenta.jpg"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.setOpaque(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(553, 608, 260, 53);
+
+        jLabel4.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        jLabel4.setText("¿Eres nuevo?");
+        add(jLabel4);
+        jLabel4.setBounds(394, 621, 152, 28);
+
+        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 24)); // NOI18N
+        jLabel2.setText("¿Olvidaste tu contraseña?");
+        add(jLabel2);
+        jLabel2.setBounds(394, 458, 313, 28);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 1366, 147);
+
+        jLabel5.setFont(new java.awt.Font("Rockwell", 0, 40)); // NOI18N
+        jLabel5.setText("Inicio de sesion");
+        add(jLabel5);
+        jLabel5.setBounds(563, 186, 300, 47);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 1366, 768);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -91,9 +115,19 @@ public class loginCliente extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtPass;
     // End of variables declaration//GEN-END:variables
