@@ -37,6 +37,7 @@ public class loginCliente extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -98,6 +99,10 @@ public class loginCliente extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1366, 768);
+
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(180, 230, 34, 14);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -124,6 +129,7 @@ public class loginCliente extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
