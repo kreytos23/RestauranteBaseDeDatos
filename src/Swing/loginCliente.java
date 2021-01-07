@@ -83,7 +83,7 @@ public class loginCliente extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Rockwell", 3, 30)); // NOI18N
         jLabel4.setText("¿Eres nuevo?");
         add(jLabel4);
-        jLabel4.setBounds(350, 630, 200, 40);
+        jLabel4.setBounds(330, 630, 200, 40);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
