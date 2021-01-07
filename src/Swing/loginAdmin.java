@@ -2,13 +2,14 @@ package Swing;
 import RestauranteConexion.*;
 import Tablas.*;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class loginAdmin extends javax.swing.JPanel {
 
 
     public loginAdmin() {
         initComponents();
-     
+        LBincorrecto.setVisible(false);
     }
 
  
@@ -18,12 +19,13 @@ public class loginAdmin extends javax.swing.JPanel {
 
         txtCorreo = new javax.swing.JTextField();
         btnAcceder = new javax.swing.JButton();
+        LBincorrecto = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtPass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnOlvidarPass = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -40,7 +42,13 @@ public class loginAdmin extends javax.swing.JPanel {
             }
         });
         add(btnAcceder);
-        btnAcceder.setBounds(565, 560, 260, 53);
+        btnAcceder.setBounds(590, 550, 260, 53);
+
+        LBincorrecto.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
+        LBincorrecto.setForeground(new java.awt.Color(255, 0, 0));
+        LBincorrecto.setText("Datos Incorrectos");
+        add(LBincorrecto);
+        LBincorrecto.setBounds(400, 470, 320, 24);
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 40)); // NOI18N
         jLabel3.setText("Inicio de sesión");
@@ -51,12 +59,12 @@ public class loginAdmin extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(0, 0, 1363, 146);
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel1.setText("Contraseña");
         add(jLabel1);
         jLabel1.setBounds(400, 360, 210, 30);
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel5.setText("Correo");
         add(jLabel5);
         jLabel5.setBounds(400, 240, 150, 30);
@@ -65,14 +73,14 @@ public class loginAdmin extends javax.swing.JPanel {
         add(txtPass);
         txtPass.setBounds(394, 400, 580, 60);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Olvidaste_la_contrasena.jpg"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnOlvidarPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Olvidaste_la_contrasena.jpg"))); // NOI18N
+        btnOlvidarPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnOlvidarPassActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(400, 480, 313, 28);
+        add(btnOlvidarPass);
+        btnOlvidarPass.setBounds(400, 500, 313, 28);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel2);
@@ -84,7 +92,10 @@ public class loginAdmin extends javax.swing.JPanel {
         Empleados empleadoRegistrado = RestauranteService.loginEmpleadoService(txtCorreo.getText(), txtPass.getText());
         
         if(empleadoRegistrado == null){
-            System.out.println("No registrado");
+            //JOptionPane.showMessageDialog(this, "Usuario No Registrado", "Error", JOptionPane.WARNING_MESSAGE);
+            LBincorrecto.setVisible(true);
+            txtCorreo.setText("");
+            txtPass.setText("");
         }else{
             System.out.println("Bienvenido " + empleadoRegistrado.getEmp_Tipo().getTipo_Nombre() + " " + empleadoRegistrado.getNombre());
         }
@@ -92,14 +103,15 @@ public class loginAdmin extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnAccederActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnOlvidarPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOlvidarPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnOlvidarPassActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LBincorrecto;
     private javax.swing.JButton btnAcceder;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnOlvidarPass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
