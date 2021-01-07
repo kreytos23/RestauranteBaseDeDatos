@@ -14,10 +14,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuRoles = new MenuRoles();
         menuRoles.setBounds(panelCambio.getBounds());
         panelCambio.add(menuRoles);
-        panelCambio.updateUI(); 
-        //RestauranteService.agregarClienteService();
-        //RestauranteService.mostrarClienteConIdService(68);
-        RestauranteService.mostarClientesConApellidos();
+        panelCambio.updateUI();
     }
 
     @SuppressWarnings("unchecked")
