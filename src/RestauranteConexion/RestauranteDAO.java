@@ -203,6 +203,36 @@ public class RestauranteDAO {
         return empleado;
     }
     
+     public static void agregarEmpleado(Empleados empleados){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+           
+            try{
+                String query = "CALL NuevoEmpleado(?,?,?,?,?,?,?,?,?,?)";
+                ps = conexion.prepareStatement(query);
+                
+                ps.setString(1, empleados.getNombre());
+                ps.setString(2, empleados.getApellido_Paterno());
+                ps.setString(3, empleados.getApellido_Materno());
+                ps.setString(4, empleados.getEmail());
+                ps.setString(5, empleados.getPassword());
+                ps.setString(6, empleados.getColonia());
+                ps.setString(7, empleados.getCalle());
+                ps.setDate(8, empleados.getEmp_Fecha_Nacimiento());
+                ps.setString(9, empleados.getTelefono());
+                ps.setInt(10, empleados.getEmp_Tipo().getTipo_Id());
+                
+                ps.executeUpdate();
+                
+            }catch(SQLException e){
+                System.out.println(e);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
       
     
 }

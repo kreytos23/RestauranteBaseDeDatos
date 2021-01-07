@@ -27,6 +27,7 @@ public class AdminUser extends javax.swing.JPanel {
 
         btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonAd.jpg"))); // NOI18N
         btnAdmin.setContentAreaFilled(false);
+        btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAdminMouseEntered(evt);
@@ -41,22 +42,23 @@ public class AdminUser extends javax.swing.JPanel {
             }
         });
         add(btnAdmin);
-        btnAdmin.setBounds(565, 344, 290, 66);
+        btnAdmin.setBounds(565, 344, 320, 66);
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonCli.jpg"))); // NOI18N
         btnCliente.setContentAreaFilled(false);
+        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
         add(btnCliente);
-        btnCliente.setBounds(565, 525, 210, 60);
+        btnCliente.setBounds(570, 520, 320, 60);
 
-        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 48)); // NOI18N
-        jLabel2.setText("Ingrese como cliente o administrador");
+        jLabel2.setFont(new java.awt.Font("Rockwell", 0, 56)); // NOI18N
+        jLabel2.setText("Inicia Sesión");
         add(jLabel2);
-        jLabel2.setBounds(259, 187, 848, 56);
+        jLabel2.setBounds(550, 180, 350, 56);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -65,7 +67,7 @@ public class AdminUser extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/Cliente.png"))); // NOI18N
         add(jLabel4);
-        jLabel4.setBounds(430, 515, 110, 100);
+        jLabel4.setBounds(420, 500, 110, 100);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/sradministracion.png"))); // NOI18N
         add(jLabel5);

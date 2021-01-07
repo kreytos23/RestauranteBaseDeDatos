@@ -24,14 +24,14 @@ public class MenuRoles extends javax.swing.JPanel {
 
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/iniciosesion2.JPG"))); // NOI18N
         btnIniciarSesion.setContentAreaFilled(false);
-        btnIniciarSesion.setOpaque(false);
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
         add(btnIniciarSesion);
-        btnIniciarSesion.setBounds(1045, 70, 220, 35);
+        btnIniciarSesion.setBounds(1060, 60, 220, 35);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -40,9 +40,10 @@ public class MenuRoles extends javax.swing.JPanel {
 
         lbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         lbFondo.setText("    ");
+        lbFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbFondo.setPreferredSize(new java.awt.Dimension(1366, 768));
         add(lbFondo);
-        lbFondo.setBounds(0, 0, 1366, 768);
+        lbFondo.setBounds(0, 0, 1370, 768);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed

@@ -1,6 +1,7 @@
 package RestauranteConexion;
 
 import Tablas.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -63,6 +64,11 @@ public class RestauranteService {
     
     public static Empleados loginEmpleadoService(String correo, String pass){
         return RestauranteDAO.loginEmpleado(correo, pass);
+    }
+    
+    public static void agregarEmpleado(Tipos tipo,Date fecha, String nombre,String apellidoP,String apellidoM, String email, String contra, String colonia, String calle, String num ){
+        Empleados empleado = new Empleados(0,tipo,fecha, nombre, apellidoP, apellidoM, email, contra, colonia, calle, num);
+        RestauranteDAO.agregarEmpleado(empleado);
     }
 
 }
