@@ -3,7 +3,7 @@
 *.class
 
 #Archivo de conexion a MySQL
-
+RestauranteConexion.java
 
 # Log file
 *.log
