@@ -64,6 +64,8 @@ public class AgregarUsuario extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
+
+        txtCorreo.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtCorreo);
         txtCorreo.setBounds(30, 570, 270, 40);
 
@@ -108,8 +110,12 @@ public class AgregarUsuario extends javax.swing.JPanel {
         jLabel11.setText("Apellido Materno");
         add(jLabel11);
         jLabel11.setBounds(670, 220, 180, 24);
+
+        txtApellidoP.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoP);
         txtApellidoP.setBounds(350, 280, 270, 40);
+
+        txtNombre.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtNombre);
         txtNombre.setBounds(30, 280, 270, 40);
 
@@ -121,12 +127,20 @@ public class AgregarUsuario extends javax.swing.JPanel {
         });
         add(btnAgregar);
         btnAgregar.setBounds(1070, 560, 180, 60);
+
+        txtApellidoM.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoM);
         txtApellidoM.setBounds(670, 280, 270, 40);
+
+        txtPassword.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtPassword);
         txtPassword.setBounds(350, 570, 270, 40);
+
+        txtNoCalle.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtNoCalle);
         txtNoCalle.setBounds(670, 440, 270, 40);
+
+        txtColonia.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtColonia);
         txtColonia.setBounds(30, 440, 270, 40);
 
@@ -135,9 +149,12 @@ public class AgregarUsuario extends javax.swing.JPanel {
         jLabel12.setText("Contraseña");
         add(jLabel12);
         jLabel12.setBounds(350, 520, 160, 24);
+
+        txtTelefono.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtTelefono);
         txtTelefono.setBounds(980, 440, 270, 40);
 
+        jcDia.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(jcDia);
         jcDia.setBounds(980, 280, 110, 40);
 
@@ -147,6 +164,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
         add(jLabel14);
         jLabel14.setBounds(30, 240, 160, 24);
 
+        jcMes.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         jcMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcMesActionPerformed(evt);
@@ -155,8 +173,11 @@ public class AgregarUsuario extends javax.swing.JPanel {
         add(jcMes);
         jcMes.setBounds(1105, 280, 110, 40);
 
+        jcYear.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(jcYear);
-        jcYear.setBounds(1240, 280, 110, 40);
+        jcYear.setBounds(1230, 280, 110, 40);
+
+        txtCalleNom.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtCalleNom);
         txtCalleNom.setBounds(350, 440, 270, 40);
 

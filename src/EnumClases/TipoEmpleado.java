@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package EnumClases;
 
-/**
- *
- * @author victor
- */
 public enum TipoEmpleado {
-    
+    Chef(1),
+    Mesero(2),
+    Limpieza(3),
+    Gerente(4),
+    Finanzas(5),
+    Publicidad(6);
+
+    private int idTipo;
+
+    private TipoEmpleado(int idTipo){
+        this.idTipo = idTipo;
+    }
+
+    public int getIdTipo() {
+        return idTipo;
+    }
 }
