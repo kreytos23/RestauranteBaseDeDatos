@@ -1,9 +1,16 @@
 package RestauranteConexion;
 
+import Swing.AgregarEmpleado;
 import Tablas.*;
 import java.sql.Date;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class RestauranteService {
@@ -66,9 +73,27 @@ public class RestauranteService {
         return RestauranteDAO.loginEmpleado(correo, pass);
     }
     
-    public static void agregarEmpleado(Tipos tipo,Date fecha, String nombre,String apellidoP,String apellidoM, String email, String contra, String colonia, String calle, String num ){
-        Empleados empleado = new Empleados(0,tipo,fecha, nombre, apellidoP, apellidoM, email, contra, colonia, calle, num);
-        RestauranteDAO.agregarEmpleado(empleado);
+    public static int agregarEmpleado(String tipo,String fecha, String nombre,String apellidoP,String apellidoM, String email, String contra, String colonia, String calle, String num ){
+        
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        try {
+            java.util.Date fechaJ = format.parse(fecha);
+            try{
+                Tipos puesto = new Tipos(Integer.parseInt(tipo), null, 0);
+                try{
+                    Date fechaSQL = new Date(fechaJ.getTime());
+                    Empleados empleado = new Empleados(0,puesto,fechaSQL, nombre, apellidoP, apellidoM, email, contra, colonia, calle, num);
+                    return RestauranteDAO.agregarEmpleado(empleado);
+                }catch(SQLException ex){
+                    System.out.println(ex);
+                    return 0;
+                }
+            }catch(NumberFormatException es){
+                return 0;
+            } 
+        }catch(ParseException ex) {
+            return 0;
+        }
     }
 
 }

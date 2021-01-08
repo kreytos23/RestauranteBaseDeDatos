@@ -8,7 +8,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private MenuRoles menuRoles;
     
-    
     public MenuPrincipal() {
         initComponents();
         menuRoles = new MenuRoles();

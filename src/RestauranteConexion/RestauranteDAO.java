@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class RestauranteDAO {
     
@@ -203,7 +204,7 @@ public class RestauranteDAO {
         return empleado;
     }
     
-     public static void agregarEmpleado(Empleados empleados){
+     public static int agregarEmpleado(Empleados empleados) throws SQLException{
         Conexion db_connect = new Conexion();
         
         try(Connection conexion = db_connect.getConnection()){
@@ -225,12 +226,27 @@ public class RestauranteDAO {
                 ps.setInt(10, empleados.getEmp_Tipo().getTipo_Id());
                 
                 ps.executeUpdate();
+                return 0;
                 
             }catch(SQLException e){
                 System.out.println(e);
+                String correo = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                
+                if(correo.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
             }
         }catch(SQLException e){
             System.out.println(e);
+            return 0;
         }
     }
       
