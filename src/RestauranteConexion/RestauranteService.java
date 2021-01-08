@@ -15,38 +15,26 @@ import javax.swing.JOptionPane;
 
 public class RestauranteService {
     
-    public static void agregarClienteService(){
-        Clientes cliente;
-        Scanner sc = new Scanner(System.in);
+    public static int agregarClienteService(String fecha, String nombre,String apellidoP,String apellidoM, String email,String Password, String colonia , String calle, String numero ){
         
-        System.out.println("Nombre: ");
-        String nombre =  sc.nextLine();
-        
-        System.out.println("\nApellido Paterno: ");
-        String apellidoP = sc.nextLine();
-        
-        System.out.println("\nApellido Materno: ");
-        String apellidoM = sc.nextLine();
-        
-        System.out.println("\nEmail: ");
-        String email = sc.nextLine();
-        
-        System.out.println("\nContraseña: ");
-        String contra = sc.nextLine();
-        
-        System.out.println("\nColonia: ");
-        String colonia = sc.nextLine();
-        
-        System.out.println("\ncalle:  ");
-        String calle = sc.nextLine();
-        
-        System.out.println("\nnumero ");
-        String num = sc.nextLine();
-        
-        cliente = new Clientes(0,nombre,apellidoP,apellidoM,email,contra,colonia,calle,num);
-        
-        RestauranteDAO.agregarCliente(cliente);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        try {
+            java.util.Date fechaJ = format.parse(fecha);
+ 
+            Date fechaSQL = new Date(fechaJ.getTime());
+            Clientes cliente = new Clientes(0,fechaSQL, nombre, apellidoP, apellidoM, email, Password, colonia, calle, numero);
+            return RestauranteDAO.agregarCliente(cliente);
+        }catch(ParseException ex) {
+            return 0;
+        }
     }
+
+        
+        
+        //cliente = new Clientes(0,nombre,apellidoP,apellidoM,email,contra,colonia,calle,num);
+        
+        //RestauranteDAO.agregarCliente(cliente);
+   
     
     public static void mostrarEmpleadosService(){
         ArrayList<Empleados> arrayEmpleados = RestauranteDAO.mostrarEmpleadosNombre();

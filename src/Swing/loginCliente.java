@@ -127,6 +127,12 @@ public class loginCliente extends javax.swing.JPanel {
 
     private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
         
+            AgregarUsuario agregarUsuario = new AgregarUsuario();
+            agregarUsuario.setBounds(this.getBounds());
+            this.removeAll();
+            this.add(agregarUsuario);
+            this.updateUI();
+        
     }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
 

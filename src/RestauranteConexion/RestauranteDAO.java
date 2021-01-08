@@ -39,14 +39,14 @@ public class RestauranteDAO {
         }
     }
     
-    public static void agregarCliente(Clientes cliente){
+    public static int agregarCliente(Clientes cliente){
         Conexion db_connect = new Conexion();
         
         try(Connection conexion = db_connect.getConnection()){
             PreparedStatement ps = null;
             try{
-                String query = "INSERT INTO clientes (Cli_Nombre,Cli_Apellido_Paterno,Cli_Apellido_Materno,Cli_Email,Cli_Password,Cli_Colonia,Cli_Calle,Cli_Telefono)"
-                               + " VALUES (?,?,?,?,?,?,?,?)";
+                String query = "INSERT INTO clientes (Cli_Nombre,Cli_Apellido_Paterno,Cli_Apellido_Materno,Cli_Email,Cli_Password,Cli_Colonia,Cli_Calle,Cli_Telefono,Cli_Fecha_Nacimiento)"
+                               + " VALUES (?,?,?,?,?,?,?,?,?)";
                 
                 ps = conexion.prepareStatement(query);
                 
@@ -58,15 +58,30 @@ public class RestauranteDAO {
                 ps.setString(6, cliente.getColonia());
                 ps.setString(7, cliente.getCalle());
                 ps.setString(8, cliente.getTelefono());
+                ps.setDate(9, cliente.getFecha());
                 
                 ps.executeUpdate();
-                System.out.println("Cliente Agregado");    
+                return 0;  
             
             }catch(SQLException e){
                 System.out.println(e);
+                String correo = "java.sql.SQLException: Check constraint 'clientes_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'clientes_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'clientes_chk_3' is violated.";
+                
+                if(correo.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
             }
         }catch(SQLException e){
             System.out.println(e);
+            return 0;
         }
     }
     
@@ -145,7 +160,7 @@ public class RestauranteDAO {
                 rs = ps.executeQuery();  
             
                 while(rs.next()){
-                    cliente = new Clientes(rs.getInt("Cli_Id"), rs.getString("Cli_Nombre"), rs.getString("Cli_Apellido_Paterno"), 
+                    cliente = new Clientes(rs.getInt("Cli_Id"),rs.getDate("Cli_Fecha_Nacimiento"), rs.getString("Cli_Nombre"), rs.getString("Cli_Apellido_Paterno"), 
                             rs.getString("Cli_Apellido_Materno"), rs.getString("Cli_Email"), rs.getString("Cli_Password"),
                             rs.getString("Cli_Colonia"), rs.getString("Cli_Calle"), rs.getString("Cli_Telefono"));
                 }
