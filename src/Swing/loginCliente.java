@@ -46,13 +46,16 @@ public class loginCliente extends javax.swing.JPanel {
 
         btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Iniciar_sesion.jpg"))); // NOI18N
         btnIngresar.setContentAreaFilled(false);
+        btnIngresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnIniciar.png"))); // NOI18N
+        btnIngresar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnOscuros/Iniciar_sesionrojo.png"))); // NOI18N
+        btnIngresar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnOscuros/Iniciar_sesionrojo.png"))); // NOI18N
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
         add(btnIngresar);
-        btnIngresar.setBounds(550, 540, 260, 53);
+        btnIngresar.setBounds(520, 530, 330, 70);
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel6.setText("Contraseña");
@@ -72,13 +75,15 @@ public class loginCliente extends javax.swing.JPanel {
 
         btnCrearCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/crearCuenta.jpg"))); // NOI18N
         btnCrearCuenta.setContentAreaFilled(false);
+        btnCrearCuenta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnCrearG.png"))); // NOI18N
+        btnCrearCuenta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnOscuros/Crear_cuentarojo.png"))); // NOI18N
         btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearCuentaActionPerformed(evt);
             }
         });
         add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(550, 620, 260, 53);
+        btnCrearCuenta.setBounds(520, 610, 330, 80);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 3, 30)); // NOI18N
         jLabel4.setText("¿Eres nuevo?");

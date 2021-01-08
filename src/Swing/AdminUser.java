@@ -27,7 +27,8 @@ public class AdminUser extends javax.swing.JPanel {
 
         btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonAd.jpg"))); // NOI18N
         btnAdmin.setContentAreaFilled(false);
-        btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAdmin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnAdminG.png"))); // NOI18N
         btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAdminMouseEntered(evt);
@@ -42,18 +43,19 @@ public class AdminUser extends javax.swing.JPanel {
             }
         });
         add(btnAdmin);
-        btnAdmin.setBounds(565, 344, 320, 66);
+        btnAdmin.setBounds(500, 330, 460, 130);
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonCli.jpg"))); // NOI18N
         btnCliente.setContentAreaFilled(false);
-        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnClientegG.png"))); // NOI18N
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
             }
         });
         add(btnCliente);
-        btnCliente.setBounds(570, 520, 320, 60);
+        btnCliente.setBounds(500, 480, 460, 130);
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 56)); // NOI18N
         jLabel2.setText("Inicia Sesión");

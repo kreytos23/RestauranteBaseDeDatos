@@ -119,14 +119,17 @@ public class AgregarUsuario extends javax.swing.JPanel {
         add(txtNombre);
         txtNombre.setBounds(30, 280, 270, 40);
 
-        btnAgregar.setText("Aceptar");
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptar.png"))); // NOI18N
+        btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptarG.png"))); // NOI18N
+        btnAgregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptarRojo.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(1070, 560, 180, 60);
+        btnAgregar.setBounds(940, 550, 410, 130);
 
         txtApellidoM.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoM);

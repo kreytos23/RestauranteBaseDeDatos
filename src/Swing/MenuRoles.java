@@ -30,11 +30,11 @@ public class MenuRoles extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(1290, 0, 77, 32);
+        jButton1.setBounds(1290, 0, 57, 24);
 
-        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/iniciosesion2.JPG"))); // NOI18N
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/Iniciar_sesion.jpg"))); // NOI18N
         btnIniciarSesion.setContentAreaFilled(false);
-        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
@@ -50,7 +50,7 @@ public class MenuRoles extends javax.swing.JPanel {
 
         lbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         lbFondo.setText("    ");
-        lbFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lbFondo.setPreferredSize(new java.awt.Dimension(1366, 768));
         add(lbFondo);
         lbFondo.setBounds(0, 0, 1370, 768);
