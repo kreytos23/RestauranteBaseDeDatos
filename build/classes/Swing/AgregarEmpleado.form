@@ -148,6 +148,9 @@
           <Image iconType="3" name="/Imagenes/AgregarUsuario/btnAceptar.png"/>
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/AgregarUsuario/btnAceptarG.png"/>
         </Property>
@@ -160,7 +163,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1000" y="550" width="360" height="110"/>
+          <AbsoluteConstraints x="940" y="550" width="360" height="110"/>
         </Constraint>
       </Constraints>
     </Component>

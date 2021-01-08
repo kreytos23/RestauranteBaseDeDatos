@@ -121,6 +121,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptar.png"))); // NOI18N
         btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptarG.png"))); // NOI18N
         btnAgregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptarRojo.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +130,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(940, 550, 410, 130);
+        btnAgregar.setBounds(900, 530, 410, 130);
 
         txtApellidoM.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoM);

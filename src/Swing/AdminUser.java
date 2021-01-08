@@ -27,7 +27,7 @@ public class AdminUser extends javax.swing.JPanel {
 
         btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonAd.jpg"))); // NOI18N
         btnAdmin.setContentAreaFilled(false);
-        btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdmin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnAdminG.png"))); // NOI18N
         btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -47,7 +47,7 @@ public class AdminUser extends javax.swing.JPanel {
 
         btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonCli.jpg"))); // NOI18N
         btnCliente.setContentAreaFilled(false);
-        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCliente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnClientegG.png"))); // NOI18N
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

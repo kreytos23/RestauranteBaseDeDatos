@@ -30,11 +30,11 @@ public class MenuRoles extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(1290, 0, 57, 24);
+        jButton1.setBounds(1290, 0, 77, 32);
 
         btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/Iniciar_sesion.jpg"))); // NOI18N
         btnIniciarSesion.setContentAreaFilled(false);
-        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);

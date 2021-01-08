@@ -6,6 +6,7 @@
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/loginCliente.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/RestauranteDAO.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/Conexion.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/EnumClases/TipoEmpleado.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuDeUsuario.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AgregarEmpleado.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuRoles.java</file>
@@ -17,6 +18,7 @@
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuDeAdmin.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuPrincipal.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AdminUser.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Platillos.java</file>
         </group>
     </open-files>
 </project-private>
