@@ -215,6 +215,13 @@ public class AgregarUsuario extends javax.swing.JPanel {
                 txtTelefono.getText());
             
             switch(error){
+                case 0:
+                    loginCliente loginCliente = new loginCliente();
+                    loginCliente.setBounds(this.getBounds());
+                    this.removeAll();
+                    this.add(loginCliente);
+                    this.updateUI();
+                    
                 case 1:
 
                 break;

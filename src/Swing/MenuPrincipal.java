@@ -1,6 +1,5 @@
 package Swing;
-import RestauranteConexion.*;
-import Tablas.*;
+
 /**
  * @author Cesar Martin
  */
