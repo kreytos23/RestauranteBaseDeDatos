@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 
 public class RestauranteService {
@@ -23,18 +20,12 @@ public class RestauranteService {
  
             Date fechaSQL = new Date(fechaJ.getTime());
             Clientes cliente = new Clientes(0,fechaSQL, nombre, apellidoP, apellidoM, email, Password, colonia, calle, numero);
+            System.out.println(cliente.getFecha());
             return RestauranteDAO.agregarCliente(cliente);
         }catch(ParseException ex) {
             return 0;
         }
     }
-
-        
-        
-        //cliente = new Clientes(0,nombre,apellidoP,apellidoM,email,contra,colonia,calle,num);
-        
-        //RestauranteDAO.agregarCliente(cliente);
-   
     
     public static void mostrarEmpleadosService(){
         ArrayList<Empleados> arrayEmpleados = RestauranteDAO.mostrarEmpleadosNombre();

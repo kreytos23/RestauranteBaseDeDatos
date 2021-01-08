@@ -9,7 +9,8 @@ public class Clientes extends Persona {
     public Clientes(int Cli_Id,Date fecha, String Nombre, String Apellido_Paterno, String Apellido_Materno, String Email, String Password, String Colonia, String Calle, String Telefono) {
         super(Nombre, Apellido_Paterno, Apellido_Materno, Email, Password, Colonia, Calle, Telefono);
         this.Cli_Id = Cli_Id;
-    }
+        this.fecha = fecha;
+    }   
     
     public Clientes(){
     }
