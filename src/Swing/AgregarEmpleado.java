@@ -13,7 +13,6 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     
     public AgregarEmpleado() {
         initComponents();
-        
         LbPass1.setVisible(false);
         LbPass2.setVisible(false);
         
@@ -67,56 +66,56 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbPass2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         LbPass1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1370, 620));
         setLayout(null);
 
         txtCorreo.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtCorreo);
-        txtCorreo.setBounds(30, 570, 270, 40);
+        txtCorreo.setBounds(20, 400, 270, 40);
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Correo");
         add(jLabel3);
-        jLabel3.setBounds(30, 520, 160, 24);
+        jLabel3.setBounds(20, 350, 160, 24);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Apellido Paterno");
         add(jLabel4);
-        jLabel4.setBounds(350, 230, 190, 20);
+        jLabel4.setBounds(340, 60, 190, 20);
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Fecha de Nacimiento");
         add(jLabel5);
-        jLabel5.setBounds(1020, 220, 280, 24);
+        jLabel5.setBounds(1010, 50, 280, 24);
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Colonia");
         add(jLabel6);
-        jLabel6.setBounds(30, 390, 100, 40);
+        jLabel6.setBounds(20, 220, 100, 40);
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Numero Telefonico");
         add(jLabel7);
-        jLabel7.setBounds(980, 390, 240, 24);
+        jLabel7.setBounds(970, 220, 240, 24);
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("No. Exterior");
         add(jLabel10);
-        jLabel10.setBounds(670, 390, 130, 24);
+        jLabel10.setBounds(660, 220, 130, 24);
 
         jLabel11.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Apellido Materno");
         add(jLabel11);
-        jLabel11.setBounds(670, 220, 180, 24);
+        jLabel11.setBounds(660, 50, 180, 24);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AgregarUsuario/btnAceptar.png"))); // NOI18N
         btnAgregar.setContentAreaFilled(false);
@@ -129,33 +128,33 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(940, 550, 360, 110);
+        btnAgregar.setBounds(930, 380, 360, 110);
 
         txtApellidoP.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoP);
-        txtApellidoP.setBounds(350, 280, 270, 40);
+        txtApellidoP.setBounds(340, 110, 270, 40);
 
         txtApellidoM.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoM);
-        txtApellidoM.setBounds(670, 280, 270, 40);
+        txtApellidoM.setBounds(660, 110, 270, 40);
 
         txtTelefono.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtTelefono);
-        txtTelefono.setBounds(980, 440, 270, 40);
+        txtTelefono.setBounds(970, 270, 270, 40);
 
         txtColonia.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtColonia);
-        txtColonia.setBounds(30, 440, 270, 40);
+        txtColonia.setBounds(20, 270, 270, 40);
 
         txtPassword.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtPassword);
-        txtPassword.setBounds(350, 570, 270, 40);
+        txtPassword.setBounds(340, 400, 270, 40);
 
         jLabel12.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Contraseña");
         add(jLabel12);
-        jLabel12.setBounds(350, 520, 160, 24);
+        jLabel12.setBounds(340, 350, 160, 24);
 
         txtPuesto.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         txtPuesto.addActionListener(new java.awt.event.ActionListener() {
@@ -164,31 +163,31 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             }
         });
         add(txtPuesto);
-        txtPuesto.setBounds(670, 570, 180, 40);
+        txtPuesto.setBounds(660, 400, 180, 40);
 
         txtNoCalle.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtNoCalle);
-        txtNoCalle.setBounds(670, 440, 270, 40);
+        txtNoCalle.setBounds(660, 270, 270, 40);
 
         jLabel13.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Puesto");
         add(jLabel13);
-        jLabel13.setBounds(670, 530, 160, 24);
+        jLabel13.setBounds(660, 360, 160, 24);
 
         txtNombre.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtNombre);
-        txtNombre.setBounds(30, 280, 270, 40);
+        txtNombre.setBounds(20, 110, 270, 40);
 
         jLabel14.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Nombre");
         add(jLabel14);
-        jLabel14.setBounds(30, 240, 160, 24);
+        jLabel14.setBounds(20, 70, 160, 24);
 
         jcDia.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(jcDia);
-        jcDia.setBounds(980, 280, 110, 40);
+        jcDia.setBounds(990, 110, 110, 40);
 
         jcMes.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         jcMes.addActionListener(new java.awt.event.ActionListener() {
@@ -197,15 +196,15 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             }
         });
         add(jcMes);
-        jcMes.setBounds(1105, 280, 110, 40);
+        jcMes.setBounds(1110, 110, 110, 40);
 
         jcYear.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(jcYear);
-        jcYear.setBounds(1240, 280, 110, 40);
+        jcYear.setBounds(1230, 110, 110, 40);
 
         txtCalleNom.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtCalleNom);
-        txtCalleNom.setBounds(350, 440, 270, 40);
+        txtCalleNom.setBounds(340, 270, 270, 40);
 
         LbPass2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbPass2.setForeground(new java.awt.Color(255, 0, 0));
@@ -217,7 +216,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Calle");
         add(jLabel15);
-        jLabel15.setBounds(350, 390, 130, 24);
+        jLabel15.setBounds(340, 220, 130, 24);
 
         LbPass1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbPass1.setForeground(new java.awt.Color(255, 0, 0));
@@ -225,13 +224,9 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         add(LbPass1);
         LbPass1.setBounds(390, 620, 200, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(0, 0, 1360, 150);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 1370, 770);
+        jLabel1.setBounds(0, -150, 1370, 770);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -362,7 +357,6 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
