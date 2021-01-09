@@ -32,7 +32,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         panelCambio.setBackground(new java.awt.Color(255, 255, 255));
         panelCambio.setMaximumSize(new java.awt.Dimension(1366, 768));
         panelCambio.setMinimumSize(new java.awt.Dimension(1366, 768));
-        panelCambio.setPreferredSize(new java.awt.Dimension(1366, 768));
 
         javax.swing.GroupLayout panelCambioLayout = new javax.swing.GroupLayout(panelCambio);
         panelCambio.setLayout(panelCambioLayout);
@@ -49,9 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 35, Short.MAX_VALUE)
-                .addComponent(panelCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 1375, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(panelCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 1375, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
