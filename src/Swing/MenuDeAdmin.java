@@ -168,6 +168,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEmpleadoActionPerformed
+        btnMenuActionPerformed(evt);
         agregarEmpleado= new AgregarEmpleado();
         agregarEmpleado.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
         panelCambiar.removeAll();
