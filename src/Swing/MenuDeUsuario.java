@@ -11,13 +11,19 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
 
     private int mostrandoMenu = 0;
     private Clientes clienteLogueado;
-    String hora,minutos,segundos,ampm;
-    Calendar calenderio;
-    Thread h1;
-            
+    private String hora,minutos,segundos,ampm;
+    private Calendar calenderio;
+    private Thread h1;
+    private PantallaPrincipalUsuario pantallaPrincipal;        
+    
     public MenuDeUsuario(Clientes cliente) {
         initComponents();
         this.clienteLogueado = cliente;
+        pantallaPrincipal = new PantallaPrincipalUsuario();
+        pantallaPrincipal.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(pantallaPrincipal);
+        panelRemplazo.updateUI();
         lblNombre.setText(clienteLogueado.getNombre());
         h1 = new Thread(this);
         h1.start();
@@ -238,6 +244,13 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         while(ct == h1) {
             calcula();
             lbHora.setText(hora + ":" + minutos + ":" + segundos + " "+ampm);
+            if((Integer.parseInt(hora) == 12) || (Integer.parseInt(hora) < 6 )  && ampm == "PM"){
+             //lbTipoComida.setText("Comida");
+            }else if((Integer.parseInt(hora) >= 6) && (Integer.parseInt(hora) <= 11) && ampm == "PM" ){
+             //lbTipoComida.setText("Cena");
+            }else{
+             //lbTipoComida.setText("Desayuno");
+         }
             try {
                 Thread.sleep(1000);
             }catch(InterruptedException e) {
