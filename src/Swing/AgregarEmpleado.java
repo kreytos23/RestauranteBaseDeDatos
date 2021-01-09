@@ -18,7 +18,6 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbPass2.setVisible(false);
         
         for(TipoEmpleado tp : tipoEmpleado.values()){
-            System.out.println("Aqui agrega a " + tp.toString());
             txtPuesto.addItem(tp.toString());
         }
         
@@ -159,6 +158,11 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         jLabel12.setBounds(350, 520, 160, 24);
 
         txtPuesto.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
+        txtPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPuestoActionPerformed(evt);
+            }
+        });
         add(txtPuesto);
         txtPuesto.setBounds(670, 570, 180, 40);
 
@@ -290,6 +294,10 @@ public class AgregarEmpleado extends javax.swing.JPanel {
            }
        }
     }//GEN-LAST:event_jcMesActionPerformed
+
+    private void txtPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuestoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPuestoActionPerformed
 
     public static boolean ComprobarStrings(String datos){
 
