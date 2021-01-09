@@ -130,7 +130,11 @@ public class loginCliente extends javax.swing.JPanel {
             txtCorreo.setText("");
             txtPass.setText("");
         }else{
-            System.out.println("Bienvenido");
+            MenuDeUsuario menuDeUsuario = new MenuDeUsuario(clienteRegistrado);
+            menuDeUsuario.setBounds(0,0,1400,770);
+            this.removeAll();
+            this.add(menuDeUsuario);
+            this.updateUI();
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
