@@ -30,10 +30,11 @@ public class loginCliente extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(null);
 
         txtCorreo.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
+        txtCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
@@ -43,6 +44,7 @@ public class loginCliente extends javax.swing.JPanel {
         txtCorreo.setBounds(394, 280, 580, 60);
 
         txtPass.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        txtPass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         add(txtPass);
         txtPass.setBounds(394, 390, 580, 60);
 
@@ -85,12 +87,13 @@ public class loginCliente extends javax.swing.JPanel {
         LBincorrecto.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
         LBincorrecto.setForeground(new java.awt.Color(255, 0, 0));
         LBincorrecto.setText("Datos Incorrectos");
+        LBincorrecto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(LBincorrecto);
         LBincorrecto.setBounds(400, 460, 320, 24);
 
         btnCrearCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/crearCuenta.jpg"))); // NOI18N
         btnCrearCuenta.setContentAreaFilled(false);
-        btnCrearCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCrearCuenta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnCrearG.png"))); // NOI18N
         btnCrearCuenta.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnOscuros/Crear_cuentarojo.png"))); // NOI18N
         btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
@@ -108,11 +111,13 @@ public class loginCliente extends javax.swing.JPanel {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel3);
         jLabel3.setBounds(0, 0, 1366, 147);
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 0, 40)); // NOI18N
         jLabel5.setText("Inicio de sesion");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel5);
         jLabel5.setBounds(560, 160, 300, 47);
 
@@ -122,7 +127,7 @@ public class loginCliente extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1366, 768);
 

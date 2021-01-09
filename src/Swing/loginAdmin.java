@@ -29,9 +29,11 @@ public class loginAdmin extends javax.swing.JPanel {
         btnOlvidarPass = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(null);
 
         txtCorreo.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
+        txtCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         add(txtCorreo);
         txtCorreo.setBounds(394, 285, 580, 60);
 
@@ -51,6 +53,7 @@ public class loginAdmin extends javax.swing.JPanel {
         LBincorrecto.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
         LBincorrecto.setForeground(new java.awt.Color(255, 0, 0));
         LBincorrecto.setText("Datos Incorrectos");
+        LBincorrecto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(LBincorrecto);
         LBincorrecto.setBounds(400, 470, 320, 24);
 
@@ -68,28 +71,34 @@ public class loginAdmin extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 40)); // NOI18N
         jLabel3.setText("Inicio de sesión");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel3);
         jLabel3.setBounds(565, 170, 320, 47);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel4);
         jLabel4.setBounds(0, 0, 1363, 146);
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel1.setText("Contraseña");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel1);
         jLabel1.setBounds(400, 360, 210, 30);
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel5.setText("Correo");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel5);
         jLabel5.setBounds(400, 240, 150, 30);
 
         txtPass.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
+        txtPass.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         add(txtPass);
         txtPass.setBounds(394, 400, 580, 60);
 
         btnOlvidarPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Olvidaste_la_contrasena.jpg"))); // NOI18N
+        btnOlvidarPass.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnOlvidarPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOlvidarPassActionPerformed(evt);
@@ -99,6 +108,7 @@ public class loginAdmin extends javax.swing.JPanel {
         btnOlvidarPass.setBounds(400, 500, 313, 28);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel2);
         jLabel2.setBounds(0, 0, 1366, 768);
     }// </editor-fold>//GEN-END:initComponents
