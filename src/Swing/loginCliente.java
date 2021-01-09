@@ -18,6 +18,7 @@ public class loginCliente extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         txtPass = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         LBincorrecto = new javax.swing.JLabel();
@@ -58,6 +59,18 @@ public class loginCliente extends javax.swing.JPanel {
         });
         add(btnIngresar);
         btnIngresar.setBounds(520, 530, 330, 70);
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/flecha.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        add(btnRegresar);
+        btnRegresar.setBounds(1300, 150, 60, 60);
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel6.setText("Contraseña");
@@ -148,11 +161,20 @@ public class loginCliente extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        AdminUser adminUser = new AdminUser();
+        adminUser.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(adminUser);
+        this.updateUI();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LBincorrecto;
     private javax.swing.JButton btnCrearCuenta;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

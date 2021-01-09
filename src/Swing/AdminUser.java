@@ -17,6 +17,7 @@ public class AdminUser extends javax.swing.JPanel {
 
         btnAdmin = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -56,6 +57,18 @@ public class AdminUser extends javax.swing.JPanel {
         });
         add(btnCliente);
         btnCliente.setBounds(500, 480, 460, 130);
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/flecha.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        add(btnRegresar);
+        btnRegresar.setBounds(1300, 150, 60, 60);
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 56)); // NOI18N
         jLabel2.setText("Inicia Sesión");
@@ -103,14 +116,23 @@ public class AdminUser extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAdminMouseEntered
 
     private void btnAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseExited
-        // TODO add your handling code here:
+       
         
     }//GEN-LAST:event_btnAdminMouseExited
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        MenuRoles menuRoles = new MenuRoles();
+        menuRoles.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(menuRoles);
+        this.updateUI();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnCliente;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -20,6 +20,7 @@ public class loginAdmin extends javax.swing.JPanel {
         txtCorreo = new javax.swing.JTextField();
         btnAcceder = new javax.swing.JButton();
         LBincorrecto = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,12 +54,24 @@ public class loginAdmin extends javax.swing.JPanel {
         add(LBincorrecto);
         LBincorrecto.setBounds(400, 470, 320, 24);
 
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/flecha.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        add(btnRegresar);
+        btnRegresar.setBounds(1300, 150, 60, 60);
+
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 40)); // NOI18N
         jLabel3.setText("Inicio de sesión");
         add(jLabel3);
         jLabel3.setBounds(565, 170, 320, 47);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginAdmin/Encabezado Admin.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         add(jLabel4);
         jLabel4.setBounds(0, 0, 1363, 146);
 
@@ -115,11 +128,20 @@ public class loginAdmin extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOlvidarPassActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        AdminUser adminUser = new AdminUser();
+        adminUser.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(adminUser);
+        this.updateUI();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LBincorrecto;
     private javax.swing.JButton btnAcceder;
     private javax.swing.JButton btnOlvidarPass;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
