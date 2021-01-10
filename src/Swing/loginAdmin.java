@@ -37,7 +37,7 @@ public class loginAdmin extends javax.swing.JPanel {
         add(txtCorreo);
         txtCorreo.setBounds(394, 285, 580, 60);
 
-        btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Iniciar_sesion.jpg"))); // NOI18N
+        btnAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginAdmin/Iniciar_sesion.png"))); // NOI18N
         btnAcceder.setContentAreaFilled(false);
         btnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAcceder.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnIniciar.png"))); // NOI18N
@@ -48,7 +48,7 @@ public class loginAdmin extends javax.swing.JPanel {
             }
         });
         add(btnAcceder);
-        btnAcceder.setBounds(540, 540, 330, 90);
+        btnAcceder.setBounds(530, 540, 340, 90);
 
         LBincorrecto.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
         LBincorrecto.setForeground(new java.awt.Color(255, 0, 0));

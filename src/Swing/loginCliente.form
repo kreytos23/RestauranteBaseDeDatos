@@ -59,7 +59,7 @@
     <Component class="javax.swing.JButton" name="btnIngresar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/LoginCliente/Iniciar_sesion.jpg"/>
+          <Image iconType="3" name="/Imagenes/LoginAdmin/Iniciar_sesion.png"/>
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -80,7 +80,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="520" y="530" width="330" height="70"/>
+          <AbsoluteConstraints x="520" y="510" width="330" height="90"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -154,7 +154,7 @@
     <Component class="javax.swing.JButton" name="btnCrearCuenta">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/LoginCliente/crearCuenta.jpg"/>
+          <Image iconType="3" name="/Imagenes/LoginAdmin/Crear_cuenta.png"/>
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -172,7 +172,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="520" y="610" width="330" height="80"/>
+          <AbsoluteConstraints x="520" y="600" width="330" height="90"/>
         </Constraint>
       </Constraints>
     </Component>

@@ -48,7 +48,7 @@ public class loginCliente extends javax.swing.JPanel {
         add(txtPass);
         txtPass.setBounds(394, 390, 580, 60);
 
-        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Iniciar_sesion.jpg"))); // NOI18N
+        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginAdmin/Iniciar_sesion.png"))); // NOI18N
         btnIngresar.setContentAreaFilled(false);
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnIniciar.png"))); // NOI18N
@@ -60,7 +60,7 @@ public class loginCliente extends javax.swing.JPanel {
             }
         });
         add(btnIngresar);
-        btnIngresar.setBounds(520, 530, 330, 70);
+        btnIngresar.setBounds(520, 510, 330, 90);
 
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
         btnRegresar.setContentAreaFilled(false);
@@ -91,7 +91,7 @@ public class loginCliente extends javax.swing.JPanel {
         add(LBincorrecto);
         LBincorrecto.setBounds(400, 460, 320, 24);
 
-        btnCrearCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/crearCuenta.jpg"))); // NOI18N
+        btnCrearCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginAdmin/Crear_cuenta.png"))); // NOI18N
         btnCrearCuenta.setContentAreaFilled(false);
         btnCrearCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCrearCuenta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnCrearG.png"))); // NOI18N
@@ -102,7 +102,7 @@ public class loginCliente extends javax.swing.JPanel {
             }
         });
         add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(520, 610, 330, 80);
+        btnCrearCuenta.setBounds(520, 600, 330, 90);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 3, 30)); // NOI18N
         jLabel4.setText("¿Eres nuevo?");
