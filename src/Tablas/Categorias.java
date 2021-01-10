@@ -5,6 +5,14 @@ public class Categorias {
    private int Cat_Id;
    private String Cat_Nombre;
 
+    public Categorias(int Cat_Id, String Cat_Nombre) {
+        this.Cat_Id = Cat_Id;
+        this.Cat_Nombre = Cat_Nombre;
+    }
+   
+   public Categorias(){
+   }
+
     public int getCat_Id() {
         return Cat_Id;
     }

@@ -4,6 +4,14 @@ public class Menus {
     private int Menu_Id;
     private String Menu_Tipo;
 
+    public Menus(int Menu_Id, String Menu_Tipo) {
+        this.Menu_Id = Menu_Id;
+        this.Menu_Tipo = Menu_Tipo;
+    }
+
+    public Menus(){
+    }
+    
     public int getMenu_Id() {
         return Menu_Id;
     }
