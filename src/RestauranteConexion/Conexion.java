@@ -10,7 +10,7 @@ public class Conexion {
         
         try {
 
-            conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/technoteam?serverTimezone=UTC","root","CabVar2000");
+            conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/technoteam?serverTimezone=America/Mexico_City","root","cesar2001=");
 
         }catch (SQLException e) {
             System.out.println(e);
