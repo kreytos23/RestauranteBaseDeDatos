@@ -14,6 +14,22 @@ public class AgregarUsuario extends javax.swing.JPanel {
         initComponents();
         LbPass1.setVisible(false);
         LbPass2.setVisible(false);
+        LbNombre1.setVisible(false);
+        LbNombre2.setVisible(false);
+        LbApellidoP1.setVisible(false);
+        LbApellidoP2.setVisible(false);
+        LbApellidoM1.setVisible(false);
+        LbApellidoM2.setVisible(false);
+        LbColonia1.setVisible(false);
+        LbColonia2.setVisible(false);
+        LbNoCalle1.setVisible(false);
+        LbNoCalle2.setVisible(false);
+        LbTelefono1.setVisible(false);
+        LbTelefono2.setVisible(false);
+        LbTelefono3.setVisible(false);
+        LbCorreo.setVisible(false);
+        LbError.setVisible(false);
+        LbRepet.setVisible(false);
         
         for(int i = 2021 ; i>=1940 ; i--){
             jcYear.addItem(String.valueOf(i));
@@ -61,6 +77,22 @@ public class AgregarUsuario extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         LbPass1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        LbCorreo = new javax.swing.JLabel();
+        LbTelefono1 = new javax.swing.JLabel();
+        LbTelefono2 = new javax.swing.JLabel();
+        LbTelefono3 = new javax.swing.JLabel();
+        LbNoCalle1 = new javax.swing.JLabel();
+        LbNoCalle2 = new javax.swing.JLabel();
+        LbColonia1 = new javax.swing.JLabel();
+        LbColonia2 = new javax.swing.JLabel();
+        LbApellidoM1 = new javax.swing.JLabel();
+        LbApellidoM2 = new javax.swing.JLabel();
+        LbApellidoP1 = new javax.swing.JLabel();
+        LbApellidoP2 = new javax.swing.JLabel();
+        LbNombre1 = new javax.swing.JLabel();
+        LbNombre2 = new javax.swing.JLabel();
+        LbRepet = new javax.swing.JLabel();
+        LbError = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -207,6 +239,105 @@ public class AgregarUsuario extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(0, 0, 1360, 150);
 
+        LbCorreo.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCorreo.setForeground(new java.awt.Color(255, 0, 0));
+        LbCorreo.setText("El Correo Esta Mal Escrito");
+        LbCorreo.setToolTipText("");
+        add(LbCorreo);
+        LbCorreo.setBounds(60, 620, 190, 30);
+
+        LbTelefono1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbTelefono1.setForeground(new java.awt.Color(255, 0, 0));
+        LbTelefono1.setText("El telefono no puede contener letras,");
+        add(LbTelefono1);
+        LbTelefono1.setBounds(990, 470, 260, 30);
+
+        LbTelefono2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbTelefono2.setForeground(new java.awt.Color(255, 0, 0));
+        LbTelefono2.setText(" espacios o caracteres especiales");
+        add(LbTelefono2);
+        LbTelefono2.setBounds(1000, 490, 240, 20);
+
+        LbTelefono3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbTelefono3.setForeground(new java.awt.Color(255, 0, 0));
+        LbTelefono3.setText("Maximo 10 caracteres");
+        add(LbTelefono3);
+        LbTelefono3.setBounds(1040, 510, 160, 18);
+
+        LbNoCalle1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbNoCalle1.setForeground(new java.awt.Color(255, 0, 0));
+        LbNoCalle1.setText("El numero de la calle no puede ");
+        add(LbNoCalle1);
+        LbNoCalle1.setBounds(690, 480, 220, 30);
+
+        LbNoCalle2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbNoCalle2.setForeground(new java.awt.Color(255, 0, 0));
+        LbNoCalle2.setText("contener letras");
+        add(LbNoCalle2);
+        LbNoCalle2.setBounds(740, 500, 110, 20);
+
+        LbColonia1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbColonia1.setForeground(new java.awt.Color(255, 0, 0));
+        LbColonia1.setText("La colonia no puede contener numeros");
+        add(LbColonia1);
+        LbColonia1.setBounds(30, 480, 270, 30);
+
+        LbColonia2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbColonia2.setForeground(new java.awt.Color(255, 0, 0));
+        LbColonia2.setText(" o caracteres especiales");
+        add(LbColonia2);
+        LbColonia2.setBounds(70, 500, 170, 30);
+
+        LbApellidoM1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbApellidoM1.setForeground(new java.awt.Color(255, 0, 0));
+        LbApellidoM1.setText("El Apellido Materno no puede contener ");
+        LbApellidoM1.setToolTipText("");
+        add(LbApellidoM1);
+        LbApellidoM1.setBounds(670, 310, 300, 40);
+
+        LbApellidoM2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbApellidoM2.setForeground(new java.awt.Color(255, 0, 0));
+        LbApellidoM2.setText("numeros o caracteres especiales");
+        add(LbApellidoM2);
+        LbApellidoM2.setBounds(690, 340, 240, 20);
+
+        LbApellidoP1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbApellidoP1.setForeground(new java.awt.Color(255, 0, 0));
+        LbApellidoP1.setText("El Apellido Paterno no puede contener ");
+        LbApellidoP1.setToolTipText("");
+        add(LbApellidoP1);
+        LbApellidoP1.setBounds(350, 310, 300, 40);
+
+        LbApellidoP2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbApellidoP2.setForeground(new java.awt.Color(255, 0, 0));
+        LbApellidoP2.setText("numeros o caracteres especiales");
+        add(LbApellidoP2);
+        LbApellidoP2.setBounds(370, 340, 240, 20);
+
+        LbNombre1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbNombre1.setForeground(new java.awt.Color(255, 0, 0));
+        LbNombre1.setText("El nombre no puede contener ");
+        add(LbNombre1);
+        LbNombre1.setBounds(60, 320, 220, 30);
+
+        LbNombre2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbNombre2.setForeground(new java.awt.Color(255, 0, 0));
+        LbNombre2.setText("numeros o caracteres especiales");
+        add(LbNombre2);
+        LbNombre2.setBounds(50, 340, 240, 20);
+
+        LbRepet.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbRepet.setForeground(new java.awt.Color(255, 0, 0));
+        LbRepet.setText("El correo ya esta registrado");
+        add(LbRepet);
+        LbRepet.setBounds(60, 640, 190, 18);
+
+        LbError.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbError.setForeground(new java.awt.Color(255, 0, 0));
+        LbError.setText("Llena todos los campos");
+        add(LbError);
+        LbError.setBounds(690, 590, 170, 18);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1370, 770);
@@ -246,18 +377,21 @@ public class AgregarUsuario extends javax.swing.JPanel {
                     this.removeAll();
                     this.add(loginCliente);
                     this.updateUI();
-                    
+                break;
                 case 1:
-
+                    LbCorreo.setVisible(true);
+                    
                 break;
                 case 2:
-                LbPass1.setVisible(true);
-                LbPass2.setVisible(true);
+                    LbPass1.setVisible(true);
+                    LbPass2.setVisible(true);
                 break;
                 case 3:
-                break;
-                case 4:
-
+                    LbTelefono1.setVisible(true);
+                    LbTelefono2.setVisible(true);
+                case 4: 
+                    LbRepet.setVisible(true);
+                                   
             }
         }
 
@@ -282,32 +416,37 @@ public class AgregarUsuario extends javax.swing.JPanel {
     private boolean datosCorrectos(){
         boolean correcto = true;
         if(!ComprobarStrings(txtNombre.getText().trim())){
-            JOptionPane.showMessageDialog(null,"El nombre no puede contener numeros o caracteres especiales");
+            LbNombre1.setVisible(true);
+            LbNombre2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarStrings(txtApellidoP.getText().trim())){
-            JOptionPane.showMessageDialog(null,"El Apellido Paterno no puede contener numeros o caracteres especiales");
+            LbApellidoP1.setVisible(true);
+            LbApellidoP2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarStrings(txtApellidoM.getText().trim())){
-            JOptionPane.showMessageDialog(null,"El Apellido Materno no puede contener numeros o caracteres especiales");
+            LbApellidoM1.setVisible(true);
+            LbApellidoM2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarStrings(txtColonia.getText().trim())){
-            JOptionPane.showMessageDialog(null,"La colonia no puede contener numeros o caracteres especiales");
+            LbColonia1.setVisible(true);
+            LbColonia2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarNumeros(txtNoCalle.getText().trim())){
-            JOptionPane.showMessageDialog(null,"El numero de la calle no puede contener letras");
+            LbNoCalle1.setVisible(true);
+            LbNoCalle2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarNumeros(txtTelefono.getText().trim())){
-            JOptionPane.showMessageDialog(null,"El telefono no puede contener letras,espacios o caracteres especiales");
+            LbTelefono3.setVisible(true);
             correcto = false;
         }
         
         if(txtNombre.getText().equals("")|| txtApellidoM.getText().equals("") || txtApellidoP.getText().equals("") || txtColonia.getText().equals("") || txtCalleNom.getText().equals("") || txtNoCalle.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Llena todos los campos","Error",JOptionPane.WARNING_MESSAGE);
+            LbError.setVisible(true);
             correcto = false;
         }
         
@@ -315,8 +454,24 @@ public class AgregarUsuario extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbApellidoM1;
+    private javax.swing.JLabel LbApellidoM2;
+    private javax.swing.JLabel LbApellidoP1;
+    private javax.swing.JLabel LbApellidoP2;
+    private javax.swing.JLabel LbColonia1;
+    private javax.swing.JLabel LbColonia2;
+    private javax.swing.JLabel LbCorreo;
+    private javax.swing.JLabel LbError;
+    private javax.swing.JLabel LbNoCalle1;
+    private javax.swing.JLabel LbNoCalle2;
+    private javax.swing.JLabel LbNombre1;
+    private javax.swing.JLabel LbNombre2;
     private javax.swing.JLabel LbPass1;
     private javax.swing.JLabel LbPass2;
+    private javax.swing.JLabel LbRepet;
+    private javax.swing.JLabel LbTelefono1;
+    private javax.swing.JLabel LbTelefono2;
+    private javax.swing.JLabel LbTelefono3;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
