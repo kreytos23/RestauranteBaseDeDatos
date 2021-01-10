@@ -6,8 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-
-
 public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
 
     int mostrandoMenu = 0;
@@ -20,6 +18,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private Thread h1;
     private AjustesAdmin ajustesAdmin;
     private loginAdmin loginAdmin;
+    private GestionarEmpleados gestionarEmpleados;
     
  
     public MenuDeAdmin(Empleados admin) {
@@ -33,10 +32,8 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         panelCambiar.updateUI();
         h1 = new Thread(this);
         h1.start();
-
     }
-
-   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,7 +44,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         btnMenu = new javax.swing.JButton();
         btnEsMenus = new javax.swing.JButton();
         btnMenuPrincipal = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnGestEmpleados = new javax.swing.JButton();
         lbHora = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
@@ -57,7 +54,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         lblAjustes = new javax.swing.JLabel();
         lblManuel = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
-        lblEliminar = new javax.swing.JLabel();
+        lblGestEmpleados = new javax.swing.JLabel();
         lblAgregarEmpleado = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -132,11 +129,16 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnMenuPrincipal);
         btnMenuPrincipal.setBounds(-170, 220, 45, 35);
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(btnEliminar);
-        btnEliminar.setBounds(-170, 260, 45, 35);
+        btnGestEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnGestEmpleados.setContentAreaFilled(false);
+        btnGestEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGestEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGestEmpleadosActionPerformed(evt);
+            }
+        });
+        add(btnGestEmpleados);
+        btnGestEmpleados.setBounds(-170, 260, 45, 35);
 
         lbHora.setFont(new java.awt.Font("Rockwell", 1, 25)); // NOI18N
         lbHora.setForeground(new java.awt.Color(0, 0, 0));
@@ -199,12 +201,12 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(lblSalir);
         lblSalir.setBounds(-335, 430, 155, 20);
 
-        lblEliminar.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblEliminar.setForeground(new java.awt.Color(0, 0, 0));
-        lblEliminar.setText("* Eliminar Empleado");
-        lblEliminar.setToolTipText("");
-        add(lblEliminar);
-        lblEliminar.setBounds(-335, 270, 155, 20);
+        lblGestEmpleados.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
+        lblGestEmpleados.setForeground(new java.awt.Color(0, 0, 0));
+        lblGestEmpleados.setText("* Gestionar Empleados");
+        lblGestEmpleados.setToolTipText("");
+        add(lblGestEmpleados);
+        lblGestEmpleados.setBounds(-335, 270, 170, 20);
 
         lblAgregarEmpleado.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblAgregarEmpleado.setForeground(new java.awt.Color(0, 0, 0));
@@ -253,12 +255,12 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             boton.jButtonXRight(-170,180,9,5, btnAjustes);
             boton.jButtonXRight(-170,180,9,5, btnAgregarEmpleado);
             boton.jButtonXRight(-170,180,9,5, btnSalir);
-            boton.jButtonXRight(-170,180,9,5, btnEliminar);
+            boton.jButtonXRight(-170,180,9,5, btnGestEmpleados);
             boton.jButtonXRight(-170,180,9,5, btnMenuPrincipal);
             
             carrito.jLabelXRight(-335,15,9,5, lblAjustes);
             carrito.jLabelXRight(-335,15,9,5, lblAgregarEmpleado);
-            carrito.jLabelXRight(-335,15,9,5, lblEliminar);
+            carrito.jLabelXRight(-335,15,9,5, lblGestEmpleados);
             carrito.jLabelXRight(-335,15,9,5, lblSalir);
             carrito.jLabelXRight(-335,15,9,5, lblManuel);
             carrito.jLabelXRight(-335,15,9,5, lblMenuPrincipal);
@@ -273,7 +275,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             
             carrito.jLabelXLeft(15,-335,15,5, lblAjustes);
             carrito.jLabelXLeft(15,-335,15,5, lblAgregarEmpleado);
-            carrito.jLabelXLeft(15,-335,15,5, lblEliminar);
+            carrito.jLabelXLeft(15,-335,15,5, lblGestEmpleados);
             carrito.jLabelXLeft(15,-335,15,5, lblSalir);
             carrito.jLabelXLeft(15,-335,15,5, lblManuel);
             carrito.jLabelXLeft(15,-335,15,5, lblEsMenu);
@@ -286,7 +288,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             boton.jButtonXLeft(180, -170, 15, 5, btnAjustes);
             boton.jButtonXLeft(180, -170, 15, 5, btnAgregarEmpleado);
             boton.jButtonXLeft(180, -170, 15, 5, btnSalir);
-            boton.jButtonXLeft(180, -170, 15, 5, btnEliminar);
+            boton.jButtonXLeft(180, -170, 15, 5, btnGestEmpleados);
             boton.jButtonXLeft(180, -170, 15, 5, btnMenuPrincipal);
             
             
@@ -329,13 +331,20 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         this.add(loginAdmin);
         this.updateUI();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnGestEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestEmpleadosActionPerformed
+        btnMenuActionPerformed(evt);
+        gestionarEmpleados = new GestionarEmpleados();
+        gestionarEmpleados.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
+        panelCambiar.removeAll();
+        panelCambiar.add(gestionarEmpleados);
+        panelCambiar.updateUI();
+    }//GEN-LAST:event_btnGestEmpleadosActionPerformed
     
     public void calcula(){
         Calendar calendario = new GregorianCalendar();
         Date fechaHoraActual = new Date();
-
         calendario.setTime(fechaHoraActual);
-
         ampm = calendario.get(Calendar.AM_PM) == Calendar.AM? "AM" : "PM";
 
         if(ampm.equals("PM")){
@@ -360,7 +369,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
              //lbTipoComida.setText("Cena");
             }else{
              //lbTipoComida.setText("Desayuno");
-         }
+            }
             try {
                 Thread.sleep(1000);
             }catch(InterruptedException e) {
@@ -371,8 +380,8 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEmpleado;
     private javax.swing.JButton btnAjustes;
-    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEsMenus;
+    private javax.swing.JButton btnGestEmpleados;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMenuPrincipal;
     private javax.swing.JButton btnSalir;
@@ -381,9 +390,9 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private javax.swing.JLabel lbHora;
     private javax.swing.JLabel lblAgregarEmpleado;
     private javax.swing.JLabel lblAjustes;
-    private javax.swing.JLabel lblEliminar;
     private javax.swing.JLabel lblEsMenu;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblGestEmpleados;
     private javax.swing.JLabel lblManuel;
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblMenuPrincipal;
@@ -393,5 +402,4 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private javax.swing.JPanel panelCambiar;
     // End of variables declaration//GEN-END:variables
 
-    
 }

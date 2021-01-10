@@ -9,12 +9,12 @@ package Swing;
  *
  * @author serpi
  */
-public class AjustarSueldos extends javax.swing.JPanel {
+public class GestionarEmpleados extends javax.swing.JPanel {
 
     /**
      * Creates new form AjustarSueldos
      */
-    public AjustarSueldos() {
+    public GestionarEmpleados() {
         initComponents();
     }
 
