@@ -23,7 +23,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     public MenuDeAdmin(Empleados admin) {
         initComponents();
         this.admin = admin;
-        lblNombre.setText(admin.getNombre());
+        lblNombre.setText(admin.getNombre() + " " + admin.getApellido_Paterno());
         pantallaPrincipalAdmin = new PantallaPrincipalAdmin(admin);
         pantallaPrincipalAdmin.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
         panelCambiar.removeAll();
