@@ -124,7 +124,7 @@ public class loginAdmin extends javax.swing.JPanel {
             txtPass.setText("");
         }else{
             System.out.println("Bienvenido " + empleadoRegistrado.getEmp_Tipo().getTipo_Nombre() + " " + empleadoRegistrado.getNombre());
-            MenuDeAdmin menuDeAdmin = new MenuDeAdmin();
+            MenuDeAdmin menuDeAdmin = new MenuDeAdmin(empleadoRegistrado);
             menuDeAdmin.setBounds(this.getBounds());
             this.removeAll();
             this.add(menuDeAdmin);

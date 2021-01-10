@@ -1,6 +1,7 @@
 package Swing;
 
 import AppPackage.AnimationClass;
+import Tablas.Empleados;
 import javafx.animation.Animation;
 
 
@@ -8,9 +9,12 @@ public class MenuDeAdmin extends javax.swing.JPanel {
 
     int mostrandoMenu = 0;
     private AgregarEmpleado agregarEmpleado;
+    private EscogerPlatillos escogerPlatillos;
+    private Empleados admin;
  
-    public MenuDeAdmin() {
+    public MenuDeAdmin(Empleados admin) {
         initComponents();
+        this.admin = admin;
     }
 
    
@@ -81,6 +85,11 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         btnEsMenus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnEsMenus.setContentAreaFilled(false);
         btnEsMenus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEsMenus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEsMenusActionPerformed(evt);
+            }
+        });
         add(btnEsMenus);
         btnEsMenus.setBounds(-170, 340, 45, 35);
 
@@ -181,6 +190,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         AnimationClass boton = new AnimationClass();
                     
         if(mostrandoMenu == 0){
+            mostrandoMenu = 1;
             carrito.jLabelXRight(-350,0,9,5, lblFondo);
             
             boton.jButtonXRight(-170,180,9,5, btnEsMenus);
@@ -200,8 +210,9 @@ public class MenuDeAdmin extends javax.swing.JPanel {
             
             carrito.jLabelXRight(-250,100,9,5, lblMenu);
             boton.jButtonXRight(10,180,20,5, btnMenu);
-            mostrandoMenu = 1;
+            
         }else{
+            mostrandoMenu = 0;
             carrito.jLabelXLeft(0,-350,15,5, lblFondo);
             
             carrito.jLabelXLeft(15,-335,15,5, lblAjustes);
@@ -222,9 +233,18 @@ public class MenuDeAdmin extends javax.swing.JPanel {
             boton.jButtonXLeft(180, -170, 15, 5, btnEliminar);
             boton.jButtonXLeft(180, -170, 15, 5, btnSueldos);
             
-            mostrandoMenu = 0;
+            
         }
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnEsMenusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsMenusActionPerformed
+        btnMenuActionPerformed(evt);
+        escogerPlatillos= new EscogerPlatillos();
+        escogerPlatillos.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
+        panelCambiar.removeAll();
+        panelCambiar.add(escogerPlatillos);
+        panelCambiar.updateUI(); 
+    }//GEN-LAST:event_btnEsMenusActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

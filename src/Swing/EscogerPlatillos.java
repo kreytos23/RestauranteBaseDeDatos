@@ -5,17 +5,25 @@
  */
 package Swing;
 
+import Tablas.Platillos;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author serpi
  */
 public class EscogerPlatillos extends javax.swing.JPanel {
 
-    /**
-     * Creates new form EscogerPlatillos
-     */
+    DefaultListModel listaPlatillos = new DefaultListModel();
+    DefaultListModel listaPlatillosMenu = new DefaultListModel();
+    private Platillos platillo;
+    
     public EscogerPlatillos() {
         initComponents();
+        jlListaPlatillos.setModel(listaPlatillos);
+        jlListaPlatillosMenu.setModel(listaPlatillosMenu);
+        
+        
     }
 
     /**
@@ -27,17 +35,73 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jlListaPlatillos = new javax.swing.JList<>();
+        lbFotoPlatillo = new javax.swing.JLabel();
+        lbNombrePlatillo = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jlListaPlatillosMenu = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
+
+        jlListaPlatillos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jlListaPlatillos);
+
+        add(jScrollPane1);
+        jScrollPane1.setBounds(40, 110, 260, 270);
+        add(lbFotoPlatillo);
+        lbFotoPlatillo.setBounds(460, 50, 150, 80);
+        add(lbNombrePlatillo);
+        lbNombrePlatillo.setBounds(470, 180, 120, 70);
+
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        add(btnAgregar);
+        btnAgregar.setBounds(510, 390, 110, 60);
+
+        jlListaPlatillosMenu.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jlListaPlatillosMenu);
+
+        add(jScrollPane2);
+        jScrollPane2.setBounds(890, 110, 260, 290);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, -140, 1670, 770);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        int index = jlListaPlatillos.getSelectedIndex();
+        Platillos platilloAux = (Platillos) listaPlatillos.getElementAt(index);
+        
+        listaPlatillosMenu.addElement(platilloAux);
+        
+                
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> jlListaPlatillos;
+    private javax.swing.JList<String> jlListaPlatillosMenu;
+    private javax.swing.JLabel lbFotoPlatillo;
+    private javax.swing.JLabel lbNombrePlatillo;
     // End of variables declaration//GEN-END:variables
 }
