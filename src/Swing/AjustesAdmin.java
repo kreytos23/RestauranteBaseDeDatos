@@ -47,17 +47,10 @@ public class AjustesAdmin extends javax.swing.JPanel {
         
         Calendario mes = null;
         System.out.println(admin.getEmp_Fecha_Nacimiento().toString());
-        switch(Integer.parseInt(fecha[1])){
-            case 3:
-                jcMes.addItem(mes.Mayo.toString());
-                break;
-            
-            
-            case 11:
-                jcMes.addItem(mes.Diciembre.toString());
-                break;
+        
+        ponerMes(mes, fecha[1]);
                 
-        }
+        
         
         ////////OTROS DATOS//////////////
         
@@ -430,7 +423,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
         }else{
             txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
         }
-
+        System.out.println(txtFecha);
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
 
         if(correcto){
@@ -585,4 +578,46 @@ public class AjustesAdmin extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> txtPuesto;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+    private void ponerMes(Calendario mes, String fecha) {
+        
+        switch(Integer.parseInt(fecha)){
+            case 1:
+                jcMes.addItem(mes.Enero.toString());
+                break;
+            case 2:
+                jcMes.addItem(mes.Febrero.toString());
+                break;
+            case 3:
+                jcMes.addItem(mes.Marzo.toString());
+                break;
+            case 4:
+                jcMes.addItem(mes.Abril.toString());
+                break;           
+            case 5:
+                jcMes.addItem(mes.Mayo.toString());
+                break;
+            case 6:
+                jcMes.addItem(mes.Junio.toString());
+                break;
+            case 7:
+                jcMes.addItem(mes.Julio.toString());
+                break;
+            case 8:
+                jcMes.addItem(mes.Agosto.toString());
+                break;
+            case 9:
+                jcMes.addItem(mes.Septiembre.toString());
+                break;
+            case 10:
+                jcMes.addItem(mes.Octubre.toString());
+                break;
+            case 11:
+                jcMes.addItem(mes.Noviembre.toString());
+                break;
+            case 12:
+                jcMes.addItem(mes.Diciembre.toString());
+                break;
+        }
+    }
 }
