@@ -27,7 +27,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblNombre.setText(clienteLogueado.getNombre());
         h1 = new Thread(this);
         h1.start();
-        setVisible(true);
+
     }
 
   

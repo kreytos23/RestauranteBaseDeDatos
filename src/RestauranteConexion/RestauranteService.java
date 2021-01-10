@@ -74,5 +74,9 @@ public class RestauranteService {
             return 0;
         }
     }
+    
+    public static ArrayList<Platillos> traerPlatillosService(){
+        return RestauranteDAO.traerPlatillos();
+    }
 
 }

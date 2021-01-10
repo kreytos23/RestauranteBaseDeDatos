@@ -3,7 +3,8 @@
 *.class
 
 #Archivo de conexion a MySQL
-
+/build/built-jar.properties
+/src/RestauranteConexion/Conexion.java
 
 # Log file
 *.log
