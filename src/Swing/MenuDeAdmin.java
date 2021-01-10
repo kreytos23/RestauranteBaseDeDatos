@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
-
     int mostrandoMenu = 0;
     private AgregarEmpleado agregarEmpleado;
     private EscogerPlatillos escogerPlatillos;
