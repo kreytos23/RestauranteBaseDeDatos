@@ -45,6 +45,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         jlListaPlatillos = new javax.swing.JList<>();
         lbFotoPlatillo = new javax.swing.JLabel();
         lbNombrePlatillo = new javax.swing.JLabel();
+        btnEliminarPlatillo = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jlListaPlatillosMenu = new javax.swing.JList<>();
@@ -65,6 +66,15 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lbFotoPlatillo.setBounds(460, 50, 150, 80);
         add(lbNombrePlatillo);
         lbNombrePlatillo.setBounds(470, 180, 120, 70);
+
+        btnEliminarPlatillo.setText("Eliminar");
+        btnEliminarPlatillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPlatilloActionPerformed(evt);
+            }
+        });
+        add(btnEliminarPlatillo);
+        btnEliminarPlatillo.setBounds(940, 450, 110, 50);
 
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,9 +110,18 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnEliminarPlatilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPlatilloActionPerformed
+        int index = jlListaPlatillosMenu.getSelectedIndex();
+        Platillos platilloAux = (Platillos) listaPlatillosMenu.getElementAt(index);
+        
+        listaPlatillos.addElement(platilloAux);
+        listaPlatillosMenu.removeElementAt(index);
+    }//GEN-LAST:event_btnEliminarPlatilloActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnEliminarPlatillo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
