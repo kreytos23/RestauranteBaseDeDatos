@@ -43,6 +43,7 @@ public class PantallaPrincipalUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblPlatillo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlatillo1MouseClicked
+        
         ArrayList<Platillos> arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
         agregarCarrito = new AgregarCarrito(arrayDePlatillos.get(1));
         agregarCarrito.setBounds(0,0,this.getWidth(),this.getHeight());

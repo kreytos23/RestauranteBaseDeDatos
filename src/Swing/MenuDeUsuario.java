@@ -219,6 +219,8 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         jLabel1.setBounds(0, 0, 1520, 770);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         AnimationClass carrito = new AnimationClass();
         AnimationClass boton = new AnimationClass();
@@ -251,7 +253,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
             carrito.jLabelXLeft(20,-190,15,5, lblHist);
             carrito.jLabelXLeft(20,-190,15,5, lblSalir);
             carrito.jLabelXLeft(20,-190,15,5, lblManuel);
-            carrito.jLabelXLeft(80,-190,15,5, lblMenuPrincipal);
+            carrito.jLabelXLeft(20,-190,15,5, lblMenuPrincipal);
             carrito.jLabelXLeft(80,-130,15,5, lblMenu);
             
             
@@ -267,6 +269,8 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         }
     }//GEN-LAST:event_btnMenuActionPerformed
 
+  
+    
     private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
         btnMenuActionPerformed(evt);
         pantallaPrincipal = new PantallaPrincipalUsuario(clienteLogueado);
