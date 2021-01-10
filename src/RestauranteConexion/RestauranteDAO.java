@@ -297,5 +297,28 @@ public class RestauranteDAO {
         }
     }
       
-    
+    public static void ActualizarPlatillos(ArrayList<Platillos> arrayPlatillos){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+           
+            try{
+                for(Platillos pla : arrayPlatillos){
+                    String query = "CALL ActualizarPlatillos(?,?)";
+                    ps = conexion.prepareStatement(query);
+
+                    ps.setInt(1,pla.getPla_Id() );
+                    ps.setString(2,pla.getPla_Estatus());
+
+                    ps.executeUpdate();
+                }
+                
+            }catch(SQLException e){
+                System.out.println(e); 
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
 }

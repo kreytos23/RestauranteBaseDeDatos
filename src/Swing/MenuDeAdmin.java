@@ -19,6 +19,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private Calendar calenderio;
     private Thread h1;
     private AjustesAdmin ajustesAdmin;
+    private loginAdmin loginAdmin;
     
  
     public MenuDeAdmin(Empleados admin) {
@@ -90,6 +91,11 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         add(btnSalir);
         btnSalir.setBounds(-170, 420, 45, 35);
 
@@ -315,6 +321,15 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
 
     }//GEN-LAST:event_btnAjustesActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        btnMenuActionPerformed(evt);
+        loginAdmin = new loginAdmin();
+        loginAdmin.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(loginAdmin);
+        this.updateUI();
+    }//GEN-LAST:event_btnSalirActionPerformed
+    
     public void calcula(){
         Calendar calendario = new GregorianCalendar();
         Date fechaHoraActual = new Date();

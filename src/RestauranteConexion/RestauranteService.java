@@ -79,4 +79,7 @@ public class RestauranteService {
         return RestauranteDAO.traerPlatillos();
     }
 
+    public static void actualizarPlatillosService(ArrayList<Platillos> arrayplatillos){
+        RestauranteDAO.ActualizarPlatillos(arrayplatillos);
+    }
 }
