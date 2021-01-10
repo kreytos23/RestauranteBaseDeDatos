@@ -3,7 +3,8 @@
 *.class
 
 #Archivo de conexion a MySQL
-
+built-jar.properties
+Conexion.java
 
 # Log file
 *.log
