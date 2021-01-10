@@ -9,6 +9,7 @@ import EnumClases.Calendario;
 import EnumClases.TipoEmpleado;
 import RestauranteConexion.RestauranteService;
 import Tablas.Empleados;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
@@ -413,19 +414,13 @@ public class AjustesAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_txtPuestoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String txtFecha;
+
         String calle;
         int error;
         boolean correcto = datosCorrectos();
 
-        if(jcMes.getSelectedIndex()< 9){
-            txtFecha = jcYear.getSelectedItem().toString() + "/0" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
-        }else{
-            txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
-        }
-        System.out.println(txtFecha);
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
-
+        /*
         if(correcto){
             System.out.println(txtPuesto.getSelectedIndex()+ 1);
             error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
@@ -454,6 +449,12 @@ public class AjustesAdmin extends javax.swing.JPanel {
                 LbCorreoRep.setVisible(true);
 
             }
+        }*/
+        
+        if(txtCorreo.getText().equals(admin.getEmail())){
+            ///aqui va sin actualizar el correo
+        }else{
+            ///aqui va la funcion de actualizar el correo
         }
 
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -520,6 +521,29 @@ public class AjustesAdmin extends javax.swing.JPanel {
             LbCampos.setVisible(true);
             correcto = false;
         }
+        
+        String correo = txtCorreo.getText();
+        String correoPartes[] = correo.split("@");
+        
+            try {
+                if(!correoPartes[0].trim().equals("")){
+                switch(correoPartes[1]){
+                    case "gmail.com":
+                    case "yahoo.com.mx":
+                    case "hotmail.com":
+                    case "outlook.com":
+                                break;
+                       default:
+                           JOptionPane.showMessageDialog(null, "Extension desconocida");
+                           correcto = false;
+                         }
+            }else{
+                    correcto = false;
+                    JOptionPane.showMessageDialog(null, "Debe haber algo antes del @");
+                }} catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "correo invalido");
+                    correcto = false;
+            }
         
         return correcto;
     }
