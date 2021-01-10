@@ -90,7 +90,7 @@ public class Platillos {
 
     @Override
     public String toString() {
-        return Pla_Nombre;
+        return Pla_Nombre + " - " + Pla_Categoria.getCat_Nombre();
     }
     
     
