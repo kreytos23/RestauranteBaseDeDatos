@@ -160,7 +160,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(930, 380, 360, 110);
+        btnAgregar.setBounds(920, 380, 360, 110);
 
         txtApellidoP.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtApellidoP);
@@ -242,7 +242,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbPass2.setForeground(new java.awt.Color(255, 0, 0));
         LbPass2.setText("De Al Menos 6 Caracteres");
         add(LbPass2);
-        LbPass2.setBounds(390, 640, 210, 20);
+        LbPass2.setBounds(390, 470, 210, 20);
 
         jLabel15.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
@@ -254,103 +254,103 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbPass1.setForeground(new java.awt.Color(255, 0, 0));
         LbPass1.setText("La Contraseña Debe Ser ");
         add(LbPass1);
-        LbPass1.setBounds(390, 620, 170, 20);
+        LbPass1.setBounds(390, 450, 170, 20);
 
         LbNombre1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbNombre1.setForeground(new java.awt.Color(255, 0, 0));
         LbNombre1.setText("El nombre no puede contener numeros");
         add(LbNombre1);
-        LbNombre1.setBounds(30, 320, 280, 18);
+        LbNombre1.setBounds(20, 160, 280, 18);
 
         LbNombre2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbNombre2.setForeground(new java.awt.Color(255, 0, 0));
         LbNombre2.setText("o caracteres especiales");
         add(LbNombre2);
-        LbNombre2.setBounds(80, 340, 170, 18);
+        LbNombre2.setBounds(70, 180, 170, 18);
 
         LbApellidoM1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbApellidoM1.setForeground(new java.awt.Color(255, 0, 0));
         LbApellidoM1.setText("El Apellido Paterno no puede contener");
         add(LbApellidoM1);
-        LbApellidoM1.setBounds(670, 320, 270, 18);
+        LbApellidoM1.setBounds(660, 160, 270, 18);
 
         LbApellidoM2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbApellidoM2.setForeground(new java.awt.Color(255, 0, 0));
         LbApellidoM2.setText("numeros o caracteres especiales");
         add(LbApellidoM2);
-        LbApellidoM2.setBounds(690, 340, 240, 18);
+        LbApellidoM2.setBounds(680, 180, 240, 18);
 
         LbApellidoP1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbApellidoP1.setForeground(new java.awt.Color(255, 0, 0));
         LbApellidoP1.setText("El Apellido Paterno no puede contener");
         add(LbApellidoP1);
-        LbApellidoP1.setBounds(350, 320, 270, 18);
+        LbApellidoP1.setBounds(340, 160, 270, 18);
 
         LbApellidoP2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbApellidoP2.setForeground(new java.awt.Color(255, 0, 0));
         LbApellidoP2.setText("numeros o caracteres especiales");
         add(LbApellidoP2);
-        LbApellidoP2.setBounds(370, 340, 240, 18);
+        LbApellidoP2.setBounds(360, 180, 240, 18);
 
         LbColonia1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbColonia1.setForeground(new java.awt.Color(255, 0, 0));
         LbColonia1.setText("La colonia no puede contener numeros");
         add(LbColonia1);
-        LbColonia1.setBounds(30, 480, 270, 18);
+        LbColonia1.setBounds(20, 310, 270, 18);
 
         LbColonia2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbColonia2.setForeground(new java.awt.Color(255, 0, 0));
         LbColonia2.setText("o caracteres especiales");
         add(LbColonia2);
-        LbColonia2.setBounds(90, 500, 170, 18);
+        LbColonia2.setBounds(80, 330, 170, 18);
 
         LbNoCalle1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbNoCalle1.setForeground(new java.awt.Color(255, 0, 0));
         LbNoCalle1.setText("El numero de la calle no puede contener ");
         add(LbNoCalle1);
-        LbNoCalle1.setBounds(660, 480, 290, 20);
+        LbNoCalle1.setBounds(650, 320, 290, 20);
 
         LbNoCalle2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbNoCalle2.setForeground(new java.awt.Color(255, 0, 0));
         LbNoCalle2.setText("letras");
         add(LbNoCalle2);
-        LbNoCalle2.setBounds(770, 500, 39, 18);
+        LbNoCalle2.setBounds(760, 340, 39, 18);
 
         LbTelefono1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbTelefono1.setForeground(new java.awt.Color(255, 0, 0));
         LbTelefono1.setText("El telefono no puede contener letras");
         add(LbTelefono1);
-        LbTelefono1.setBounds(990, 480, 250, 18);
+        LbTelefono1.setBounds(980, 310, 250, 18);
 
         LbTelefono2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbTelefono2.setForeground(new java.awt.Color(255, 0, 0));
         LbTelefono2.setText("espacios o caracteres especiales");
         add(LbTelefono2);
-        LbTelefono2.setBounds(1000, 500, 230, 16);
+        LbTelefono2.setBounds(990, 330, 230, 16);
 
         LbTelefono3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbTelefono3.setForeground(new java.awt.Color(255, 0, 0));
         LbTelefono3.setText("Maximo 10 numeros");
         add(LbTelefono3);
-        LbTelefono3.setBounds(1050, 520, 150, 16);
+        LbTelefono3.setBounds(1040, 350, 150, 16);
 
         LbCorreo.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbCorreo.setForeground(new java.awt.Color(255, 0, 0));
         LbCorreo.setText("El correo esta mal escrito");
         add(LbCorreo);
-        LbCorreo.setBounds(70, 620, 180, 18);
+        LbCorreo.setBounds(20, 440, 180, 18);
 
         LbCorreoRep.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbCorreoRep.setForeground(new java.awt.Color(255, 0, 0));
         LbCorreoRep.setText("El correo ya esta registrado");
         add(LbCorreoRep);
-        LbCorreoRep.setBounds(60, 640, 200, 18);
+        LbCorreoRep.setBounds(20, 460, 200, 18);
 
-        LbCampos.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCampos.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         LbCampos.setForeground(new java.awt.Color(255, 0, 0));
         LbCampos.setText("Llene todos los campos ");
         add(LbCampos);
-        LbCampos.setBounds(730, 630, 170, 18);
+        LbCampos.setBounds(1000, 490, 240, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);

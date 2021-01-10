@@ -2,22 +2,35 @@ package Swing;
 
 import AppPackage.AnimationClass;
 import Tablas.Empleados;
-import Tablas.Platillos;
-import java.util.ArrayList;
-import javafx.animation.Animation;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 
-public class MenuDeAdmin extends javax.swing.JPanel {
+
+public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
 
     int mostrandoMenu = 0;
     private AgregarEmpleado agregarEmpleado;
     private EscogerPlatillos escogerPlatillos;
     private Empleados admin;
+    private PantallaPrincipalAdmin pantallaPrincipalAdmin;
+    private String hora,minutos,segundos,ampm;
+    private Calendar calenderio;
+    private Thread h1;
     
  
     public MenuDeAdmin(Empleados admin) {
         initComponents();
         this.admin = admin;
+        lblNombre.setText(admin.getNombre());
+        pantallaPrincipalAdmin = new PantallaPrincipalAdmin(admin);
+        pantallaPrincipalAdmin.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
+        panelCambiar.removeAll();
+        panelCambiar.add(pantallaPrincipalAdmin);
+        panelCambiar.updateUI();
+        h1 = new Thread(this);
+        h1.start();
 
     }
 
@@ -27,13 +40,15 @@ public class MenuDeAdmin extends javax.swing.JPanel {
     private void initComponents() {
 
         btnAgregarEmpleado = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btnAjustes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
         btnEsMenus = new javax.swing.JButton();
         btnSueldos = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        lbHora = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         lblEsMenu = new javax.swing.JLabel();
         lblSueldos = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
@@ -43,6 +58,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         lblEliminar = new javax.swing.JLabel();
         lblAgregarEmpleado = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         panelCambiar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -58,10 +74,6 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         });
         add(btnAgregarEmpleado);
         btnAgregarEmpleado.setBounds(-170, 220, 45, 35);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(0, 0, 1380, 160);
 
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
@@ -108,6 +120,25 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(btnEliminar);
         btnEliminar.setBounds(-170, 260, 45, 35);
+
+        lbHora.setFont(new java.awt.Font("Rockwell", 1, 25)); // NOI18N
+        lbHora.setForeground(new java.awt.Color(0, 0, 0));
+        lbHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        add(lbHora);
+        lbHora.setBounds(1130, 90, 230, 50);
+
+        lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
+        lblTitulo.setText("Bienvenido de Nuevo!! ");
+        add(lblTitulo);
+        lblTitulo.setBounds(910, 0, 470, 40);
+
+        lblNombre.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombre.setText("Nombre");
+        add(lblNombre);
+        lblNombre.setBounds(920, 40, 440, 60);
 
         lblEsMenu.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblEsMenu.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,6 +200,10 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         lblFondo.setOpaque(true);
         add(lblFondo);
         lblFondo.setBounds(-350, 150, 240, 360);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1380, 160);
 
         panelCambiar.setBackground(new java.awt.Color(255, 102, 0));
         panelCambiar.setLayout(null);
@@ -250,6 +285,43 @@ public class MenuDeAdmin extends javax.swing.JPanel {
         panelCambiar.updateUI(); 
     }//GEN-LAST:event_btnEsMenusActionPerformed
 
+    public void calcula(){
+        Calendar calendario = new GregorianCalendar();
+        Date fechaHoraActual = new Date();
+
+        calendario.setTime(fechaHoraActual);
+
+        ampm = calendario.get(Calendar.AM_PM) == Calendar.AM? "AM" : "PM";
+
+        if(ampm.equals("PM")){
+            int h = calendario.get(Calendar.HOUR_OF_DAY)-12;
+            hora = h>9?""+h:"0"+h;
+        }else{
+            hora = calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        }
+        minutos = calendario.get(Calendar.MINUTE)>9? "" + calendario.get(Calendar.MINUTE) : "0"+calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+    }
+    
+    @Override
+    public void run() {
+        Thread ct = Thread.currentThread();
+        while(ct == h1) {
+            calcula();
+            lbHora.setText(hora + ":" + minutos + ":" + segundos + " "+ampm);
+            if((Integer.parseInt(hora) == 12) || (Integer.parseInt(hora) < 6 )  && ampm == "PM"){
+             //lbTipoComida.setText("Comida");
+            }else if((Integer.parseInt(hora) >= 6) && (Integer.parseInt(hora) <= 11) && ampm == "PM" ){
+             //lbTipoComida.setText("Cena");
+            }else{
+             //lbTipoComida.setText("Desayuno");
+         }
+            try {
+                Thread.sleep(1000);
+            }catch(InterruptedException e) {
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEmpleado;
@@ -261,6 +333,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
     private javax.swing.JButton btnSueldos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbHora;
     private javax.swing.JLabel lblAgregarEmpleado;
     private javax.swing.JLabel lblAjustes;
     private javax.swing.JLabel lblEliminar;
@@ -268,8 +341,12 @@ public class MenuDeAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblManuel;
     private javax.swing.JLabel lblMenu;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblSueldos;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelCambiar;
     // End of variables declaration//GEN-END:variables
+
+    
 }
