@@ -27,13 +27,8 @@ public class RestauranteService {
         }
     }
     
-    public static void mostrarEmpleadosService(){
-        ArrayList<Empleados> arrayEmpleados = RestauranteDAO.mostrarEmpleadosNombre();
-        for(int i = 0; i < arrayEmpleados.size(); i++){
-            System.out.println(arrayEmpleados.get(i).getNombre());
-            System.out.println(arrayEmpleados.get(i).getApellido_Paterno());
-            System.out.println(arrayEmpleados.get(i).getApellido_Materno());
-        }
+    public static ArrayList<Empleados> mostrarEmpleadosService(){
+        return RestauranteDAO.mostrarEmpleadosNombre();
     }
     
     public static void mostrarClienteConIdService(int Id){
