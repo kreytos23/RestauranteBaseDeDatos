@@ -290,7 +290,6 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             boton.jButtonXLeft(180, -170, 15, 5, btnGestEmpleados);
             boton.jButtonXLeft(180, -170, 15, 5, btnMenuPrincipal);
             
-            
         }
     }//GEN-LAST:event_btnMenuActionPerformed
 
