@@ -314,7 +314,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
 
     private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
         btnMenuActionPerformed(evt);
-        ajustesAdmin = new AjustesAdmin();
+        ajustesAdmin = new AjustesAdmin(admin);
         ajustesAdmin.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
         panelCambiar.removeAll();
         panelCambiar.add(ajustesAdmin);

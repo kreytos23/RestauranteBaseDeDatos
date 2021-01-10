@@ -182,6 +182,7 @@ public class RestauranteDAO {
         try(Connection conexion = db_connect.getConnection()){
             PreparedStatement ps = null;
             ResultSet rs = null;
+            System.out.println("conexion exitosa");
             try{
                 String query = "call LoginAdmin(?,?)";
                 ps = conexion.prepareStatement(query);
@@ -223,7 +224,7 @@ public class RestauranteDAO {
         
         try(Connection conexion = db_connect.getConnection()){
             PreparedStatement ps = null;
-           
+            System.out.println("conexion exitosa");
             try{
                 String query = "CALL NuevoEmpleado(?,?,?,?,?,?,?,?,?,?)";
                 ps = conexion.prepareStatement(query);

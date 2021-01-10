@@ -365,13 +365,19 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         boolean correcto = datosCorrectos();
         
         if(jcMes.getSelectedIndex()< 9){
-            txtFecha = jcYear.getSelectedItem().toString() + "/0" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
+            txtFecha = jcYear.getSelectedItem().toString() + "/0" + (jcMes.getSelectedIndex() + 1) ;
         }else{
-            txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
+            txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) ;
+        }
+        
+        if(jcDia.getSelectedIndex() < 9){
+            txtFecha += "/0" + jcDia.getSelectedItem().toString();
+        }else{
+            txtFecha += "/" + jcDia.getSelectedItem().toString();
         }
         
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
-        
+        System.out.println(txtFecha);
         if(correcto){
             System.out.println(txtPuesto.getSelectedIndex()+ 1);
             error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
