@@ -61,6 +61,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btnConfirmarMenu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jlListaPlatillosMenu = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
@@ -80,46 +81,65 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jlListaPlatillos);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(50, 100, 260, 270);
+        jScrollPane1.setBounds(170, 130, 260, 270);
         add(lbFotoPlatillo);
         lbFotoPlatillo.setBounds(480, 80, 150, 80);
         add(lbNombrePlatillo);
         lbNombrePlatillo.setBounds(460, 160, 120, 70);
 
-        btnEliminarPlatillo.setText("Eliminar");
+        btnEliminarPlatillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrar.png"))); // NOI18N
+        btnEliminarPlatillo.setBorderPainted(false);
+        btnEliminarPlatillo.setContentAreaFilled(false);
+        btnEliminarPlatillo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrarOsc.png"))); // NOI18N
+        btnEliminarPlatillo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrarG.png"))); // NOI18N
         btnEliminarPlatillo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarPlatilloActionPerformed(evt);
             }
         });
         add(btnEliminarPlatillo);
-        btnEliminarPlatillo.setBounds(660, 430, 110, 50);
+        btnEliminarPlatillo.setBounds(900, 370, 260, 100);
 
-        btnAgregar.setText("Agregar");
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton Agregar.png"))); // NOI18N
+        btnAgregar.setToolTipText("");
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton AgregarOsc.png"))); // NOI18N
+        btnAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton AgregarG.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(340, 430, 110, 60);
+        btnAgregar.setBounds(450, 400, 270, 100);
 
         jLabel3.setText("Categoria");
         add(jLabel3);
-        jLabel3.setBounds(390, 100, 50, 30);
+        jLabel3.setBounds(490, 110, 50, 30);
 
-        btnConfirmarMenu.setText("Confirmar");
+        btnConfirmarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmar.png"))); // NOI18N
+        btnConfirmarMenu.setBorderPainted(false);
+        btnConfirmarMenu.setContentAreaFilled(false);
+        btnConfirmarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmarOsc.png"))); // NOI18N
+        btnConfirmarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmarG.png"))); // NOI18N
         btnConfirmarMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarMenuActionPerformed(evt);
             }
         });
         add(btnConfirmarMenu);
-        btnConfirmarMenu.setBounds(800, 430, 120, 60);
+        btnConfirmarMenu.setBounds(900, 460, 260, 100);
 
         jLabel2.setText("Menu");
         add(jLabel2);
-        jLabel2.setBounds(390, 170, 70, 40);
+        jLabel2.setBounds(490, 230, 70, 40);
+
+        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Platillos");
+        add(jLabel4);
+        jLabel4.setBounds(220, 80, 150, 50);
 
         jlListaPlatillosMenu.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -134,7 +154,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jlListaPlatillosMenu);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(660, 80, 260, 290);
+        jScrollPane2.setBounds(900, 80, 260, 290);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
@@ -345,6 +365,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> jlListaPlatillos;
