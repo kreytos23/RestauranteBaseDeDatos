@@ -19,7 +19,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     public MenuDeUsuario(Clientes cliente) {
         initComponents();
         this.clienteLogueado = cliente;
-        pantallaPrincipal = new PantallaPrincipalUsuario();
+        pantallaPrincipal = new PantallaPrincipalUsuario(clienteLogueado);
         pantallaPrincipal.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
         panelRemplazo.removeAll();
         panelRemplazo.add(pantallaPrincipal);
@@ -251,8 +251,9 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
             carrito.jLabelXLeft(20,-190,15,5, lblHist);
             carrito.jLabelXLeft(20,-190,15,5, lblSalir);
             carrito.jLabelXLeft(20,-190,15,5, lblManuel);
+            carrito.jLabelXLeft(80,-190,15,5, lblMenuPrincipal);
             carrito.jLabelXLeft(80,-130,15,5, lblMenu);
-            carrito.jLabelXLeft(80,-130,15,5, lblMenuPrincipal);
+            
             
             boton.jButtonXLeft(140, 10, 15, 5, btnMenu);
             
@@ -268,7 +269,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
 
     private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
         btnMenuActionPerformed(evt);
-        pantallaPrincipal = new PantallaPrincipalUsuario();
+        pantallaPrincipal = new PantallaPrincipalUsuario(clienteLogueado);
         pantallaPrincipal.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
         panelRemplazo.removeAll();
         panelRemplazo.add(pantallaPrincipal);
