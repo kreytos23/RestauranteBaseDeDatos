@@ -18,6 +18,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private String hora,minutos,segundos,ampm;
     private Calendar calenderio;
     private Thread h1;
+    private AjustesAdmin ajustesAdmin;
     
  
     public MenuDeAdmin(Empleados admin) {
@@ -44,13 +45,13 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         btnSalir = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
         btnEsMenus = new javax.swing.JButton();
-        btnSueldos = new javax.swing.JButton();
+        btnMenuPrincipal = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lbHora = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblEsMenu = new javax.swing.JLabel();
-        lblSueldos = new javax.swing.JLabel();
+        lblMenuPrincipal = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
         lblAjustes = new javax.swing.JLabel();
         lblManuel = new javax.swing.JLabel();
@@ -73,11 +74,16 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             }
         });
         add(btnAgregarEmpleado);
-        btnAgregarEmpleado.setBounds(-170, 220, 45, 35);
+        btnAgregarEmpleado.setBounds(-170, 300, 45, 35);
 
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
         btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjustesActionPerformed(evt);
+            }
+        });
         add(btnAjustes);
         btnAjustes.setBounds(-170, 380, 45, 35);
 
@@ -109,11 +115,16 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnEsMenus);
         btnEsMenus.setBounds(-170, 340, 45, 35);
 
-        btnSueldos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
-        btnSueldos.setContentAreaFilled(false);
-        btnSueldos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(btnSueldos);
-        btnSueldos.setBounds(-170, 300, 45, 35);
+        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnMenuPrincipal.setContentAreaFilled(false);
+        btnMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPrincipalActionPerformed(evt);
+            }
+        });
+        add(btnMenuPrincipal);
+        btnMenuPrincipal.setBounds(-170, 220, 45, 35);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnEliminar.setContentAreaFilled(false);
@@ -147,12 +158,12 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(lblEsMenu);
         lblEsMenu.setBounds(-335, 350, 155, 20);
 
-        lblSueldos.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblSueldos.setForeground(new java.awt.Color(0, 0, 0));
-        lblSueldos.setText("* Sueldos");
-        lblSueldos.setToolTipText("");
-        add(lblSueldos);
-        lblSueldos.setBounds(-335, 310, 155, 20);
+        lblMenuPrincipal.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
+        lblMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        lblMenuPrincipal.setText("* Menu Principal");
+        lblMenuPrincipal.setToolTipText("");
+        add(lblMenuPrincipal);
+        lblMenuPrincipal.setBounds(-335, 230, 155, 20);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(0, 0, 0));
@@ -194,7 +205,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         lblAgregarEmpleado.setText("* Agregar Empleado");
         lblAgregarEmpleado.setToolTipText("");
         add(lblAgregarEmpleado);
-        lblAgregarEmpleado.setBounds(-335, 230, 155, 20);
+        lblAgregarEmpleado.setBounds(-335, 310, 155, 20);
 
         lblFondo.setBackground(new java.awt.Color(255, 128, 128));
         lblFondo.setOpaque(true);
@@ -237,14 +248,14 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             boton.jButtonXRight(-170,180,9,5, btnAgregarEmpleado);
             boton.jButtonXRight(-170,180,9,5, btnSalir);
             boton.jButtonXRight(-170,180,9,5, btnEliminar);
-            boton.jButtonXRight(-170,180,9,5, btnSueldos);
+            boton.jButtonXRight(-170,180,9,5, btnMenuPrincipal);
             
             carrito.jLabelXRight(-335,15,9,5, lblAjustes);
             carrito.jLabelXRight(-335,15,9,5, lblAgregarEmpleado);
             carrito.jLabelXRight(-335,15,9,5, lblEliminar);
             carrito.jLabelXRight(-335,15,9,5, lblSalir);
             carrito.jLabelXRight(-335,15,9,5, lblManuel);
-            carrito.jLabelXRight(-335,15,9,5, lblSueldos);
+            carrito.jLabelXRight(-335,15,9,5, lblMenuPrincipal);
             carrito.jLabelXRight(-335,15,9,5, lblEsMenu);
             
             carrito.jLabelXRight(-250,100,9,5, lblMenu);
@@ -260,7 +271,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             carrito.jLabelXLeft(15,-335,15,5, lblSalir);
             carrito.jLabelXLeft(15,-335,15,5, lblManuel);
             carrito.jLabelXLeft(15,-335,15,5, lblEsMenu);
-            carrito.jLabelXLeft(15,-335,15,5, lblSueldos);
+            carrito.jLabelXLeft(15,-335,15,5, lblMenuPrincipal);
             
             carrito.jLabelXLeft(100,-250,15,5, lblMenu);
             boton.jButtonXLeft(180,10, 15, 5, btnMenu);
@@ -270,7 +281,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             boton.jButtonXLeft(180, -170, 15, 5, btnAgregarEmpleado);
             boton.jButtonXLeft(180, -170, 15, 5, btnSalir);
             boton.jButtonXLeft(180, -170, 15, 5, btnEliminar);
-            boton.jButtonXLeft(180, -170, 15, 5, btnSueldos);
+            boton.jButtonXLeft(180, -170, 15, 5, btnMenuPrincipal);
             
             
         }
@@ -284,6 +295,25 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         panelCambiar.add(escogerPlatillos);
         panelCambiar.updateUI(); 
     }//GEN-LAST:event_btnEsMenusActionPerformed
+
+    private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
+        btnMenuActionPerformed(evt);
+        pantallaPrincipalAdmin = new PantallaPrincipalAdmin(admin);
+        pantallaPrincipalAdmin.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
+        panelCambiar.removeAll();
+        panelCambiar.add(pantallaPrincipalAdmin);
+        panelCambiar.updateUI();
+    }//GEN-LAST:event_btnMenuPrincipalActionPerformed
+
+    private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
+        btnMenuActionPerformed(evt);
+        ajustesAdmin = new AjustesAdmin();
+        ajustesAdmin.setBounds(0,0,panelCambiar.getWidth(),panelCambiar.getHeight());
+        panelCambiar.removeAll();
+        panelCambiar.add(ajustesAdmin);
+        panelCambiar.updateUI();
+
+    }//GEN-LAST:event_btnAjustesActionPerformed
 
     public void calcula(){
         Calendar calendario = new GregorianCalendar();
@@ -329,8 +359,8 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEsMenus;
     private javax.swing.JButton btnMenu;
+    private javax.swing.JButton btnMenuPrincipal;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSueldos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbHora;
@@ -341,9 +371,9 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblManuel;
     private javax.swing.JLabel lblMenu;
+    private javax.swing.JLabel lblMenuPrincipal;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSalir;
-    private javax.swing.JLabel lblSueldos;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelCambiar;
     // End of variables declaration//GEN-END:variables
