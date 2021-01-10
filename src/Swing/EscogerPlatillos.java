@@ -29,13 +29,6 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         jlListaPlatillos.setModel(listaPlatillos);
         jlListaPlatillosMenu.setModel(listaPlatillosMenu);
         
-        for(int i= 0; i< arrayPlatillos.size(); i++){
-            if(arrayPlatillos.get(i).getPla_Estatus().equals("Activo")){
-                listaPlatillosMenu.addElement(arrayPlatillos.get(i));
-            }else{
-                listaPlatillos.addElement(arrayPlatillos.get(i));
-            }
-        }
         
         platillosComidaTipoComida = 0;
         platillosCenaTipoComida= 0;
@@ -44,6 +37,45 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         platillosDesayunoTipoBebida = 0;
         platillosComidaTipoBebida = 0;
         platillosCenaTipoBebida = 0;
+        
+        for(int i= 0; i< arrayPlatillos.size(); i++){
+            
+            if(arrayPlatillos.get(i).getPla_Estatus().equals("Activo")){
+                listaPlatillosMenu.addElement(arrayPlatillos.get(i));
+                if(arrayPlatillos.get(i).getPla_Menu().getMenu_Id()== 1){
+                    switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
+                        case 2:
+                        case 3:
+                            platillosDesayunoTipoBebida++;
+                            break;
+                        default:
+                            platillosDesayunoTipoComida++;
+                    }}else if(arrayPlatillos.get(i).getPla_Menu().getMenu_Id()==2){
+                            switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
+                            case 2:
+                            case 3:
+                                platillosComidaTipoBebida++;
+                                break;
+                            default:
+                                platillosComidaTipoComida++;
+                                }
+                }else{
+                        switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
+                            case 2:
+                            case 3:
+                                platillosCenaTipoBebida++;
+                                break;
+                            default:
+                                platillosCenaTipoComida++;
+                                }
+                    }
+            }
+            else{
+                listaPlatillos.addElement(arrayPlatillos.get(i));
+            }
+        }
+        
+        
         
     }
 
