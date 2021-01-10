@@ -330,7 +330,23 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         
         
         if(confirmar){
+            arrayPlatillos.clear();
+            
+            for(int i = 0; i<= listaPlatillos.getSize() ; i++){
+                Platillos platilloAux = (Platillos) listaPlatillos.getElementAt(i);
+                platilloAux.setPla_Estatus("Inactivo");
+                arrayPlatillos.add(platilloAux);
+            }
+            for(int i = 0; i<= listaPlatillosMenu.getSize() ; i++){
+                Platillos platilloAux = (Platillos) listaPlatillosMenu.getElementAt(i);
+                platilloAux.setPla_Estatus("Activo");
+                arrayPlatillos.add(platilloAux);
+            }
+            
             JOptionPane.showMessageDialog(null, "El menu se confirmo");
+            
+            
+            
         }
         
         
