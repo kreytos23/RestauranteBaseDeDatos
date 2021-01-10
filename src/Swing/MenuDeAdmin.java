@@ -11,6 +11,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
  
     public MenuDeAdmin() {
         initComponents();
+        RestauranteConexion.RestauranteService.traerPlatillosService();
     }
 
    
@@ -53,7 +54,7 @@ public class MenuDeAdmin extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1360, 150);
+        jLabel2.setBounds(0, 0, 1380, 160);
 
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);

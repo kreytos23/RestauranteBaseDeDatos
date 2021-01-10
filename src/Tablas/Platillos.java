@@ -7,8 +7,30 @@ public class Platillos {
     private String Pla_Descripcion;
     private double Pla_Precio;
     private int Pla_Cantidad;
+    private String Pla_Estatus;
     private Categorias Pla_Categoria;
     private Menus Pla_Menu;
+
+    public Platillos(int Pla_Id, String Pla_Nombre, String Pla_Descripcion, double Pla_Precio, int Pla_Cantidad, String Pla_Estatus, Categorias Pla_Categoria, Menus Pla_Menu) {
+        this.Pla_Id = Pla_Id;
+        this.Pla_Nombre = Pla_Nombre;
+        this.Pla_Descripcion = Pla_Descripcion;
+        this.Pla_Precio = Pla_Precio;
+        this.Pla_Cantidad = Pla_Cantidad;
+        this.Pla_Estatus = Pla_Estatus;
+        this.Pla_Categoria = Pla_Categoria;
+        this.Pla_Menu = Pla_Menu;
+    }
+
+    
+    
+    public String getPla_Estatus() {
+        return Pla_Estatus;
+    }
+
+    public void setPla_Estatus(String Pla_Estatus) {
+        this.Pla_Estatus = Pla_Estatus;
+    }
 
     public int getPla_Id() {
         return Pla_Id;

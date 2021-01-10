@@ -263,6 +263,39 @@ public class RestauranteDAO {
             return 0;
         }
     }
+     
+    public static ArrayList<Platillos> traerPlatillos(){
+        Platillos platillo;
+        Menus menuDePlatillo;
+        Categorias categoria;
+        ArrayList<Platillos> arrayPlatillos = new ArrayList<>();
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "SELECT * FROM traerPlatillos";    
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                categoria = new Categorias(rs.getInt("Cat_Id"), rs.getString("Cat_Nombre"));
+                menuDePlatillo = new Menus(rs.getInt("Menu_Id"), rs.getString("Menu_Tipo"));
+                platillo = new Platillos(rs.getInt("Pla_Id"), rs.getString("Pla_Nombre"),
+                                         rs.getString("Pla_Descripcion"),(double)rs.getInt("Pla_Precio"),
+                                         rs.getInt("Pla_Cantidad"), rs.getString("Pla_Estatus"), 
+                                         categoria, menuDePlatillo);
+                arrayPlatillos.add(platillo);
+            }
+            
+            return arrayPlatillos;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                System.out.println("No se pudo leer los mensajes");
+                return arrayPlatillos;
+        }
+    }
       
     
 }
