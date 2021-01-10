@@ -87,6 +87,12 @@ public class Platillos {
     public void setPla_Menu(Menus Pla_Menu) {
         this.Pla_Menu = Pla_Menu;
     }
+
+    @Override
+    public String toString() {
+        return Pla_Nombre;
+    }
+    
     
     
 }

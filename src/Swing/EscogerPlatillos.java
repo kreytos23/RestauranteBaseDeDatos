@@ -6,6 +6,7 @@
 package Swing;
 
 import Tablas.Platillos;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 /**
@@ -17,11 +18,16 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     DefaultListModel listaPlatillos = new DefaultListModel();
     DefaultListModel listaPlatillosMenu = new DefaultListModel();
     private Platillos platillo;
+    private ArrayList<Platillos> arrayPlatillos;
     
     public EscogerPlatillos() {
         initComponents();
+        arrayPlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
         jlListaPlatillos.setModel(listaPlatillos);
         jlListaPlatillosMenu.setModel(listaPlatillosMenu);
+        for(int i= 0; i< arrayPlatillos.size(); i++){
+            listaPlatillos.addElement(arrayPlatillos.get(i));
+        }
         
         
     }
@@ -89,6 +95,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         Platillos platilloAux = (Platillos) listaPlatillos.getElementAt(index);
         
         listaPlatillosMenu.addElement(platilloAux);
+        listaPlatillos.removeElementAt(index);
         
                 
     }//GEN-LAST:event_btnAgregarActionPerformed

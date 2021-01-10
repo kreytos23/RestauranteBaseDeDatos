@@ -2,6 +2,8 @@ package Swing;
 
 import AppPackage.AnimationClass;
 import Tablas.Empleados;
+import Tablas.Platillos;
+import java.util.ArrayList;
 import javafx.animation.Animation;
 
 
@@ -11,14 +13,12 @@ public class MenuDeAdmin extends javax.swing.JPanel {
     private AgregarEmpleado agregarEmpleado;
     private EscogerPlatillos escogerPlatillos;
     private Empleados admin;
+    
  
     public MenuDeAdmin(Empleados admin) {
         initComponents();
-<<<<<<< HEAD
         this.admin = admin;
-=======
-        RestauranteConexion.RestauranteService.traerPlatillosService();
->>>>>>> 54713f2e8444c490b307a755d7516deadb693417
+
     }
 
    
