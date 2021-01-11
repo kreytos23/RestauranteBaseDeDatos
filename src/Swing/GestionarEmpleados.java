@@ -5,17 +5,31 @@
  */
 package Swing;
 
+import Tablas.Empleados;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import EnumClases.TipoEmpleado;
+
 /**
  *
  * @author serpi
  */
 public class GestionarEmpleados extends javax.swing.JPanel {
-
-    /**
-     * Creates new form AjustarSueldos
-     */
+    
+    ArrayList<Empleados> empleados;
+    DefaultListModel modeloEmpleados;
+    
+    TipoEmpleado tipoEmpleado;
+    
+    
     public GestionarEmpleados() {
         initComponents();
+        
+        for(TipoEmpleado tipo : tipoEmpleado.values()){
+            cbTiposEmpleados.addItem(tipo.toString());
+        }
+        
+        
     }
 
     /**
@@ -27,17 +41,45 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cbTiposEmpleados = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jlListaEmpleados = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
+
+        cbTiposEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTiposEmpleadosActionPerformed(evt);
+            }
+        });
+        add(cbTiposEmpleados);
+        cbTiposEmpleados.setBounds(70, 240, 130, 50);
+
+        jlListaEmpleados.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jlListaEmpleados);
+
+        add(jScrollPane1);
+        jScrollPane1.setBounds(350, 190, 90, 180);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, -140, 1670, 770);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbTiposEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTiposEmpleadosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbTiposEmpleados;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> jlListaEmpleados;
     // End of variables declaration//GEN-END:variables
 }
