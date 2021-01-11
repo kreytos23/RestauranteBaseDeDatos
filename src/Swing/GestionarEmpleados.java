@@ -86,6 +86,11 @@ public class GestionarEmpleados extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jlListaEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlListaEmpleadosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jlListaEmpleados);
 
         add(jScrollPane1);
@@ -163,6 +168,10 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     private void cbTiposEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosMouseClicked
         
     }//GEN-LAST:event_cbTiposEmpleadosMouseClicked
+
+    private void jlListaEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlListaEmpleadosMouseClicked
+        
+    }//GEN-LAST:event_jlListaEmpleadosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
