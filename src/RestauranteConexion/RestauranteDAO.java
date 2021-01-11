@@ -332,4 +332,108 @@ public class RestauranteDAO {
             System.out.println(e);
         }
     }
+    
+    public static int actualizarEmpleado(Empleados empleados,boolean correo){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                if(correo){
+                    String query = "CALL ActualizarEmpleadoConCorreo(?,?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, empleados.getEmp_Id());
+                    ps.setString(2, empleados.getCalle());
+                    ps.setString(3, empleados.getColonia());
+                    ps.setString(4, empleados.getPassword());
+                    ps.setString(5, empleados.getTelefono());
+                    ps.setString(6, empleados.getEmail());
+                    ps.executeUpdate();
+                }else{
+                    String query = "CALL ActualizarEmpleadoSinCorreo(?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, empleados.getEmp_Id());
+                    ps.setString(2, empleados.getCalle());
+                    ps.setString(3, empleados.getColonia());
+                    ps.setString(4, empleados.getPassword());
+                    ps.setString(5, empleados.getTelefono());
+                    ps.executeUpdate();
+                }
+                
+                return 0;
+                
+            }catch(SQLException e){
+                System.out.println(e);
+                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                
+                if(correoEr.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+            return 0;
+        }
+    }
+    
+    public static int actualizarCliente(Clientes cliente,boolean correo){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                if(correo){
+                    String query = "CALL ActualizarClienteConCorreo(?,?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, cliente.getCli_Id());
+                    ps.setString(2, cliente.getCalle());
+                    ps.setString(3, cliente.getColonia());
+                    ps.setString(4, cliente.getPassword());
+                    ps.setString(5, cliente.getTelefono());
+                    ps.setString(6, cliente.getEmail());
+                    ps.executeUpdate();
+                }else{
+                    String query = "CALL ActualizarClienteSinCorreo(?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, cliente.getCli_Id());
+                    ps.setString(2, cliente.getCalle());
+                    ps.setString(3, cliente.getColonia());
+                    ps.setString(4, cliente.getPassword());
+                    ps.setString(5, cliente.getTelefono());
+                    ps.executeUpdate();
+                }
+                
+                return 0;
+                
+            }catch(SQLException e){
+                System.out.println(e);
+                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                
+                if(correoEr.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+            return 0;
+        }
+    }
 }

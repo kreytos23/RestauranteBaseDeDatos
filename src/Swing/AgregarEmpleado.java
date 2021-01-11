@@ -459,6 +459,11 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             LbApellidoP2.setVisible(true);
             correcto = false;
         }
+        if(!ComprobarStrings(txtCalleNom.getText().trim())){
+//            LbNoCalle1.setVisible(true);
+//            LbNoCalle2.setVisible(true);
+            correcto = false;
+        }
         if(!ComprobarStrings(txtApellidoM.getText().trim())){
             LbApellidoM1.setVisible(true);
             LbApellidoM2.setVisible(true);

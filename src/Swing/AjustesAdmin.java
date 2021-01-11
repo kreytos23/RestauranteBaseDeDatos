@@ -2,6 +2,7 @@ package Swing;
 
 import EnumClases.Calendario;
 import EnumClases.TipoEmpleado;
+import RestauranteConexion.Conexion;
 import RestauranteConexion.RestauranteService;
 import Tablas.Empleados;
 import javax.swing.JOptionPane;
@@ -408,19 +409,19 @@ public class AjustesAdmin extends javax.swing.JPanel {
         boolean correcto = datosCorrectos();
 
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
-        /*
+        
         if(correcto){
-            System.out.println(txtPuesto.getSelectedIndex()+ 1);
-            error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
-                txtFecha,
-                txtNombre.getText(),
-                txtApellidoP.getText(),
-                txtApellidoM.getText(),
-                txtCorreo.getText(),
-                txtPassword.getText(),
-                txtColonia.getText(),
-                calle,
-                txtTelefono.getText());
+            admin.setCalle(calle);
+            admin.setColonia(txtColonia.getText());
+            admin.setTelefono(txtTelefono.getText());
+            admin.setPassword(txtPassword.getText());
+            
+            if(txtCorreo.getText().equals(admin.getEmail())){
+                error = RestauranteService.actualizarEmpleadoService(admin, false);
+            }else{
+                admin.setEmail(txtCorreo.getText());
+                error = RestauranteService.actualizarEmpleadoService(admin, true);
+            }
             switch(error){
                 case 1:
                 LbCorreo.setVisible(true);
@@ -435,16 +436,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
                 break;
                 case 4:
                 LbCorreoRep.setVisible(true);
-
             }
-        }*/
-        
-        if(txtCorreo.getText().equals(admin.getEmail())){
-            ///aqui va sin actualizar el correo
-        }else{
-            ///aqui va la funcion de actualizar el correo
         }
-
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnTColoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTColoniaActionPerformed
@@ -500,6 +493,14 @@ public class AjustesAdmin extends javax.swing.JPanel {
             LbNoCalle2.setVisible(true);
             correcto = false;
         }
+        
+        if(!ComprobarStrings(txtCalleNom.getText().trim())){
+//            LbNoCalle1.setVisible(true);
+//            LbNoCalle2.setVisible(true);
+            correcto = false;
+        }
+        
+        
         if(!ComprobarNumeros(txtTelefono.getText().trim())){
             LbTelefono3.setVisible(true);
             correcto = false;
