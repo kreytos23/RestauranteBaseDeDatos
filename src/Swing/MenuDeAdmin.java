@@ -62,7 +62,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
 
         setLayout(null);
 
-        btnAgregarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnAgregarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/usuario.png"))); // NOI18N
         btnAgregarEmpleado.setContentAreaFilled(false);
         btnAgregarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +73,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnAgregarEmpleado);
         btnAgregarEmpleado.setBounds(-170, 300, 45, 35);
 
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/configuraciones.png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
         btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAjustes.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +84,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnAjustes);
         btnAjustes.setBounds(-170, 380, 45, 35);
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/logout.png"))); // NOI18N
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnMenu);
         btnMenu.setBounds(10, 160, 45, 35);
 
-        btnEsMenus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnEsMenus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/restaurante (1).png"))); // NOI18N
         btnEsMenus.setContentAreaFilled(false);
         btnEsMenus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEsMenus.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +117,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnEsMenus);
         btnEsMenus.setBounds(-170, 340, 45, 35);
 
-        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/casa (1).png"))); // NOI18N
         btnMenuPrincipal.setContentAreaFilled(false);
         btnMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(btnMenuPrincipal);
         btnMenuPrincipal.setBounds(-170, 220, 45, 35);
 
-        btnGestEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnGestEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/silueta-de-multiples-usuarios (2).png"))); // NOI18N
         btnGestEmpleados.setContentAreaFilled(false);
         btnGestEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGestEmpleados.addActionListener(new java.awt.event.ActionListener() {
@@ -250,12 +250,12 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             mostrandoMenu = 1;
             carrito.jLabelXRight(-350,0,9,5, lblFondo);
             
-            boton.jButtonXRight(-170,180,9,5, btnEsMenus);
-            boton.jButtonXRight(-170,180,9,5, btnAjustes);
-            boton.jButtonXRight(-170,180,9,5, btnAgregarEmpleado);
-            boton.jButtonXRight(-170,180,9,5, btnSalir);
-            boton.jButtonXRight(-170,180,9,5, btnGestEmpleados);
-            boton.jButtonXRight(-170,180,9,5, btnMenuPrincipal);
+            boton.jButtonXRight(-170,185,9,5, btnEsMenus);
+            boton.jButtonXRight(-170,185,9,5, btnAjustes);
+            boton.jButtonXRight(-170,185,9,5, btnAgregarEmpleado);
+            boton.jButtonXRight(-170,185,9,5, btnSalir);
+            boton.jButtonXRight(-170,185,9,5, btnGestEmpleados);
+            boton.jButtonXRight(-170,185,9,5, btnMenuPrincipal);
             
             carrito.jLabelXRight(-335,15,9,5, lblAjustes);
             carrito.jLabelXRight(-335,15,9,5, lblAgregarEmpleado);
@@ -283,12 +283,12 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
             carrito.jLabelXLeft(100,-250,15,5, lblMenu);
             boton.jButtonXLeft(180,10, 15, 5, btnMenu);
             
-            boton.jButtonXLeft(180, -170, 15, 5, btnEsMenus);
-            boton.jButtonXLeft(180, -170, 15, 5, btnAjustes);
-            boton.jButtonXLeft(180, -170, 15, 5, btnAgregarEmpleado);
-            boton.jButtonXLeft(180, -170, 15, 5, btnSalir);
-            boton.jButtonXLeft(180, -170, 15, 5, btnGestEmpleados);
-            boton.jButtonXLeft(180, -170, 15, 5, btnMenuPrincipal);
+            boton.jButtonXLeft(185, -170, 15, 5, btnEsMenus);
+            boton.jButtonXLeft(185, -170, 15, 5, btnAjustes);
+            boton.jButtonXLeft(185, -170, 15, 5, btnAgregarEmpleado);
+            boton.jButtonXLeft(185, -170, 15, 5, btnSalir);
+            boton.jButtonXLeft(185, -170, 15, 5, btnGestEmpleados);
+            boton.jButtonXLeft(185, -170, 15, 5, btnMenuPrincipal);
             
         }
     }//GEN-LAST:event_btnMenuActionPerformed
