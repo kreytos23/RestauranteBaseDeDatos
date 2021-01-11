@@ -9,12 +9,46 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
     private int indexDeMenu;
     private ArrayList<Platillos> arrayDePlatillos;
-
+    private ArrayList<Platillos> desayuno;
+    private ArrayList<Platillos> comida;
+    private ArrayList<Platillos> cena;
+    private ArrayList<Platillos> bebidas;
+    
+    private ArrayList<Platillos> platoFuerte;
+    private ArrayList<Platillos> ensalada;
+    private ArrayList<Platillos> entradas;
+    private ArrayList<Platillos> postres;
+   
+   
+   
+    
     public MenuDePlatillos() {
         initComponents();
         indexDeMenu = 0;
         arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
         lblMenu.setText("Desayunos");
+        platoFuerte=new ArrayList<>();
+        ensalada=new ArrayList<>();
+        entradas=new ArrayList<>();
+        postres=new ArrayList<>();
+        for(Platillos plat:arrayDePlatillos){
+         int a=plat.getPla_Menu().getMenu_Id();
+         switch(a){
+             case 1:
+                 desayuno.add(plat);
+                 break;
+             case 2:
+                 comida.add(plat);
+                 break;
+             case 3:
+                 cena.add(plat);
+                 break;
+             
+         }
+         if(plat.getPla_Categoria().getCat_Id()==2 || plat.getPla_Categoria().getCat_Id()==3){
+             bebidas.add(plat);
+         }
+        }
     }
 
     
@@ -262,17 +296,24 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
     private void btnAvanzarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarMenuActionPerformed
         
-        indexDeMenu = indexDeMenu >= 2 ? 0 :  indexDeMenu + 1 ;
+        indexDeMenu = indexDeMenu >= 3 ? 0 :  indexDeMenu + 1 ;
 
         switch(indexDeMenu){
             case 0:
                 lblMenu.setText("Desayunos");
+                cambiarPanelDesayuno(desayuno);
                 break;
             case 1:
                 lblMenu.setText("Comida");
+                cambiarPanelComida(comida);
                 break;
             case 2:
                 lblMenu.setText("Cena");
+                cambiarPanelCena(cena);
+                break;
+            case 3:
+                lblMenu.setText("Bebidas");
+                cambiarPanelBebidas();
                 break;
         }
     }//GEN-LAST:event_btnAvanzarMenuActionPerformed
@@ -309,4 +350,39 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblPlato;
     // End of variables declaration//GEN-END:variables
+
+    private void cambiarPanelDesayuno(ArrayList<Platillos> comidas) {
+       
+        platoFuerte.clear();
+        entradas.clear();
+        ensalada.clear();
+        postres.clear();
+        for(Platillos plat: comidas){
+           int b=plat.getPla_Categoria().getCat_Id();
+       /*     if(b==1){
+                entradas.add(plat);
+            }
+            else if(b==3){
+                platoFuerte.add(plat);
+            }
+            else if(b==4){
+                ensalada.add(plat);
+            }
+            else if(b==6){
+                postres.add(plat);
+            }*/
+        }
+    }
+
+    private void cambiarPanelComida(ArrayList<Platillos> com) {
+       
+    }
+
+    private void cambiarPanelCena(ArrayList<Platillos> cena) {
+    
+    }
+
+    private void cambiarPanelBebidas() {
+    
+    }
 }

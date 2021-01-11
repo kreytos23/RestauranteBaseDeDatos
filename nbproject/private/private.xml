@@ -4,6 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/PantallaPrincipalUsuario.java</file>
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/RestauranteConexion/RestauranteService.java</file>
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/RestauranteConexion/Conexion.java</file>
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/laura/Proyecto/src/Swing/loginCliente.java</file>
             <file>file:/C:/Users/laura/Proyecto/src/Swing/AdminUser.java</file>
             <file>file:/C:/Users/laura/Proyecto/src/Swing/loginAdmin.java</file>
@@ -36,6 +41,7 @@
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Categorias.java</file>
 >>>>>>> 3cadc49229b9678c41d13fa0ef01f5cd59886951
 >>>>>>> 1ecbc1c61ee75f166cc8fb9ec49272acb0a5942f
+>>>>>>> 43f3f90c894cf63b64805374dc88701f33d81643
         </group>
     </open-files>
 </project-private>
