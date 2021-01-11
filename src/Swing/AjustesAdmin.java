@@ -30,6 +30,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         LbTelefono3.setVisible(false);
         LbCorreoRep.setVisible(false);
         LbCampos.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
         this.admin=admin;
         txtNombre.setText(admin.getNombre());
         txtApellidoP.setText(admin.getApellido_Paterno());
@@ -107,6 +109,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTTelefono = new javax.swing.JToggleButton();
         btnTCorreo = new javax.swing.JToggleButton();
         btnTPassword = new javax.swing.JToggleButton();
+        LbCalle1 = new javax.swing.JLabel();
+        LbCalle2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -327,58 +331,100 @@ public class AjustesAdmin extends javax.swing.JPanel {
         add(LbCampos);
         LbCampos.setBounds(1000, 490, 240, 40);
 
+        btnTColonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTColonia.setContentAreaFilled(false);
+        btnTColonia.setRolloverEnabled(false);
+        btnTColonia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTColonia.setVerifyInputWhenFocusTarget(false);
         btnTColonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTColoniaActionPerformed(evt);
             }
         });
         add(btnTColonia);
-        btnTColonia.setBounds(220, 220, 60, 30);
+        btnTColonia.setBounds(230, 220, 60, 40);
 
-        btnTCalle.setText("jToggleButton1");
+        btnTCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCalle.setContentAreaFilled(false);
+        btnTCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTCalle.setVerifyInputWhenFocusTarget(false);
         btnTCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCalleActionPerformed(evt);
             }
         });
         add(btnTCalle);
-        btnTCalle.setBounds(510, 220, 115, 32);
+        btnTCalle.setBounds(550, 220, 60, 40);
 
-        btnTNoCalle.setText("jToggleButton1");
+        btnTNoCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTNoCalle.setToolTipText("");
+        btnTNoCalle.setBorderPainted(false);
+        btnTNoCalle.setContentAreaFilled(false);
+        btnTNoCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTNoCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTNoCalle.setVerifyInputWhenFocusTarget(false);
         btnTNoCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTNoCalleActionPerformed(evt);
             }
         });
         add(btnTNoCalle);
-        btnTNoCalle.setBounds(820, 220, 115, 32);
+        btnTNoCalle.setBounds(870, 210, 60, 40);
 
-        btnTTelefono.setText("jToggleButton2");
+        btnTTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTTelefono.setBorderPainted(false);
+        btnTTelefono.setContentAreaFilled(false);
+        btnTTelefono.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTTelefono.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTTelefono.setVerifyInputWhenFocusTarget(false);
         btnTTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTTelefonoActionPerformed(evt);
             }
         });
         add(btnTTelefono);
-        btnTTelefono.setBounds(1200, 220, 115, 32);
+        btnTTelefono.setBounds(1180, 210, 60, 40);
 
-        btnTCorreo.setText("jToggleButton3");
+        btnTCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCorreo.setBorderPainted(false);
+        btnTCorreo.setContentAreaFilled(false);
+        btnTCorreo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCorreo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTCorreo.setVerifyInputWhenFocusTarget(false);
         btnTCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCorreoActionPerformed(evt);
             }
         });
         add(btnTCorreo);
-        btnTCorreo.setBounds(190, 360, 115, 32);
+        btnTCorreo.setBounds(230, 360, 60, 40);
 
-        btnTPassword.setText("jToggleButton4");
+        btnTPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTPassword.setBorderPainted(false);
+        btnTPassword.setContentAreaFilled(false);
+        btnTPassword.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTPassword.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTPassword.setVerifyInputWhenFocusTarget(false);
         btnTPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTPasswordActionPerformed(evt);
             }
         });
         add(btnTPassword);
-        btnTPassword.setBounds(510, 350, 115, 32);
+        btnTPassword.setBounds(550, 360, 60, 40);
+
+        LbCalle1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle1.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle1.setText("La calle no puede contener caracteres");
+        add(LbCalle1);
+        LbCalle1.setBounds(340, 310, 264, 18);
+
+        LbCalle2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle2.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle2.setText("especiales");
+        add(LbCalle2);
+        LbCalle2.setBounds(430, 330, 80, 18);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
@@ -462,8 +508,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         }
         
         if(!ComprobarStrings(txtCalleNom.getText().trim())){
-//            LbNoCalle1.setVisible(true);
-//            LbNoCalle2.setVisible(true);
+            LbCalle1.setVisible(true);
+            LbCalle2.setVisible(true);
             correcto = false;
         }
         
@@ -513,6 +559,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbCalle1;
+    private javax.swing.JLabel LbCalle2;
     private javax.swing.JLabel LbCampos;
     private javax.swing.JLabel LbColonia1;
     private javax.swing.JLabel LbColonia2;

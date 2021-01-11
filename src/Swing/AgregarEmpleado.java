@@ -30,6 +30,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbTelefono2.setVisible(false);
         LbTelefono3.setVisible(false);
         LbCorreoRep.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
         LbCampos.setVisible(false);
         
         for(TipoEmpleado tp : tipoEmpleado.values()){
@@ -98,6 +100,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         LbCorreo = new javax.swing.JLabel();
         LbCorreoRep = new javax.swing.JLabel();
         LbCampos = new javax.swing.JLabel();
+        LbCalle1 = new javax.swing.JLabel();
+        LbCalle2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1370, 620));
@@ -352,6 +356,18 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         add(LbCampos);
         LbCampos.setBounds(1000, 490, 240, 40);
 
+        LbCalle1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle1.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle1.setText("La calle no puede tener caracteres ");
+        add(LbCalle1);
+        LbCalle1.setBounds(350, 310, 250, 20);
+
+        LbCalle2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle2.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle2.setText("especiales");
+        add(LbCalle2);
+        LbCalle2.setBounds(440, 330, 80, 18);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, -150, 1370, 770);
@@ -460,8 +476,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             correcto = false;
         }
         if(!ComprobarStrings(txtCalleNom.getText().trim())){
-//            LbNoCalle1.setVisible(true);
-//            LbNoCalle2.setVisible(true);
+            LbCalle1.setVisible(true);
+            LbCalle2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarStrings(txtApellidoM.getText().trim())){
@@ -520,6 +536,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     private javax.swing.JLabel LbApellidoM2;
     private javax.swing.JLabel LbApellidoP1;
     private javax.swing.JLabel LbApellidoP2;
+    private javax.swing.JLabel LbCalle1;
+    private javax.swing.JLabel LbCalle2;
     private javax.swing.JLabel LbCampos;
     private javax.swing.JLabel LbColonia1;
     private javax.swing.JLabel LbColonia2;

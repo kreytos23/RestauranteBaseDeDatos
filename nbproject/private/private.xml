@@ -4,6 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+            <file>file:/C:/Users/laura/Proyecto/src/Swing/loginCliente.java</file>
+            <file>file:/C:/Users/laura/Proyecto/src/Swing/AdminUser.java</file>
+            <file>file:/C:/Users/laura/Proyecto/src/Swing/loginAdmin.java</file>
+            <file>file:/C:/Users/laura/Proyecto/src/Swing/EscogerPlatillos.java</file>
+            <file>file:/C:/Users/laura/Proyecto/src/RestauranteConexion/Conexion.java</file>
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/RestauranteConexion/Conexion.java</file>
 =======
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/loginCliente.java</file>
@@ -28,6 +35,7 @@
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Menus.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Categorias.java</file>
 >>>>>>> 3cadc49229b9678c41d13fa0ef01f5cd59886951
+>>>>>>> 1ecbc1c61ee75f166cc8fb9ec49272acb0a5942f
         </group>
     </open-files>
 </project-private>
