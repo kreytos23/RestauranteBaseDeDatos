@@ -17,7 +17,7 @@ import EnumClases.TipoEmpleado;
 public class GestionarEmpleados extends javax.swing.JPanel {
     
     ArrayList<Empleados> empleados;
-    DefaultListModel modeloEmpleados;
+    DefaultListModel modeloEmpleados = new DefaultListModel();
     
     TipoEmpleado tipoEmpleado;
     
@@ -25,10 +25,19 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     public GestionarEmpleados() {
         initComponents();
         
+        jlListaEmpleados.setModel(modeloEmpleados);
+        
         for(TipoEmpleado tipo : tipoEmpleado.values()){
             cbTiposEmpleados.addItem(tipo.toString());
         }
         
+        
+        empleados = RestauranteConexion.RestauranteService.mostrarEmpleadosService();
+        
+        for(int i = 0; i < empleados.size(); i++){
+            if(empleados.get(i).getEmp_Tipo().getTipo_Id() == 1)
+            modeloEmpleados.addElement(empleados.get(i));
+        }
         
     }
 
@@ -59,6 +68,11 @@ public class GestionarEmpleados extends javax.swing.JPanel {
 
         setLayout(null);
 
+        cbTiposEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbTiposEmpleadosMouseClicked(evt);
+            }
+        });
         cbTiposEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTiposEmpleadosActionPerformed(evt);
@@ -127,8 +141,28 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbTiposEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosActionPerformed
-        // TODO add your handling code here:
+        try {
+            if(cbTiposEmpleados.getSelectedIndex() == 0){
+            actualizarLista(1);
+        }else if(cbTiposEmpleados.getSelectedIndex() == 1){
+             actualizarLista(2);
+        }else if(cbTiposEmpleados.getSelectedIndex() == 2){
+             actualizarLista(3);
+        }else if(cbTiposEmpleados.getSelectedIndex() == 3){
+             actualizarLista(4);
+        }else if(cbTiposEmpleados.getSelectedIndex() == 4){
+             actualizarLista(5);
+        }else{
+            actualizarLista(6);
+        }
+        } catch (Exception e) {
+        }
+        
     }//GEN-LAST:event_cbTiposEmpleadosActionPerformed
+
+    private void cbTiposEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosMouseClicked
+        
+    }//GEN-LAST:event_cbTiposEmpleadosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -148,4 +182,12 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     private javax.swing.JLabel lbFechaNacimiento;
     private javax.swing.JLabel lbNombre;
     // End of variables declaration//GEN-END:variables
+
+    private void actualizarLista(int tipo) {
+        modeloEmpleados.removeAllElements();
+        for(int i = 0; i < empleados.size(); i++){
+            if(empleados.get(i).getEmp_Tipo().getTipo_Id() == tipo)
+            modeloEmpleados.addElement(empleados.get(i));
+        }
+    }
 }
