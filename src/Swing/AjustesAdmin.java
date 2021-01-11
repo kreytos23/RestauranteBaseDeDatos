@@ -2,8 +2,9 @@ package Swing;
 
 import EnumClases.Calendario;
 import EnumClases.TipoEmpleado;
-import RestauranteConexion.Conexion;
 import RestauranteConexion.RestauranteService;
+import static Swing.AgregarEmpleado.ComprobarNumeros;
+import static Swing.AgregarEmpleado.ComprobarStrings;
 import Tablas.Empleados;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -156,11 +157,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         jcMes.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         jcMes.setEnabled(false);
-        jcMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcMesActionPerformed(evt);
-            }
-        });
         add(jcMes);
         jcMes.setBounds(1110, 110, 110, 40);
 
@@ -309,11 +305,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         txtPuesto.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         txtPuesto.setEnabled(false);
-        txtPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPuestoActionPerformed(evt);
-            }
-        });
         add(txtPuesto);
         txtPuesto.setBounds(660, 400, 180, 40);
 
@@ -394,14 +385,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
         jLabel1.setBounds(0, -140, 1670, 770);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcMesActionPerformed
-
-    }//GEN-LAST:event_jcMesActionPerformed
-
-    private void txtPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuestoActionPerformed
-        
-    }//GEN-LAST:event_txtPuestoActionPerformed
-
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
         String calle;
@@ -464,22 +447,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
         activarTxt(txtPassword, btnTPassword);
     }//GEN-LAST:event_btnTPasswordActionPerformed
 
-    public static boolean ComprobarStrings(String datos){
-
-        String [] palabras = datos.split(" ");
-
-        for (String palabra : palabras) {
-            if (!palabra.matches("[a-zA-Z]*")) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public static boolean ComprobarNumeros(String datos){
-        return datos.matches("[0-9]*");
-    }
     
     private boolean datosCorrectos(){
         boolean correcto = true;
@@ -516,24 +483,24 @@ public class AjustesAdmin extends javax.swing.JPanel {
         
             try {
                 if(!correoPartes[0].trim().equals("")){
-                switch(correoPartes[1]){
-                    case "gmail.com":
-                    case "yahoo.com.mx":
-                    case "hotmail.com":
-                    case "outlook.com":
-                                break;
-                       default:
-                           JOptionPane.showMessageDialog(null, "Extension desconocida");
-                           correcto = false;
-                         }
-            }else{
+                    switch(correoPartes[1]){
+                        case "gmail.com":
+                        case "yahoo.com.mx":
+                        case "hotmail.com":
+                        case "outlook.com":
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Extension desconocida");
+                            correcto = false;
+                    }
+                }else{
                     correcto = false;
                     JOptionPane.showMessageDialog(null, "Debe haber algo antes del @");
-                }} catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "correo invalido");
-                    correcto = false;
+                }
+            }catch(Exception e) {
+                JOptionPane.showMessageDialog(null, "correo invalido");
+                correcto = false;
             }
-        
         return correcto;
     }
     
