@@ -379,6 +379,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
         System.out.println(txtFecha);
         if(correcto){
+            System.out.println(txtFecha);
             System.out.println(txtPuesto.getSelectedIndex()+ 1);
             error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
                                            txtFecha,
@@ -431,11 +432,10 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_txtPuestoActionPerformed
 
     public static boolean ComprobarStrings(String datos){
-
         String [] palabras = datos.split(" ");
 
         for (String palabra : palabras) {
-            if (!palabra.matches("[a-zA-Z]*")) {
+            if (!palabra.matches("[a-zA-ZñÑ]*")) {
                 return false;
             }
         }

@@ -10,8 +10,9 @@ public class Platillos {
     private String Pla_Estatus;
     private Categorias Pla_Categoria;
     private Menus Pla_Menu;
+    private String Pla_Imagen;
 
-    public Platillos(int Pla_Id, String Pla_Nombre, String Pla_Descripcion, double Pla_Precio, int Pla_Cantidad, String Pla_Estatus, Categorias Pla_Categoria, Menus Pla_Menu) {
+    public Platillos(int Pla_Id, String Pla_Nombre, String Pla_Descripcion, double Pla_Precio, int Pla_Cantidad, String Pla_Estatus, Categorias Pla_Categoria, Menus Pla_Menu,String Pla_Imagen) {
         this.Pla_Id = Pla_Id;
         this.Pla_Nombre = Pla_Nombre;
         this.Pla_Descripcion = Pla_Descripcion;
@@ -20,6 +21,7 @@ public class Platillos {
         this.Pla_Estatus = Pla_Estatus;
         this.Pla_Categoria = Pla_Categoria;
         this.Pla_Menu = Pla_Menu;
+        this.Pla_Imagen = Pla_Imagen;
     }
 
     

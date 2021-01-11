@@ -295,7 +295,7 @@ public class RestauranteDAO {
                 platillo = new Platillos(rs.getInt("Pla_Id"), rs.getString("Pla_Nombre"),
                                          rs.getString("Pla_Descripcion"),(double)rs.getInt("Pla_Precio"),
                                          rs.getInt("Pla_Cantidad"), rs.getString("Pla_Estatus"), 
-                                         categoria, menuDePlatillo);
+                                         categoria, menuDePlatillo,rs.getString("Pla_Imagen"));
                 arrayPlatillos.add(platillo);
             }
             
@@ -434,6 +434,26 @@ public class RestauranteDAO {
         }catch(SQLException e){
             System.out.println(e);
             return 0;
+        }
+    }
+    
+    public static void eliminarEmpleado(int Id){
+          Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                String query = "CALL EliminarEmpleado(?)";
+                
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1,Id);
+                ps.executeUpdate();
+                
+            }catch(SQLException e){
+                System.out.println(e);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
         }
     }
 }
