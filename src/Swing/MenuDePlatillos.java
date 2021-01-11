@@ -1,14 +1,16 @@
 package Swing;
 
-import RestauranteConexion.Conexion;
+
 import Tablas.Platillos;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 
 
 public class MenuDePlatillos extends javax.swing.JPanel {
 
     private int indexDeMenu;
     private ArrayList<Platillos> arrayDePlatillos;
+    
     private ArrayList<Platillos> desayuno;
     private ArrayList<Platillos> comida;
     private ArrayList<Platillos> cena;
@@ -18,37 +20,42 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private ArrayList<Platillos> ensalada;
     private ArrayList<Platillos> entradas;
     private ArrayList<Platillos> postres;
-   
-   
-   
     
     public MenuDePlatillos() {
         initComponents();
-        indexDeMenu = 0;
+        
+        indexDeMenu = -1;
         arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
+        System.out.println(arrayDePlatillos.size());
         lblMenu.setText("Desayunos");
-        platoFuerte=new ArrayList<>();
-        ensalada=new ArrayList<>();
-        entradas=new ArrayList<>();
-        postres=new ArrayList<>();
-        for(Platillos plat:arrayDePlatillos){
-         int a=plat.getPla_Menu().getMenu_Id();
-         switch(a){
-             case 1:
-                 desayuno.add(plat);
-                 break;
-             case 2:
-                 comida.add(plat);
-                 break;
-             case 3:
-                 cena.add(plat);
-                 break;
-             
-         }
-         if(plat.getPla_Categoria().getCat_Id()==2 || plat.getPla_Categoria().getCat_Id()==3){
-             bebidas.add(plat);
-         }
+        
+        platoFuerte = new ArrayList<>();
+        ensalada = new ArrayList<>();
+        entradas = new ArrayList<>();
+        postres = new ArrayList<>();
+        desayuno = new ArrayList<>();
+        comida = new ArrayList<>();
+        cena  = new ArrayList<>();
+        bebidas = new ArrayList<>();
+        
+        for(Platillos plat : arrayDePlatillos){
+            int a=plat.getPla_Menu().getMenu_Id();
+            switch(a){
+                case 1:
+                    desayuno.add(plat);
+                    break;
+                case 2:
+                    comida.add(plat);
+                    break;
+                case 3:
+                    cena.add(plat);
+                    break;
+            }
+            if(plat.getPla_Categoria().getCat_Id()==2 || plat.getPla_Categoria().getCat_Id()==3){
+                bebidas.add(plat);
+            }
         }
+        btnAvanzarMenuActionPerformed(null);
     }
 
     
@@ -57,14 +64,14 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        lblEnsalada2 = new javax.swing.JLabel();
+        lblEnsalda = new javax.swing.JLabel();
         lblPlato = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        lblPlato2 = new javax.swing.JLabel();
+        lblPostre = new javax.swing.JLabel();
+        lblPostre2 = new javax.swing.JLabel();
+        lblEntrada = new javax.swing.JLabel();
+        lblEntrada2 = new javax.swing.JLabel();
         lblMenu = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -89,23 +96,22 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Menu");
         jLabel2.setOpaque(true);
         add(jLabel2);
         jLabel2.setBounds(70, 100, 170, 40);
 
-        jLabel3.setText("jLabel3");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.setOpaque(true);
-        add(jLabel3);
-        jLabel3.setBounds(1070, 120, 150, 130);
+        lblEnsalada2.setText("jLabel3");
+        lblEnsalada2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEnsalada2.setOpaque(true);
+        add(lblEnsalada2);
+        lblEnsalada2.setBounds(1070, 120, 150, 130);
 
-        jLabel13.setText("jLabel3");
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel13.setOpaque(true);
-        add(jLabel13);
-        jLabel13.setBounds(900, 120, 150, 130);
+        lblEnsalda.setText("jLabel3");
+        lblEnsalda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEnsalda.setOpaque(true);
+        add(lblEnsalda);
+        lblEnsalda.setBounds(900, 120, 150, 130);
 
         lblPlato.setText("jLabel3");
         lblPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,52 +119,49 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         add(lblPlato);
         lblPlato.setBounds(380, 120, 150, 130);
 
-        jLabel15.setText("jLabel3");
-        jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel15.setOpaque(true);
-        add(jLabel15);
-        jLabel15.setBounds(550, 120, 150, 130);
+        lblPlato2.setText("jLabel3");
+        lblPlato2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPlato2.setOpaque(true);
+        add(lblPlato2);
+        lblPlato2.setBounds(550, 120, 150, 130);
 
-        jLabel16.setText("jLabel3");
-        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel16.setOpaque(true);
-        add(jLabel16);
-        jLabel16.setBounds(900, 380, 150, 130);
+        lblPostre.setText("jLabel3");
+        lblPostre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPostre.setOpaque(true);
+        add(lblPostre);
+        lblPostre.setBounds(900, 380, 150, 130);
 
-        jLabel17.setText("jLabel3");
-        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel17.setOpaque(true);
-        add(jLabel17);
-        jLabel17.setBounds(1070, 380, 150, 130);
+        lblPostre2.setText("jLabel3");
+        lblPostre2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPostre2.setOpaque(true);
+        add(lblPostre2);
+        lblPostre2.setBounds(1070, 380, 150, 130);
 
-        jLabel18.setText("jLabel3");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel18.setOpaque(true);
-        add(jLabel18);
-        jLabel18.setBounds(380, 380, 150, 130);
+        lblEntrada.setText("jLabel3");
+        lblEntrada.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEntrada.setOpaque(true);
+        add(lblEntrada);
+        lblEntrada.setBounds(380, 380, 150, 130);
 
-        jLabel19.setText("jLabel3");
-        jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel19.setOpaque(true);
-        add(jLabel19);
-        jLabel19.setBounds(550, 380, 150, 130);
+        lblEntrada2.setText("jLabel3");
+        lblEntrada2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEntrada2.setOpaque(true);
+        add(lblEntrada2);
+        lblEntrada2.setBounds(550, 380, 150, 130);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        lblMenu.setForeground(new java.awt.Color(0, 0, 0));
         lblMenu.setText("Cena");
         lblMenu.setOpaque(true);
         add(lblMenu);
         lblMenu.setBounds(70, 170, 170, 30);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("jLabel4");
         jLabel4.setOpaque(true);
         add(jLabel4);
         jLabel4.setBounds(40, 260, 230, 200);
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPanelPlatillos/Cuadrito_naranja.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -167,21 +170,18 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel5.setBounds(360, 110, 360, 150);
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Ensalada");
         jLabel6.setOpaque(true);
         add(jLabel6);
         jLabel6.setBounds(960, 60, 200, 30);
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Postres");
         jLabel7.setOpaque(true);
         add(jLabel7);
         jLabel7.setBounds(960, 320, 210, 30);
 
         jLabel8.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPanelPlatillos/Cuadrito_naranja.png"))); // NOI18N
         jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -190,14 +190,12 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel8.setBounds(880, 370, 360, 150);
 
         jLabel9.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Plato Fuerte");
         jLabel9.setOpaque(true);
         add(jLabel9);
         jLabel9.setBounds(440, 60, 180, 30);
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPanelPlatillos/Cuadrito_naranja.png"))); // NOI18N
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -206,7 +204,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel10.setBounds(880, 110, 360, 150);
 
         jLabel11.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPanelPlatillos/Cuadrito_naranja.png"))); // NOI18N
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -215,7 +212,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel11.setBounds(360, 370, 360, 150);
 
         jLabel12.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Entradas");
         jLabel12.setOpaque(true);
         add(jLabel12);
@@ -224,11 +220,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         btnIzqEntradas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPanelPlatillos/Flecha_izq.png"))); // NOI18N
         btnIzqEntradas.setContentAreaFilled(false);
         btnIzqEntradas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIzqEntradas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIzqEntradasActionPerformed(evt);
-            }
-        });
         add(btnIzqEntradas);
         btnIzqEntradas.setBounds(290, 420, 60, 50);
 
@@ -290,10 +281,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel1.setBounds(0, -150, 1370, 790);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIzqEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzqEntradasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIzqEntradasActionPerformed
-
     private void btnAvanzarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarMenuActionPerformed
         
         indexDeMenu = indexDeMenu >= 3 ? 0 :  indexDeMenu + 1 ;
@@ -301,24 +288,62 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         switch(indexDeMenu){
             case 0:
                 lblMenu.setText("Desayunos");
-                cambiarPanelDesayuno(desayuno);
+                cambiarPanelDeMenu(desayuno);
                 break;
             case 1:
                 lblMenu.setText("Comida");
-                cambiarPanelComida(comida);
+                cambiarPanelDeMenu(comida);
                 break;
             case 2:
                 lblMenu.setText("Cena");
-                cambiarPanelCena(cena);
+                cambiarPanelDeMenu(cena);
                 break;
             case 3:
                 lblMenu.setText("Bebidas");
-                cambiarPanelBebidas();
+                cambiarPanelDeMenu(bebidas);
                 break;
         }
     }//GEN-LAST:event_btnAvanzarMenuActionPerformed
 
+    private void cambiarPanelDeMenu(ArrayList<Platillos> comidas) {
+        platoFuerte.clear();
+        entradas.clear();
+        ensalada.clear();
+        postres.clear();
+        
+        comidas.forEach((plat) -> {
+            int categoria = plat.getPla_Categoria().getCat_Id();
+            
+            switch(categoria){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    platoFuerte.add(plat);
+                    entradas.add(plat);
+                    ensalada.add(plat);
+                    postres.add(plat);
+                    break;   
+            }
+        });
+        
+        llenarPaneles(entradas, lblEntrada, lblEntrada2);
+        llenarPaneles(platoFuerte, lblPlato, lblPlato2);
+        llenarPaneles(ensalada, lblEnsalda, lblEnsalada2);
+        llenarPaneles(postres, lblPostre, lblPostre2);
+        
+    }
 
+    private void llenarPaneles(ArrayList<Platillos> comida,JLabel lbl1, JLabel lb2) {
+       lbl1.setText(comida.get(0).getPla_Nombre());
+       lb2.setText(comida.get(1).getPla_Nombre());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAvanzarMenu;
     private javax.swing.JButton btnDerEnsalada;
@@ -333,56 +358,22 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblEnsalada2;
+    private javax.swing.JLabel lblEnsalda;
+    private javax.swing.JLabel lblEntrada;
+    private javax.swing.JLabel lblEntrada2;
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblPlato;
+    private javax.swing.JLabel lblPlato2;
+    private javax.swing.JLabel lblPostre;
+    private javax.swing.JLabel lblPostre2;
     // End of variables declaration//GEN-END:variables
 
-    private void cambiarPanelDesayuno(ArrayList<Platillos> comidas) {
-       
-        platoFuerte.clear();
-        entradas.clear();
-        ensalada.clear();
-        postres.clear();
-        for(Platillos plat: comidas){
-           int b=plat.getPla_Categoria().getCat_Id();
-       /*     if(b==1){
-                entradas.add(plat);
-            }
-            else if(b==3){
-                platoFuerte.add(plat);
-            }
-            else if(b==4){
-                ensalada.add(plat);
-            }
-            else if(b==6){
-                postres.add(plat);
-            }*/
-        }
-    }
-
-    private void cambiarPanelComida(ArrayList<Platillos> com) {
-       
-    }
-
-    private void cambiarPanelCena(ArrayList<Platillos> cena) {
-    
-    }
-
-    private void cambiarPanelBebidas() {
-    
-    }
 }
