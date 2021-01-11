@@ -327,58 +327,78 @@ public class AjustesAdmin extends javax.swing.JPanel {
         add(LbCampos);
         LbCampos.setBounds(1000, 490, 240, 40);
 
+        btnTColonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTColonia.setContentAreaFilled(false);
+        btnTColonia.setRolloverEnabled(false);
+        btnTColonia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTColonia.setVerifyInputWhenFocusTarget(false);
         btnTColonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTColoniaActionPerformed(evt);
             }
         });
         add(btnTColonia);
-        btnTColonia.setBounds(220, 220, 60, 30);
+        btnTColonia.setBounds(230, 220, 60, 40);
 
-        btnTCalle.setText("jToggleButton1");
+        btnTCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCalle.setContentAreaFilled(false);
+        btnTCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCalleActionPerformed(evt);
             }
         });
         add(btnTCalle);
-        btnTCalle.setBounds(510, 220, 115, 32);
+        btnTCalle.setBounds(550, 220, 60, 40);
 
-        btnTNoCalle.setText("jToggleButton1");
+        btnTNoCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTNoCalle.setToolTipText("");
+        btnTNoCalle.setBorderPainted(false);
+        btnTNoCalle.setContentAreaFilled(false);
+        btnTNoCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTNoCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTNoCalleActionPerformed(evt);
             }
         });
         add(btnTNoCalle);
-        btnTNoCalle.setBounds(820, 220, 115, 32);
+        btnTNoCalle.setBounds(870, 210, 60, 40);
 
-        btnTTelefono.setText("jToggleButton2");
+        btnTTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTTelefono.setBorderPainted(false);
+        btnTTelefono.setContentAreaFilled(false);
+        btnTTelefono.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTTelefonoActionPerformed(evt);
             }
         });
         add(btnTTelefono);
-        btnTTelefono.setBounds(1200, 220, 115, 32);
+        btnTTelefono.setBounds(1180, 210, 60, 40);
 
-        btnTCorreo.setText("jToggleButton3");
+        btnTCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTCorreo.setBorderPainted(false);
+        btnTCorreo.setContentAreaFilled(false);
+        btnTCorreo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCorreoActionPerformed(evt);
             }
         });
         add(btnTCorreo);
-        btnTCorreo.setBounds(190, 360, 115, 32);
+        btnTCorreo.setBounds(230, 360, 60, 40);
 
-        btnTPassword.setText("jToggleButton4");
+        btnTPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
+        btnTPassword.setBorderPainted(false);
+        btnTPassword.setContentAreaFilled(false);
+        btnTPassword.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTPasswordActionPerformed(evt);
             }
         });
         add(btnTPassword);
-        btnTPassword.setBounds(510, 350, 115, 32);
+        btnTPassword.setBounds(550, 360, 60, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);

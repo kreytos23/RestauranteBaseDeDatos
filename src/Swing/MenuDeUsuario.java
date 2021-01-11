@@ -14,7 +14,8 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private String hora,minutos,segundos,ampm;
     private Calendar calenderio;
     private Thread h1;
-    private PantallaPrincipalUsuario pantallaPrincipal;        
+    private PantallaPrincipalUsuario pantallaPrincipal;   
+    private MenuDePlatillos menuDePlatillos;
     
     public MenuDeUsuario(Clientes cliente) {
         initComponents();
@@ -41,8 +42,10 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnAjustes = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnCarrito = new javax.swing.JButton();
-        btnHist = new javax.swing.JButton();
+        btnPlatillos = new javax.swing.JButton();
         btnMenuPrincipal = new javax.swing.JButton();
+        lblPlatillos = new javax.swing.JLabel();
+        btnHist = new javax.swing.JButton();
         lblMenuPrincipal = new javax.swing.JLabel();
         lbHora = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
@@ -74,31 +77,36 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         add(btnMenu);
         btnMenu.setBounds(10, 160, 50, 40);
 
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/configuraciones.png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
         btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(btnAjustes);
-        btnAjustes.setBounds(-70, 330, 50, 40);
+        btnAjustes.setBounds(-70, 370, 50, 40);
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/logout.png"))); // NOI18N
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(btnSalir);
-        btnSalir.setBounds(-70, 370, 50, 40);
+        btnSalir.setBounds(-70, 410, 50, 40);
 
-        btnCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/carro.png"))); // NOI18N
         btnCarrito.setContentAreaFilled(false);
         btnCarrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(btnCarrito);
         btnCarrito.setBounds(-70, 250, 50, 40);
 
-        btnHist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
-        btnHist.setContentAreaFilled(false);
-        btnHist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add(btnHist);
-        btnHist.setBounds(-70, 290, 50, 40);
+        btnPlatillos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/recibo.png"))); // NOI18N
+        btnPlatillos.setContentAreaFilled(false);
+        btnPlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPlatillos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlatillosActionPerformed(evt);
+            }
+        });
+        add(btnPlatillos);
+        btnPlatillos.setBounds(-70, 290, 50, 40);
 
-        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/menu (1).png"))); // NOI18N
+        btnMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/casa (1).png"))); // NOI18N
         btnMenuPrincipal.setContentAreaFilled(false);
         btnMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -109,13 +117,27 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         add(btnMenuPrincipal);
         btnMenuPrincipal.setBounds(-70, 210, 50, 40);
 
-        lblMenuPrincipal.setFont(new java.awt.Font("Rockwell", 3, 16)); // NOI18N
+        lblPlatillos.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
+        lblPlatillos.setForeground(new java.awt.Color(0, 0, 0));
+        lblPlatillos.setText("* Ver Menus");
+        lblPlatillos.setToolTipText("");
+        lblPlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        add(lblPlatillos);
+        lblPlatillos.setBounds(-190, 300, 150, 20);
+
+        btnHist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/recibo.png"))); // NOI18N
+        btnHist.setContentAreaFilled(false);
+        btnHist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(btnHist);
+        btnHist.setBounds(-70, 330, 50, 40);
+
+        lblMenuPrincipal.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
         lblMenuPrincipal.setText("* Menu Principal");
         lblMenuPrincipal.setToolTipText("");
         lblMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(lblMenuPrincipal);
-        lblMenuPrincipal.setBounds(-190, 220, 132, 20);
+        lblMenuPrincipal.setBounds(-190, 220, 122, 20);
 
         lbHora.setFont(new java.awt.Font("Rockwell", 1, 25)); // NOI18N
         lbHora.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,13 +166,13 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         add(lblTitulo);
         lblTitulo.setBounds(910, 0, 470, 40);
 
-        lblAjustes.setFont(new java.awt.Font("Rockwell", 3, 16)); // NOI18N
+        lblAjustes.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblAjustes.setForeground(new java.awt.Color(0, 0, 0));
         lblAjustes.setText("* Ajustes");
         lblAjustes.setToolTipText("");
         lblAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(lblAjustes);
-        lblAjustes.setBounds(-190, 340, 150, 20);
+        lblAjustes.setBounds(-190, 380, 150, 20);
 
         lblManuel.setFont(new java.awt.Font("Rockwell", 3, 12)); // NOI18N
         lblManuel.setForeground(new java.awt.Color(0, 0, 0));
@@ -158,25 +180,25 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblManuel.setToolTipText("");
         lblManuel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(lblManuel);
-        lblManuel.setBounds(-190, 420, 180, 20);
+        lblManuel.setBounds(-190, 460, 180, 20);
 
-        lblSalir.setFont(new java.awt.Font("Rockwell", 3, 16)); // NOI18N
+        lblSalir.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblSalir.setForeground(new java.awt.Color(0, 0, 0));
         lblSalir.setText("* Salir");
         lblSalir.setToolTipText("");
         lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(lblSalir);
-        lblSalir.setBounds(-190, 380, 150, 20);
+        lblSalir.setBounds(-190, 420, 150, 20);
 
-        lblHist.setFont(new java.awt.Font("Rockwell", 3, 16)); // NOI18N
+        lblHist.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblHist.setForeground(new java.awt.Color(0, 0, 0));
         lblHist.setText("* Historial");
         lblHist.setToolTipText("");
         lblHist.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(lblHist);
-        lblHist.setBounds(-190, 300, 150, 20);
+        lblHist.setBounds(-190, 340, 150, 20);
 
-        lblCarrito.setFont(new java.awt.Font("Rockwell", 3, 16)); // NOI18N
+        lblCarrito.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
         lblCarrito.setForeground(new java.awt.Color(0, 0, 0));
         lblCarrito.setText("* Ver Carrito");
         lblCarrito.setToolTipText("");
@@ -188,7 +210,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblFondo.setOpaque(true);
         add(lblFondo);
-        lblFondo.setBounds(-210, 150, 200, 300);
+        lblFondo.setBounds(-210, 150, 200, 340);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -227,20 +249,23 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
 
                     
         if(mostrandoMenu == 0){
-            boton.jButtonXRight(-70,140,15,5, btnHist);
+            boton.jButtonXRight(-70,140,15,5, btnPlatillos);
             boton.jButtonXRight(-70,140,15,5, btnAjustes);
             boton.jButtonXRight(-70,140,15,5, btnCarrito);
             boton.jButtonXRight(-70,140,15,5, btnSalir);
             boton.jButtonXRight(-70,140,15,5, btnMenuPrincipal);
+            boton.jButtonXRight(-70,140,15,5, btnPlatillos);
+            boton.jButtonXRight(-70,140,15,5, btnHist);
             
             carrito.jLabelXRight(-210,0,15,5, lblFondo);
             
-            carrito.jLabelXRight(-190,20,15,5, lblAjustes);
-            carrito.jLabelXRight(-190,20,15,5, lblCarrito);
-            carrito.jLabelXRight(-190,20,15,5, lblHist);
-            carrito.jLabelXRight(-190,20,15,5, lblSalir);
-            carrito.jLabelXRight(-190,20,15,5, lblManuel);
-            carrito.jLabelXRight(-190,20,15,5, lblMenuPrincipal);
+            carrito.jLabelXRight(-190,15,15,5, lblAjustes);
+            carrito.jLabelXRight(-190,15,15,5, lblCarrito);
+            carrito.jLabelXRight(-190,15,15,5, lblHist);
+            carrito.jLabelXRight(-190,15,15,5, lblSalir);
+            carrito.jLabelXRight(-190,15,15,5, lblManuel);
+            carrito.jLabelXRight(-190,15,15,5, lblMenuPrincipal);
+            carrito.jLabelXRight(-190,15,15,5, lblPlatillos);
             
             carrito.jLabelXRight(-130,80,15,5, lblMenu);
             boton.jButtonXRight(10,140,20,5, btnMenu);
@@ -248,22 +273,24 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         }else{
             carrito.jLabelXLeft(0,-210,15,5, lblFondo);
             
-            carrito.jLabelXLeft(20,-190,15,5, lblAjustes);
-            carrito.jLabelXLeft(20,-190,15,5, lblCarrito);
-            carrito.jLabelXLeft(20,-190,15,5, lblHist);
-            carrito.jLabelXLeft(20,-190,15,5, lblSalir);
-            carrito.jLabelXLeft(20,-190,15,5, lblManuel);
-            carrito.jLabelXLeft(20,-190,15,5, lblMenuPrincipal);
-            carrito.jLabelXLeft(80,-130,15,5, lblMenu);
-            
+            carrito.jLabelXLeft(15,-190,15,5, lblAjustes);
+            carrito.jLabelXLeft(15,-190,15,5, lblCarrito);
+            carrito.jLabelXLeft(15,-190,15,5, lblHist);
+            carrito.jLabelXLeft(15,-190,15,5, lblSalir);
+            carrito.jLabelXLeft(15,-190,15,5, lblManuel);
+            carrito.jLabelXLeft(15,-190,15,5, lblMenuPrincipal);
+            carrito.jLabelXLeft(15,-190,15,5, lblPlatillos);
             
             boton.jButtonXLeft(140, 10, 15, 5, btnMenu);
+            carrito.jLabelXLeft(80,-130,15,5, lblMenu);
             
-            boton.jButtonXLeft(140, -70, 15, 5, btnHist);
+            boton.jButtonXLeft(140, -70, 15, 5, btnPlatillos);
             boton.jButtonXLeft(140, -70, 15, 5, btnAjustes);
             boton.jButtonXLeft(140, -70, 15, 5, btnCarrito);
             boton.jButtonXLeft(140, -70, 15, 5, btnSalir);
             boton.jButtonXLeft(140, -70, 15, 5, btnMenuPrincipal);
+            boton.jButtonXLeft(140, -70, 15, 5, btnPlatillos);
+            boton.jButtonXLeft(140, -70, 15, 5, btnHist);
             
             mostrandoMenu = 0;
         }
@@ -279,6 +306,15 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         panelRemplazo.add(pantallaPrincipal);
         panelRemplazo.updateUI();
     }//GEN-LAST:event_btnMenuPrincipalActionPerformed
+
+    private void btnPlatillosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlatillosActionPerformed
+        btnMenuActionPerformed(evt);
+        menuDePlatillos = new MenuDePlatillos();
+        menuDePlatillos.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(menuDePlatillos);
+        panelRemplazo.updateUI();
+    }//GEN-LAST:event_btnPlatillosActionPerformed
 
      @Override
     public void run() {
@@ -324,6 +360,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private javax.swing.JButton btnHist;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMenuPrincipal;
+    private javax.swing.JButton btnPlatillos;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -336,6 +373,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblMenuPrincipal;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPlatillos;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelRemplazo;
