@@ -379,6 +379,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
         System.out.println(txtFecha);
         if(correcto){
+            System.out.println(txtFecha);
             System.out.println(txtPuesto.getSelectedIndex()+ 1);
             error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
                                            txtFecha,

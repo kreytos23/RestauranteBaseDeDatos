@@ -12,7 +12,7 @@ public class RestauranteService {
     
     public static int agregarClienteService(String fecha, String nombre,String apellidoP,String apellidoM, String email,String Password, String colonia , String calle, String numero ){
         
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         try {
             java.util.Date fechaJ = format.parse(fecha);
  
@@ -47,7 +47,7 @@ public class RestauranteService {
     
     public static int agregarEmpleado(String tipo,String fecha, String nombre,String apellidoP,String apellidoM, String email, String contra, String colonia, String calle, String num ){
         System.out.println("llega");
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         try {
             java.util.Date fechaJ = format.parse(fecha);
             try{
