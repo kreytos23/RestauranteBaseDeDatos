@@ -30,6 +30,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         LbTelefono3.setVisible(false);
         LbCorreoRep.setVisible(false);
         LbCampos.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
         this.admin=admin;
         txtNombre.setText(admin.getNombre());
         txtApellidoP.setText(admin.getApellido_Paterno());
@@ -107,6 +109,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTTelefono = new javax.swing.JToggleButton();
         btnTCorreo = new javax.swing.JToggleButton();
         btnTPassword = new javax.swing.JToggleButton();
+        LbCalle1 = new javax.swing.JLabel();
+        LbCalle2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -342,7 +346,9 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         btnTCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCalle.setContentAreaFilled(false);
+        btnTCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTCalle.setVerifyInputWhenFocusTarget(false);
         btnTCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCalleActionPerformed(evt);
@@ -355,7 +361,9 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTNoCalle.setToolTipText("");
         btnTNoCalle.setBorderPainted(false);
         btnTNoCalle.setContentAreaFilled(false);
+        btnTNoCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTNoCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTNoCalle.setVerifyInputWhenFocusTarget(false);
         btnTNoCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTNoCalleActionPerformed(evt);
@@ -367,7 +375,9 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTTelefono.setBorderPainted(false);
         btnTTelefono.setContentAreaFilled(false);
+        btnTTelefono.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTTelefono.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTTelefono.setVerifyInputWhenFocusTarget(false);
         btnTTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTTelefonoActionPerformed(evt);
@@ -379,7 +389,9 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCorreo.setBorderPainted(false);
         btnTCorreo.setContentAreaFilled(false);
+        btnTCorreo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCorreo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTCorreo.setVerifyInputWhenFocusTarget(false);
         btnTCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTCorreoActionPerformed(evt);
@@ -391,7 +403,9 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTPassword.setBorderPainted(false);
         btnTPassword.setContentAreaFilled(false);
+        btnTPassword.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTPassword.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
+        btnTPassword.setVerifyInputWhenFocusTarget(false);
         btnTPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTPasswordActionPerformed(evt);
@@ -399,6 +413,18 @@ public class AjustesAdmin extends javax.swing.JPanel {
         });
         add(btnTPassword);
         btnTPassword.setBounds(550, 360, 60, 40);
+
+        LbCalle1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle1.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle1.setText("La calle no puede contener caracteres");
+        add(LbCalle1);
+        LbCalle1.setBounds(340, 310, 264, 18);
+
+        LbCalle2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        LbCalle2.setForeground(new java.awt.Color(255, 0, 0));
+        LbCalle2.setText("especiales");
+        add(LbCalle2);
+        LbCalle2.setBounds(430, 330, 80, 18);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
@@ -482,8 +508,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         }
         
         if(!ComprobarStrings(txtCalleNom.getText().trim())){
-//            LbNoCalle1.setVisible(true);
-//            LbNoCalle2.setVisible(true);
+            LbCalle1.setVisible(true);
+            LbCalle2.setVisible(true);
             correcto = false;
         }
         
@@ -533,6 +559,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbCalle1;
+    private javax.swing.JLabel LbCalle2;
     private javax.swing.JLabel LbCampos;
     private javax.swing.JLabel LbColonia1;
     private javax.swing.JLabel LbColonia2;
