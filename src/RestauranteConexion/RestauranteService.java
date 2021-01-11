@@ -8,8 +8,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-
-
 public class RestauranteService {
     
     public static int agregarClienteService(String fecha, String nombre,String apellidoP,String apellidoM, String email,String Password, String colonia , String calle, String numero ){
@@ -84,5 +82,9 @@ public class RestauranteService {
     
     public static int actualizarClienteService(Clientes cliente, boolean correo){
         return RestauranteDAO.actualizarCliente(cliente, correo);
+    }
+    
+    public static void eliminarEmpleado(int Id){
+        RestauranteDAO.eliminarEmpleado(Id);
     }
 }
