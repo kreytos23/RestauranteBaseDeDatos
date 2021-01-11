@@ -77,4 +77,12 @@ public class RestauranteService {
     public static void actualizarPlatillosService(ArrayList<Platillos> arrayplatillos){
         RestauranteDAO.ActualizarPlatillos(arrayplatillos);
     }
+    
+    public static int actualizarEmpleadoService(Empleados empleado, boolean correo){
+        return RestauranteDAO.actualizarEmpleado(empleado, correo);
+    }
+    
+    public static int actualizarClienteService(Clientes cliente, boolean correo){
+        return RestauranteDAO.actualizarCliente(cliente, correo);
+    }
 }
