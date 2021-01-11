@@ -365,14 +365,21 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         boolean correcto = datosCorrectos();
         
         if(jcMes.getSelectedIndex()< 9){
-            txtFecha = jcYear.getSelectedItem().toString() + "/0" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
+            txtFecha = jcYear.getSelectedItem().toString() + "/0" + (jcMes.getSelectedIndex() + 1) ;
         }else{
-            txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) + "/" + jcDia.getSelectedItem().toString();
+            txtFecha = jcYear.getSelectedItem().toString() + "/" + (jcMes.getSelectedIndex() + 1) ;
+        }
+        
+        if(jcDia.getSelectedIndex() < 9){
+            txtFecha += "/0" + jcDia.getSelectedItem().toString();
+        }else{
+            txtFecha += "/" + jcDia.getSelectedItem().toString();
         }
         
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
-        
+        System.out.println(txtFecha);
         if(correcto){
+            System.out.println(txtFecha);
             System.out.println(txtPuesto.getSelectedIndex()+ 1);
             error =  RestauranteService.agregarEmpleado(String.valueOf(txtPuesto.getSelectedIndex()+ 1),
                                            txtFecha,
@@ -425,11 +432,10 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_txtPuestoActionPerformed
 
     public static boolean ComprobarStrings(String datos){
-
         String [] palabras = datos.split(" ");
 
         for (String palabra : palabras) {
-            if (!palabra.matches("[a-zA-Z]*")) {
+            if (!palabra.matches("[a-zA-ZñÑ]*")) {
                 return false;
             }
         }
@@ -451,6 +457,11 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         if(!ComprobarStrings(txtApellidoP.getText().trim())){
             LbApellidoP1.setVisible(true);
             LbApellidoP2.setVisible(true);
+            correcto = false;
+        }
+        if(!ComprobarStrings(txtCalleNom.getText().trim())){
+//            LbNoCalle1.setVisible(true);
+//            LbNoCalle2.setVisible(true);
             correcto = false;
         }
         if(!ComprobarStrings(txtApellidoM.getText().trim())){
@@ -477,6 +488,29 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             LbCampos.setVisible(true);
             correcto = false;
         }
+        
+        String correo = txtCorreo.getText();
+        String correoPartes[] = correo.split("@");
+        
+            try {
+                if(!correoPartes[0].trim().equals("")){
+                switch(correoPartes[1]){
+                    case "gmail.com":
+                    case "yahoo.com.mx":
+                    case "hotmail.com":
+                    case "outlook.com":
+                                break;
+                       default:
+                           JOptionPane.showMessageDialog(null, "Extension desconocida");
+                           correcto = false;
+                         }
+            }else{
+                    correcto = false;
+                    JOptionPane.showMessageDialog(null, "Debe haber algo antes del @");
+                }} catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "correo invalido");
+                    correcto = false;
+            }
         
         return correcto;
     }

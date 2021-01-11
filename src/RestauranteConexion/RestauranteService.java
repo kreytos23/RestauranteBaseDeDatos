@@ -8,13 +8,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-
-
 public class RestauranteService {
     
     public static int agregarClienteService(String fecha, String nombre,String apellidoP,String apellidoM, String email,String Password, String colonia , String calle, String numero ){
         
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         try {
             java.util.Date fechaJ = format.parse(fecha);
  
@@ -27,13 +25,8 @@ public class RestauranteService {
         }
     }
     
-    public static void mostrarEmpleadosService(){
-        ArrayList<Empleados> arrayEmpleados = RestauranteDAO.mostrarEmpleadosNombre();
-        for(int i = 0; i < arrayEmpleados.size(); i++){
-            System.out.println(arrayEmpleados.get(i).getNombre());
-            System.out.println(arrayEmpleados.get(i).getApellido_Paterno());
-            System.out.println(arrayEmpleados.get(i).getApellido_Materno());
-        }
+    public static ArrayList<Empleados> mostrarEmpleadosService(){
+        return RestauranteDAO.mostrarEmpleadosNombre();
     }
     
     public static void mostrarClienteConIdService(int Id){
@@ -53,8 +46,8 @@ public class RestauranteService {
     }
     
     public static int agregarEmpleado(String tipo,String fecha, String nombre,String apellidoP,String apellidoM, String email, String contra, String colonia, String calle, String num ){
-        
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/mm/dd");
+        System.out.println("llega");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         try {
             java.util.Date fechaJ = format.parse(fecha);
             try{
@@ -81,5 +74,17 @@ public class RestauranteService {
 
     public static void actualizarPlatillosService(ArrayList<Platillos> arrayplatillos){
         RestauranteDAO.ActualizarPlatillos(arrayplatillos);
+    }
+    
+    public static int actualizarEmpleadoService(Empleados empleado, boolean correo){
+        return RestauranteDAO.actualizarEmpleado(empleado, correo);
+    }
+    
+    public static int actualizarClienteService(Clientes cliente, boolean correo){
+        return RestauranteDAO.actualizarCliente(cliente, correo);
+    }
+    
+    public static void eliminarEmpleado(int Id){
+        RestauranteDAO.eliminarEmpleado(Id);
     }
 }

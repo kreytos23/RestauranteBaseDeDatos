@@ -425,6 +425,11 @@ public class AgregarUsuario extends javax.swing.JPanel {
             LbApellidoP2.setVisible(true);
             correcto = false;
         }
+        if(!ComprobarStrings(txtCalleNom.getText().trim())){
+//            LbNoCalle1.setVisible(true);
+//            LbNoCalle2.setVisible(true);
+            correcto = false;
+        }
         if(!ComprobarStrings(txtApellidoM.getText().trim())){
             LbApellidoM1.setVisible(true);
             LbApellidoM2.setVisible(true);
@@ -450,6 +455,28 @@ public class AgregarUsuario extends javax.swing.JPanel {
             correcto = false;
         }
         
+        String correo = txtCorreo.getText();
+        String correoPartes[] = correo.split("@");
+        
+            try {
+                if(!correoPartes[0].trim().equals("")){
+                switch(correoPartes[1]){
+                    case "gmail.com":
+                    case "yahoo.com.mx":
+                    case "hotmail.com":
+                    case "outlook.com":
+                                break;
+                       default:
+                           JOptionPane.showMessageDialog(null, "Extension desconocida");
+                           correcto = false;
+                         }
+            }else{
+                    correcto = false;
+                    JOptionPane.showMessageDialog(null, "Debe haber algo antes del @");
+                }} catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "correo invalido");
+                    correcto = false;
+            }
         return correcto;
     }
 

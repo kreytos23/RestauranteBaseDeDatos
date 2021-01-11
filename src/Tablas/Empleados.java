@@ -42,6 +42,13 @@ public class Empleados extends Persona{
     public void setEmp_Fecha_Nacimiento(Date Emp_Fecha_Nacimiento) {
         this.Emp_Fecha_Nacimiento = Emp_Fecha_Nacimiento;
     }
+
+    @Override
+    public String toString() {
+        return super.getNombre() + " " + getApellido_Paterno() + " " + getApellido_Materno();
+    }
+    
+    
     
     
 }

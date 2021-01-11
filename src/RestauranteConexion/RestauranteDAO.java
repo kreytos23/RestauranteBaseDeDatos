@@ -12,28 +12,38 @@ public class RestauranteDAO {
     
     public static ArrayList<Empleados> mostrarEmpleadosNombre(){
         Empleados empleado;
+        Tipos tipoDeEmp;
         ArrayList<Empleados> arrayEmpleados = new ArrayList<>();
         Conexion db_connect = new Conexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
         
         try(Connection conexion = db_connect.getConnection()){
-            String query = "SELECT * FROM empleados_Nombre_Id";    
+            String query = "SELECT * FROM traerEmpleados";    
             ps = conexion.prepareStatement(query);
             rs = ps.executeQuery();
             
             while(rs.next()){
-                empleado = new Empleados();
-                empleado.setNombre(rs.getString("Emp_Nombre"));
-                empleado.setApellido_Paterno(rs.getString("Emp_Apellido_Paterno"));
-                empleado.setApellido_Materno(rs.getString("Emp_Apellido_Materno"));
+                tipoDeEmp = new Tipos(rs.getInt("Tipo_Id"), 
+                                          rs.getString("Tipo_Nombre"),
+                                          rs.getInt("Tipo_Sueldo"));
+                empleado = new Empleados(rs.getInt("Emp_Id"),
+                                             tipoDeEmp,
+                                             rs.getDate("Emp_Fecha_Nacimiento"),
+                                             rs.getString("Emp_Nombre"),
+                                             rs.getString("Emp_Apellido_Paterno"), 
+                                             rs.getString("Emp_Apellido_Materno"),
+                                             rs.getString("Emp_Email"),
+                                             rs.getString("Emp_Password"),
+                                             rs.getString("Emp_Colonia"),
+                                             rs.getString("Emp_Calle"),
+                                             rs.getString("Emp_Telefono"));
                 arrayEmpleados.add(empleado);
             }
             return arrayEmpleados;
             
         }catch(SQLException ex){
                 System.out.println(ex);
-                System.out.println("No se pudo leer los mensajes");
                 return arrayEmpleados;
         }
     }
@@ -182,6 +192,7 @@ public class RestauranteDAO {
         try(Connection conexion = db_connect.getConnection()){
             PreparedStatement ps = null;
             ResultSet rs = null;
+            System.out.println("conexion exitosa");
             try{
                 String query = "call LoginAdmin(?,?)";
                 ps = conexion.prepareStatement(query);
@@ -223,7 +234,7 @@ public class RestauranteDAO {
         
         try(Connection conexion = db_connect.getConnection()){
             PreparedStatement ps = null;
-           
+            System.out.println("conexion exitosa");
             try{
                 String query = "CALL NuevoEmpleado(?,?,?,?,?,?,?,?,?,?)";
                 ps = conexion.prepareStatement(query);
@@ -284,7 +295,7 @@ public class RestauranteDAO {
                 platillo = new Platillos(rs.getInt("Pla_Id"), rs.getString("Pla_Nombre"),
                                          rs.getString("Pla_Descripcion"),(double)rs.getInt("Pla_Precio"),
                                          rs.getInt("Pla_Cantidad"), rs.getString("Pla_Estatus"), 
-                                         categoria, menuDePlatillo);
+                                         categoria, menuDePlatillo,rs.getString("Pla_Imagen"));
                 arrayPlatillos.add(platillo);
             }
             
@@ -316,6 +327,130 @@ public class RestauranteDAO {
                 
             }catch(SQLException e){
                 System.out.println(e); 
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+    
+    public static int actualizarEmpleado(Empleados empleados,boolean correo){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                if(correo){
+                    String query = "CALL ActualizarEmpleadoConCorreo(?,?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, empleados.getEmp_Id());
+                    ps.setString(2, empleados.getCalle());
+                    ps.setString(3, empleados.getColonia());
+                    ps.setString(4, empleados.getPassword());
+                    ps.setString(5, empleados.getTelefono());
+                    ps.setString(6, empleados.getEmail());
+                    ps.executeUpdate();
+                }else{
+                    String query = "CALL ActualizarEmpleadoSinCorreo(?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, empleados.getEmp_Id());
+                    ps.setString(2, empleados.getCalle());
+                    ps.setString(3, empleados.getColonia());
+                    ps.setString(4, empleados.getPassword());
+                    ps.setString(5, empleados.getTelefono());
+                    ps.executeUpdate();
+                }
+                
+                return 0;
+                
+            }catch(SQLException e){
+                System.out.println(e);
+                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                
+                if(correoEr.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+            return 0;
+        }
+    }
+    
+    public static int actualizarCliente(Clientes cliente,boolean correo){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                if(correo){
+                    String query = "CALL ActualizarClienteConCorreo(?,?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, cliente.getCli_Id());
+                    ps.setString(2, cliente.getCalle());
+                    ps.setString(3, cliente.getColonia());
+                    ps.setString(4, cliente.getPassword());
+                    ps.setString(5, cliente.getTelefono());
+                    ps.setString(6, cliente.getEmail());
+                    ps.executeUpdate();
+                }else{
+                    String query = "CALL ActualizarClienteSinCorreo(?,?,?,?,?)";
+                    ps = conexion.prepareStatement(query);
+                    ps.setInt(1, cliente.getCli_Id());
+                    ps.setString(2, cliente.getCalle());
+                    ps.setString(3, cliente.getColonia());
+                    ps.setString(4, cliente.getPassword());
+                    ps.setString(5, cliente.getTelefono());
+                    ps.executeUpdate();
+                }
+                
+                return 0;
+                
+            }catch(SQLException e){
+                System.out.println(e);
+                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                
+                if(correoEr.equals(e.toString())){
+                    return 1;
+                }else if(pass.equals(e.toString())){
+                    return 2;
+                }else if(num.equals(e.toString())){
+                    return 3;
+                }else{
+                    return 4;
+                }
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+            return 0;
+        }
+    }
+    
+    public static void eliminarEmpleado(int Id){
+          Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                String query = "CALL EliminarEmpleado(?)";
+                
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1,Id);
+                ps.executeUpdate();
+                
+            }catch(SQLException e){
+                System.out.println(e);
             }
         }catch(SQLException e){
             System.out.println(e);
