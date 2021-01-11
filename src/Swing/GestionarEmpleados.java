@@ -44,7 +44,18 @@ public class GestionarEmpleados extends javax.swing.JPanel {
         cbTiposEmpleados = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jlListaEmpleados = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lbApellidoP = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lbNombre = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lbFechaNacimiento = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -54,7 +65,7 @@ public class GestionarEmpleados extends javax.swing.JPanel {
             }
         });
         add(cbTiposEmpleados);
-        cbTiposEmpleados.setBounds(70, 240, 130, 50);
+        cbTiposEmpleados.setBounds(160, 90, 140, 40);
 
         jlListaEmpleados.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -64,11 +75,55 @@ public class GestionarEmpleados extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jlListaEmpleados);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(350, 190, 90, 180);
+        jScrollPane1.setBounds(150, 170, 170, 210);
+
+        jLabel2.setText("Nombre");
+        add(jLabel2);
+        jLabel2.setBounds(510, 70, 80, 60);
+
+        jLabel3.setText("Apellido Paterno");
+        add(jLabel3);
+        jLabel3.setBounds(510, 140, 120, 16);
+
+        lbApellidoP.setText("jLabel4");
+        add(lbApellidoP);
+        lbApellidoP.setBounds(630, 140, 41, 16);
+
+        jLabel5.setText("jLabel5");
+        add(jLabel5);
+        jLabel5.setBounds(630, 190, 100, 16);
+
+        jLabel6.setText("Apellido Materno");
+        add(jLabel6);
+        jLabel6.setBounds(510, 180, 120, 30);
+
+        lbNombre.setText("jLabel7");
+        add(lbNombre);
+        lbNombre.setBounds(580, 80, 290, 30);
+
+        jLabel8.setText("Fecha de nacimiento");
+        add(jLabel8);
+        jLabel8.setBounds(510, 230, 130, 16);
+
+        lbFechaNacimiento.setText("jLabel4");
+        add(lbFechaNacimiento);
+        lbFechaNacimiento.setBounds(650, 220, 150, 30);
+
+        jLabel9.setText("Tipo");
+        add(jLabel9);
+        jLabel9.setBounds(510, 320, 170, 20);
+
+        jLabel10.setText("Sueldo");
+        add(jLabel10);
+        jLabel10.setBounds(510, 270, 100, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
         jLabel1.setBounds(0, -140, 1670, 770);
+
+        jLabel4.setText("jLabel4");
+        add(jLabel4);
+        jLabel4.setBounds(510, 370, 190, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbTiposEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosActionPerformed
@@ -79,7 +134,18 @@ public class GestionarEmpleados extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbTiposEmpleados;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> jlListaEmpleados;
+    private javax.swing.JLabel lbApellidoP;
+    private javax.swing.JLabel lbFechaNacimiento;
+    private javax.swing.JLabel lbNombre;
     // End of variables declaration//GEN-END:variables
 }

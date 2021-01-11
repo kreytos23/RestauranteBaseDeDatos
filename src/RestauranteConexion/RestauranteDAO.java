@@ -12,28 +12,38 @@ public class RestauranteDAO {
     
     public static ArrayList<Empleados> mostrarEmpleadosNombre(){
         Empleados empleado;
+        Tipos tipoDeEmp;
         ArrayList<Empleados> arrayEmpleados = new ArrayList<>();
         Conexion db_connect = new Conexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
         
         try(Connection conexion = db_connect.getConnection()){
-            String query = "SELECT * FROM empleados_Nombre_Id";    
+            String query = "SELECT * FROM traerEmpleados";    
             ps = conexion.prepareStatement(query);
             rs = ps.executeQuery();
             
             while(rs.next()){
-                empleado = new Empleados();
-                empleado.setNombre(rs.getString("Emp_Nombre"));
-                empleado.setApellido_Paterno(rs.getString("Emp_Apellido_Paterno"));
-                empleado.setApellido_Materno(rs.getString("Emp_Apellido_Materno"));
+                tipoDeEmp = new Tipos(rs.getInt("Tipo_Id"), 
+                                          rs.getString("Tipo_Nombre"),
+                                          rs.getInt("Tipo_Sueldo"));
+                empleado = new Empleados(rs.getInt("Emp_Id"),
+                                             tipoDeEmp,
+                                             rs.getDate("Emp_Fecha_Nacimiento"),
+                                             rs.getString("Emp_Nombre"),
+                                             rs.getString("Emp_Apellido_Paterno"), 
+                                             rs.getString("Emp_Apellido_Materno"),
+                                             rs.getString("Emp_Email"),
+                                             rs.getString("Emp_Password"),
+                                             rs.getString("Emp_Colonia"),
+                                             rs.getString("Emp_Calle"),
+                                             rs.getString("Emp_Telefono"));
                 arrayEmpleados.add(empleado);
             }
             return arrayEmpleados;
             
         }catch(SQLException ex){
                 System.out.println(ex);
-                System.out.println("No se pudo leer los mensajes");
                 return arrayEmpleados;
         }
     }
