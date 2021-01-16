@@ -417,9 +417,9 @@ public class RestauranteDAO {
                 
             }catch(SQLException e){
                 System.out.println(e);
-                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
-                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
-                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                String correoEr = "java.sql.SQLException: Check constraint 'clientes_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'clientes_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'clientes_chk_3' is violated.";
                 
                 if(correoEr.equals(e.toString())){
                     return 1;

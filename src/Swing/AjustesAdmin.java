@@ -18,20 +18,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
     
     public AjustesAdmin(Empleados admin) {
         initComponents();
-        LbPass1.setVisible(false);
-        LbPass2.setVisible(false);
-        LbColonia1.setVisible(false);
-        LbColonia2.setVisible(false);
-        LbNoCalle1.setVisible(false);
-        LbNoCalle2.setVisible(false);
-        LbCorreo.setVisible(false);
-        LbTelefono1.setVisible(false);
-        LbTelefono2.setVisible(false);
-        LbTelefono3.setVisible(false);
-        LbCorreoRep.setVisible(false);
-        LbCampos.setVisible(false);
-        LbCalle1.setVisible(false);
-        LbCalle2.setVisible(false);
+        quitarLabels();
         this.admin=admin;
         txtNombre.setText(admin.getNombre());
         txtApellidoP.setText(admin.getApellido_Paterno());
@@ -333,7 +320,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         btnTColonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTColonia.setContentAreaFilled(false);
-        btnTColonia.setRolloverEnabled(false);
         btnTColonia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTColonia.setVerifyInputWhenFocusTarget(false);
         btnTColonia.addActionListener(new java.awt.event.ActionListener() {
@@ -435,6 +421,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         String calle;
         int error;
+        quitarLabels();
         boolean correcto = datosCorrectos();
 
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
@@ -460,11 +447,11 @@ public class AjustesAdmin extends javax.swing.JPanel {
                 LbPass2.setVisible(true);
                 break;
                 case 3:
-                LbTelefono1.setVisible(true);
-                LbTelefono2.setVisible(true);
+                LbTelefono3.setVisible(true);
                 break;
                 case 4:
                 LbCorreoRep.setVisible(true);
+                break;
             }
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -515,7 +502,8 @@ public class AjustesAdmin extends javax.swing.JPanel {
         
         
         if(!ComprobarNumeros(txtTelefono.getText().trim())){
-            LbTelefono3.setVisible(true);
+            LbTelefono1.setVisible(true);
+            LbTelefono2.setVisible(true);
             correcto = false;
         }
         
@@ -647,5 +635,22 @@ public class AjustesAdmin extends javax.swing.JPanel {
                 jcMes.addItem(mes.Diciembre.toString());
                 break;
         }
+    }
+
+    private void quitarLabels() {
+        LbPass1.setVisible(false);
+        LbPass2.setVisible(false);
+        LbColonia1.setVisible(false);
+        LbColonia2.setVisible(false);
+        LbNoCalle1.setVisible(false);
+        LbNoCalle2.setVisible(false);
+        LbCorreo.setVisible(false);
+        LbTelefono1.setVisible(false);
+        LbTelefono2.setVisible(false);
+        LbTelefono3.setVisible(false);
+        LbCorreoRep.setVisible(false);
+        LbCampos.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
     }
 }
