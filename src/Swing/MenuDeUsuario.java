@@ -16,6 +16,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private Thread h1;
     private PantallaPrincipalUsuario pantallaPrincipal;   
     private MenuDePlatillos menuDePlatillos;
+    private AjustesUsuario ajustesUsuario;
     
     public MenuDeUsuario(Clientes cliente) {
         initComponents();
@@ -80,6 +81,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/configuraciones.png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
         btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjustesActionPerformed(evt);
+            }
+        });
         add(btnAjustes);
         btnAjustes.setBounds(-70, 370, 50, 40);
 
@@ -315,6 +321,15 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         panelRemplazo.add(menuDePlatillos);
         panelRemplazo.updateUI();
     }//GEN-LAST:event_btnPlatillosActionPerformed
+
+    private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
+        btnMenuActionPerformed(evt);
+        ajustesUsuario = new AjustesUsuario(clienteLogueado);
+        ajustesUsuario.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(ajustesUsuario);
+        panelRemplazo.updateUI();
+    }//GEN-LAST:event_btnAjustesActionPerformed
 
      @Override
     public void run() {
