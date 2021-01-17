@@ -320,6 +320,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         btnTColonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTColonia.setContentAreaFilled(false);
+        btnTColonia.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTColonia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTColonia.setVerifyInputWhenFocusTarget(false);
         btnTColonia.addActionListener(new java.awt.event.ActionListener() {

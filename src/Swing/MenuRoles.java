@@ -26,7 +26,8 @@ public class MenuRoles extends javax.swing.JPanel {
         setRequestFocusEnabled(false);
         setLayout(null);
 
-        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/Iniciar_sesion.jpg"))); // NOI18N
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/Inicio sesion_1.png"))); // NOI18N
+        btnIniciarSesion.setBorderPainted(false);
         btnIniciarSesion.setContentAreaFilled(false);
         btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -35,19 +36,19 @@ public class MenuRoles extends javax.swing.JPanel {
             }
         });
         add(btnIniciarSesion);
-        btnIniciarSesion.setBounds(1060, 60, 220, 35);
+        btnIniciarSesion.setBounds(1030, 40, 260, 80);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1366, 147);
 
-        lbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
+        lbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/Panel_2.jpg"))); // NOI18N
         lbFondo.setText("    ");
         lbFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lbFondo.setPreferredSize(new java.awt.Dimension(1366, 768));
         add(lbFondo);
-        lbFondo.setBounds(0, 0, 1370, 768);
+        lbFondo.setBounds(0, 70, 1370, 768);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed

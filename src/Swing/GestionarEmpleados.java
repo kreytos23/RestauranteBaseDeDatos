@@ -124,14 +124,20 @@ public class GestionarEmpleados extends javax.swing.JPanel {
         add(lbApellidoP);
         lbApellidoP.setBounds(1010, 170, 210, 22);
 
-        btnEliminar.setText("Elimiar");
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Eliminar.png"))); // NOI18N
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEliminar.setOpaque(false);
+        btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Eliminar2.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
         add(btnEliminar);
-        btnEliminar.setBounds(1150, 190, 200, 50);
+        btnEliminar.setBounds(1130, 220, 210, 90);
 
         lbApellidoM.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         lbApellidoM.setForeground(new java.awt.Color(0, 0, 0));

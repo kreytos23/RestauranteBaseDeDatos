@@ -99,12 +99,15 @@ public class EscogerPlatillos extends javax.swing.JPanel {
 
         lblCategoria.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         lblCategoria.setForeground(new java.awt.Color(0, 0, 0));
+        lblCategoria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblCategoria);
-        lblCategoria.setBounds(710, 350, 160, 40);
+        lblCategoria.setBounds(720, 350, 160, 40);
 
         lbNombrePlatillo.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         lbNombrePlatillo.setForeground(new java.awt.Color(0, 0, 0));
         lbNombrePlatillo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbNombrePlatillo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lbNombrePlatillo);
         lbNombrePlatillo.setBounds(510, 80, 370, 40);
 
@@ -158,20 +161,24 @@ public class EscogerPlatillos extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Menu");
         add(jLabel2);
-        jLabel2.setBounds(560, 310, 110, 30);
+        jLabel2.setBounds(530, 310, 160, 30);
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 3, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Categoria");
         add(jLabel3);
-        jLabel3.setBounds(720, 310, 110, 30);
+        jLabel3.setBounds(720, 310, 160, 40);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(0, 0, 0));
+        lblMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblMenu);
-        lblMenu.setBounds(540, 350, 160, 40);
+        lblMenu.setBounds(530, 350, 160, 40);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));

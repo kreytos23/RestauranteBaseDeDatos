@@ -45,9 +45,9 @@ public class AgregarCarrito extends javax.swing.JPanel {
         btnAgregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lblInfo = new javax.swing.JTextArea();
-        lblCantidad = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
+        lblCantidad = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -57,63 +57,82 @@ public class AgregarCarrito extends javax.swing.JPanel {
         add(lblFoto);
         lblFoto.setBounds(340, 80, 350, 320);
 
-        btnMenos.setText("-");
+        btnMenos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Menos.png"))); // NOI18N
+        btnMenos.setBorderPainted(false);
+        btnMenos.setContentAreaFilled(false);
+        btnMenos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenosActionPerformed(evt);
             }
         });
         add(btnMenos);
-        btnMenos.setBounds(860, 360, 50, 32);
+        btnMenos.setBounds(880, 350, 60, 60);
 
-        btnMas.setText("+");
+        btnMas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Mas.png"))); // NOI18N
+        btnMas.setBorderPainted(false);
+        btnMas.setContentAreaFilled(false);
+        btnMas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasActionPerformed(evt);
             }
         });
         add(btnMas);
-        btnMas.setBounds(1065, 360, 50, 32);
+        btnMas.setBounds(1040, 350, 60, 60);
 
-        btnComprarAhora.setText("jButton3");
+        btnComprarAhora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Comprar ahora_1.png"))); // NOI18N
+        btnComprarAhora.setBorderPainted(false);
+        btnComprarAhora.setContentAreaFilled(false);
+        btnComprarAhora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(btnComprarAhora);
-        btnComprarAhora.setBounds(1040, 440, 77, 32);
+        btnComprarAhora.setBounds(1030, 430, 160, 70);
 
-        btnAgregar.setText("jButton4");
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Agregar al carrito_1.png"))); // NOI18N
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(860, 440, 77, 32);
+        btnAgregar.setBounds(780, 430, 160, 70);
 
+        lblInfo.setBackground(new java.awt.Color(255, 102, 51));
         lblInfo.setColumns(20);
+        lblInfo.setFont(new java.awt.Font("Rockwell", 0, 22)); // NOI18N
+        lblInfo.setForeground(new java.awt.Color(255, 255, 255));
         lblInfo.setRows(5);
         jScrollPane1.setViewportView(lblInfo);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(780, 130, 430, 200);
+        jScrollPane1.setBounds(740, 130, 500, 200);
 
-        lblCantidad.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        lblCantidad.setForeground(new java.awt.Color(0, 0, 0));
-        lblCantidad.setOpaque(true);
-        add(lblCantidad);
-        lblCantidad.setBounds(940, 360, 100, 32);
-
-        lblNombre.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        lblNombre.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("jLabel3");
-        lblNombre.setOpaque(true);
+        lblNombre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblNombre);
         lblNombre.setBounds(780, 50, 260, 50);
 
-        lblPrecio.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        lblPrecio.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        lblPrecio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPrecio.setText("jLabel4");
-        lblPrecio.setOpaque(true);
+        lblPrecio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblPrecio);
         lblPrecio.setBounds(1060, 50, 140, 50);
+
+        lblCantidad.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
+        lblCantidad.setForeground(new java.awt.Color(0, 0, 0));
+        lblCantidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblCantidad.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(lblCantidad);
+        lblCantidad.setBounds(935, 355, 110, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
