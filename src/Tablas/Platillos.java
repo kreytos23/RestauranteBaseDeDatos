@@ -24,6 +24,22 @@ public class Platillos {
         this.Pla_Imagen = Pla_Imagen;
     }
 
+    public Platillos(int Pla_Id, String Pla_Nombre, double Pla_Precio) {
+        this.Pla_Id = Pla_Id;
+        this.Pla_Nombre = Pla_Nombre;
+        this.Pla_Precio = Pla_Precio;
+    }
+    
+    
+
+    public void setPla_Imagen(String Pla_Imagen) {
+        this.Pla_Imagen = Pla_Imagen;
+    }
+
+    public String getPla_Imagen() {
+        return Pla_Imagen;
+    }
+
     
     
     public String getPla_Estatus() {

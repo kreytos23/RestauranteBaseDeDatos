@@ -417,9 +417,9 @@ public class RestauranteDAO {
                 
             }catch(SQLException e){
                 System.out.println(e);
-                String correoEr = "java.sql.SQLException: Check constraint 'empleados_chk_1' is violated.";
-                String pass = "java.sql.SQLException: Check constraint 'empleados_chk_2' is violated.";
-                String num = "java.sql.SQLException: Check constraint 'empleados_chk_3' is violated.";
+                String correoEr = "java.sql.SQLException: Check constraint 'clientes_chk_1' is violated.";
+                String pass = "java.sql.SQLException: Check constraint 'clientes_chk_2' is violated.";
+                String num = "java.sql.SQLException: Check constraint 'clientes_chk_3' is violated.";
                 
                 if(correoEr.equals(e.toString())){
                     return 1;
@@ -454,6 +454,135 @@ public class RestauranteDAO {
             }
         }catch(SQLException e){
             System.out.println(e);
+        }
+    }
+    
+    public static int idDeTicket(){
+        int idMaximo = 0;
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "SELECT * FROM IdDeTicket";    
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idMaximo = rs.getInt("MaxId");
+            }
+            
+            System.out.println("\n" + idMaximo);
+            return idMaximo;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                System.out.println("No se pudo leer los mensajes");
+                return idMaximo;
+        }
+    }
+    
+    public static void agregarTicket(Tickets ticket){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                String query = "CALL AgregarTicket(?,?,?,?)";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, ticket.getTic_Id());
+                ps.setInt(2, (int) ticket.getTic_Total());
+                ps.setDate(3, ticket.getTic_Fecha());
+                ps.setInt(4, ticket.getTic_cliente().getCli_Id());
+                ps.executeUpdate();
+                
+            }catch(SQLException e){
+                System.out.println(e);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+    
+    public static void agregarPlatillosTicket(ArrayList<PlatillosTickets> arrayDePlatillos){
+        Conexion db_connect = new Conexion();
+       
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                
+                for (PlatillosTickets arrayDePlatillo : arrayDePlatillos) {
+                    String query = "CALL AgregarTicketPlatillos(?,?,?)";
+                    ps = conexion.prepareStatement(query);
+
+                    ps.setInt(1, arrayDePlatillo.getPT_Ticket().getTic_Id());
+                    ps.setInt(2, arrayDePlatillo.getPT_Platillo().getPla_Id());
+                    ps.setInt(3, arrayDePlatillo.getCantidad_platillo());
+                    ps.executeUpdate();
+                }
+            
+            }catch(SQLException e){
+                System.out.println(e); 
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+    
+    public static ArrayList<Tickets> mostrarTicketsCliente(int idCliente){
+        Tickets ticketCliente;
+        ArrayList<Tickets> arrayTickets = new ArrayList<>();
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "CALL TicketsDeCliente(?)";    
+            ps = conexion.prepareStatement(query);
+            ps.setInt(1,idCliente);
+            rs = ps.executeQuery();
+            
+            System.out.println(arrayTickets.size());
+            while(rs.next()){
+                ticketCliente = new Tickets(rs.getInt("Tic_Id"),(double) rs.getInt("Tic_Total"),rs.getDate("Tic_Fecha"),null);
+                arrayTickets.add(ticketCliente);
+            }
+            System.out.println(arrayTickets.size());
+            return arrayTickets;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                return arrayTickets;
+        }
+    }
+    
+    public static ArrayList<PlatillosTickets> mostrarPlatillosDeTickets(int idTicket){
+        Platillos platillo;
+        PlatillosTickets platilloDeTicket;
+        Tickets ticket;
+        ArrayList<PlatillosTickets> arrayTickets = new ArrayList<>();
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "CALL PlatillosDeTickets(?)";    
+            ps = conexion.prepareStatement(query);
+            ps.setInt(1, idTicket);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                ticket = new Tickets(rs.getInt("PT_Ticket_Id"));
+                platillo = new Platillos(rs.getInt("Pla_Id"), rs.getString("Pla_Nombre"), rs.getInt("Pla_Precio"));
+                platilloDeTicket = new PlatillosTickets(rs.getInt("PT_Id"), platillo, ticket, rs.getInt("Cantidad_Platillo"));
+                arrayTickets.add(platilloDeTicket);
+            }
+            return arrayTickets;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                return arrayTickets;
         }
     }
 }

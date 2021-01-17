@@ -1,5 +1,7 @@
 package Tablas;
 
+import java.text.DecimalFormat;
+
 
 public class PlatillosTickets {
     private int PT_Id;
@@ -7,6 +9,17 @@ public class PlatillosTickets {
     private Tickets PT_Ticket;
     private int cantidad_platillo;
 
+    public PlatillosTickets(int PT_Id, Platillos PT_Platillo, Tickets PT_Ticket, int cantidad_platillo) {
+        this.PT_Id = PT_Id;
+        this.PT_Platillo = PT_Platillo;
+        this.PT_Ticket = PT_Ticket;
+        this.cantidad_platillo = cantidad_platillo;
+    }
+
+    public PlatillosTickets() {
+    }
+    
+    
     public int getPT_Id() {
         return PT_Id;
     }
@@ -37,6 +50,13 @@ public class PlatillosTickets {
 
     public void setCantidad_platillo(int cantidad_platillo) {
         this.cantidad_platillo = cantidad_platillo;
+    }
+
+    @Override
+    public String toString() {
+        DecimalFormat formato = new DecimalFormat("###,###.##");
+        return PT_Platillo.getPla_Nombre() + "                              " + cantidad_platillo +
+                "                      $" + formato.format(PT_Platillo.getPla_Precio());
     }
     
     

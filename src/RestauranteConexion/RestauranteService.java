@@ -87,4 +87,24 @@ public class RestauranteService {
     public static void eliminarEmpleado(int Id){
         RestauranteDAO.eliminarEmpleado(Id);
     }
+    
+    public static int idTicketService(){
+        return RestauranteDAO.idDeTicket();
+    }
+    
+    public static void agregarTicketService(Tickets ticket){
+        RestauranteDAO.agregarTicket(ticket);
+    }
+    
+    public static void agregarPlatillosEnTickets(ArrayList<PlatillosTickets> arrayPlatillos){
+        RestauranteDAO.agregarPlatillosTicket(arrayPlatillos);
+    }
+    
+    public static ArrayList<Tickets> mostrarTicketsDeClientesService(int idCliente){
+        return RestauranteDAO.mostrarTicketsCliente(idCliente);
+    }
+    
+    public static ArrayList<PlatillosTickets> mostrarPlatillosDeTicketsService(int idTicket){
+        return RestauranteDAO.mostrarPlatillosDeTickets(idTicket);
+    }
 }

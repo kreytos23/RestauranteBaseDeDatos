@@ -2,6 +2,10 @@ package Swing;
 
 import AppPackage.AnimationClass;
 import Tablas.Clientes;
+import Tablas.Platillos;
+import Tablas.PlatillosTickets;
+import Tablas.Tickets;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -16,6 +20,13 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private Thread h1;
     private PantallaPrincipalUsuario pantallaPrincipal;   
     private MenuDePlatillos menuDePlatillos;
+    private AjustesUsuario ajustesUsuario;
+    private static ArrayList<PlatillosTickets> platillosEnCarrito;
+    private static Tickets ticketGenerado;
+    private ComprarCarrito comprarCarrito;
+    private HistorialTickets historialTickets;
+
+   
     
     public MenuDeUsuario(Clientes cliente) {
         initComponents();
@@ -30,7 +41,8 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         h1.start();
         String fecha[] = clienteLogueado.getFecha().toString().split("-");
         System.out.println(Integer.parseInt(fecha[1]));
-
+        platillosEnCarrito = new ArrayList<>();
+        ticketGenerado =  new Tickets();
     }
 
   
@@ -80,6 +92,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/configuraciones.png"))); // NOI18N
         btnAjustes.setContentAreaFilled(false);
         btnAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjustesActionPerformed(evt);
+            }
+        });
         add(btnAjustes);
         btnAjustes.setBounds(-70, 370, 50, 40);
 
@@ -92,6 +109,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/carro.png"))); // NOI18N
         btnCarrito.setContentAreaFilled(false);
         btnCarrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarritoActionPerformed(evt);
+            }
+        });
         add(btnCarrito);
         btnCarrito.setBounds(-70, 250, 50, 40);
 
@@ -128,6 +150,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnHist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/recibo.png"))); // NOI18N
         btnHist.setContentAreaFilled(false);
         btnHist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistActionPerformed(evt);
+            }
+        });
         add(btnHist);
         btnHist.setBounds(-70, 330, 50, 40);
 
@@ -316,6 +343,33 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         panelRemplazo.updateUI();
     }//GEN-LAST:event_btnPlatillosActionPerformed
 
+    private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
+        btnMenuActionPerformed(evt);
+        ajustesUsuario = new AjustesUsuario(clienteLogueado);
+        ajustesUsuario.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(ajustesUsuario);
+        panelRemplazo.updateUI();
+    }//GEN-LAST:event_btnAjustesActionPerformed
+
+    private void btnCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarritoActionPerformed
+        btnMenuActionPerformed(evt);
+        comprarCarrito = new ComprarCarrito(clienteLogueado);
+        comprarCarrito.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(comprarCarrito);
+        panelRemplazo.updateUI();
+    }//GEN-LAST:event_btnCarritoActionPerformed
+
+    private void btnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistActionPerformed
+        btnMenuActionPerformed(evt);
+        historialTickets = new HistorialTickets(clienteLogueado);
+        historialTickets.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(historialTickets);
+        panelRemplazo.updateUI();
+    }//GEN-LAST:event_btnHistActionPerformed
+
      @Override
     public void run() {
         Thread ct = Thread.currentThread();
@@ -352,6 +406,10 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         }
         minutos = calendario.get(Calendar.MINUTE)>9? "" + calendario.get(Calendar.MINUTE) : "0"+calendario.get(Calendar.MINUTE);
         segundos = calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+    }
+    
+     public static ArrayList<PlatillosTickets> getPlatillosEnCarrito() {
+        return platillosEnCarrito;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

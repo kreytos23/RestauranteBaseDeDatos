@@ -9,8 +9,9 @@ public class Conexion {
         Connection conection = null;
         
         try {
+            
             conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/technoteam?serverTimezone= America/Mexico_City&useSSL=false","root","Cascabel22");
-        
+
         }catch (SQLException e) {
             System.out.println(e);
         }

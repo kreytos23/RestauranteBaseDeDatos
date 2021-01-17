@@ -22,55 +22,44 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     private int platillosComidaTipoBebida;
     private int platillosCenaTipoBebida;
     
+    
+    private int[] platillosTipoComidaDesayuno = {0,0,0,0,0};
+    private int[] platillosTipoBebidaDesayuno = {0};
+    
+    private int[] platillosTipoComidaComida = {0,0,0,0,0,0};
+    private int[] platillosTipoBebidaComida = {0};
+    
+    private int[] platillosTipoComidaCena = {0,0,0};
+    private int[] platillosTipoBebidaCena = {0};
+    
     public EscogerPlatillos() {
         initComponents();
+        
         
         arrayPlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
         jlListaPlatillos.setModel(listaPlatillos);
         jlListaPlatillosMenu.setModel(listaPlatillosMenu);
         
-        
-        platillosComidaTipoComida = 0;
-        platillosCenaTipoComida= 0;
-        platillosDesayunoTipoComida = 0;
-        
-        platillosDesayunoTipoBebida = 0;
-        platillosComidaTipoBebida = 0;
-        platillosCenaTipoBebida = 0;
+ 
+        //USANDO LAS NUEVAS CATEGORIAS
         
         for(int i= 0; i< arrayPlatillos.size(); i++){
             
             if(arrayPlatillos.get(i).getPla_Estatus().equals("Activo")){
                 listaPlatillosMenu.addElement(arrayPlatillos.get(i));
                 if(arrayPlatillos.get(i).getPla_Menu().getMenu_Id()== 1){
-                    switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
-                        case 2:
-                        case 3:
-                            platillosDesayunoTipoBebida++;
-                            break;
-                        default:
-                            platillosDesayunoTipoComida++;
-                    }}else if(arrayPlatillos.get(i).getPla_Menu().getMenu_Id()==2){
-                            switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
-                            case 2:
-                            case 3:
-                                platillosComidaTipoBebida++;
-                                break;
-                            default:
-                                platillosComidaTipoComida++;
-                                }
+                    
+                    contarValoresInciales(arrayPlatillos.get(i).getPla_Categoria().getCat_Id(),platillosTipoComidaDesayuno,platillosTipoBebidaDesayuno,"Desayuno");
+                    
+                }else if(arrayPlatillos.get(i).getPla_Menu().getMenu_Id()==2){
+                    
+                        contarValoresInciales(arrayPlatillos.get(i).getPla_Categoria().getCat_Id(),platillosTipoComidaComida,platillosTipoBebidaComida,"Comida");
                 }else{
-                        switch(arrayPlatillos.get(i).getPla_Categoria().getCat_Id()){
-                            case 2:
-                            case 3:
-                                platillosCenaTipoBebida++;
-                                break;
-                            default:
-                                platillosCenaTipoComida++;
-                                }
+                        contarValoresInciales(arrayPlatillos.get(i).getPla_Categoria().getCat_Id(),platillosTipoComidaCena,platillosTipoBebidaCena,"Cena");
                     }
             }
             else{
+                
                 listaPlatillos.addElement(arrayPlatillos.get(i));
             }
         }
@@ -263,92 +252,18 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         int index = jlListaPlatillos.getSelectedIndex();
         boolean agregar = false;
         Platillos platilloAux = (Platillos) listaPlatillos.getElementAt(index);
+        int categoria = platilloAux.getPla_Categoria().getCat_Id();
         
         if(platilloAux.getPla_Menu().getMenu_Id() == 1){
-            /*
-            if(platillosDesayunoTipoComida< 5){
-                platillosDesayunoTipoComida++;
-                agregar = true;
-            }else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 5 platillos de tipo Desayuno");
-            }
-            */
-            int categoria = platilloAux.getPla_Categoria().getCat_Id();
-            
-            if( categoria == 2 || categoria == 3){
-                if(platillosDesayunoTipoBebida <2){
-                    platillosDesayunoTipoBebida++;
-                    agregar = true;
-                }else{
-                    JOptionPane.showMessageDialog(null, "No se puede agregar mas de 6 bebidas de tipo Desayuno");
-                }
-            }else{
-                if(platillosDesayunoTipoComida < 2){
-                    platillosDesayunoTipoComida++;
-                    agregar = true;
-                }
-                else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 8 platillos de tipo Desayuno");
-            }
+            agregar = comprarMaximoPlatillos(categoria, platillosTipoComidaDesayuno,platillosTipoBebidaDesayuno,"Desayuno");
         }
-        }
-        
-        
-        
+ 
         if(platilloAux.getPla_Menu().getMenu_Id() == 2){
-            /*if(platillosComidaTipoComida < 5){
-                platillosComidaTipoComida++;
-                agregar = true;
-            }else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 5 platillos de tipo Comida");
-            }*/
-            
-            int categoria = platilloAux.getPla_Categoria().getCat_Id();
-            
-            if( categoria == 2 || categoria == 3){
-                if(platillosComidaTipoBebida <2){
-                    platillosComidaTipoBebida++;
-                    agregar = true;
-                }else{
-                    JOptionPane.showMessageDialog(null, "No se puede agregar mas de 6 bebidas de tipo Comida");
-                }
-            }else{
-                if(platillosComidaTipoComida < 2){
-                    platillosComidaTipoComida++;
-                    agregar = true;
-                }
-            else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 8 platillos de tipo Comida");
-            }
-        }
+            agregar = comprarMaximoPlatillos(categoria, platillosTipoComidaComida,platillosTipoBebidaComida,"Comida");
         }
         
         if(platilloAux.getPla_Menu().getMenu_Id()== 3){
-            /*if(platillosCenaTipoComida < 5 ){
-                platillosCenaTipoComida++;
-                agregar = true;
-            }else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 5 platillos de tipo Cena");
-            }*/
-            
-            int categoria = platilloAux.getPla_Categoria().getCat_Id();
-            
-            if( categoria == 2 || categoria == 3){
-                if(platillosCenaTipoBebida <2){
-                    platillosCenaTipoBebida++;
-                    agregar = true;
-                }else{
-                    JOptionPane.showMessageDialog(null, "No se puede agregar mas de 6 bebidas de tipo Cena");
-                }
-            }else{
-                if(platillosCenaTipoComida < 2){
-                    platillosCenaTipoComida++;
-                    agregar = true;
-                }
-            else{
-                JOptionPane.showMessageDialog(null, "No se puede agregar mas de 8 platillos de tipo Cena");
-            }
-        }
+            agregar = comprarMaximoPlatillos(categoria, platillosTipoComidaCena,platillosTipoBebidaCena,"Cena");
         }
         
         if(agregar){    
@@ -363,23 +278,11 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         int categoria = platilloAux.getPla_Categoria().getCat_Id();
         
         if(platilloAux.getPla_Menu().getMenu_Id() == 1){
-            if(categoria == 2 || categoria == 3){
-                platillosDesayunoTipoBebida--;
-            }else{
-                platillosDesayunoTipoComida--;
-            }
+            elimianrValores(categoria, platillosTipoComidaDesayuno, platillosTipoBebidaDesayuno,"Desayuno");
         }else if(platilloAux.getPla_Menu().getMenu_Id() == 2){
-            if(categoria == 2 || categoria == 3){
-                platillosComidaTipoBebida--;
-            }else{
-                platillosComidaTipoComida--;
-            }
+            elimianrValores(categoria, platillosTipoComidaComida, platillosTipoBebidaComida,"Comida");
         }else{
-            if(categoria == 2 || categoria == 3){
-                platillosCenaTipoBebida--;
-            }else{
-                platillosCenaTipoComida--;
-            }
+             elimianrValores(categoria, platillosTipoComidaCena, platillosTipoBebidaCena,"Cena");
         }
         
         listaPlatillos.addElement(platilloAux);
@@ -404,41 +307,20 @@ public class EscogerPlatillos extends javax.swing.JPanel {
 
     private void btnConfirmarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarMenuActionPerformed
         
-        boolean confirmar = true;
+        boolean confirmar1 = false,confirmar2 = false, confirmar3 =false;
         
         ////// DESAYUNO
-        if(platillosDesayunoTipoBebida < 1){
-            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 bebidas de tipo desayuno");
-            confirmar = false;
-        }
-        if(platillosDesayunoTipoComida < 1){
-            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 platillos de tipo desayuno");
-            confirmar = false;
-        }
         
+        confirmar1 = comprobacionPlatillosFinal(platillosTipoComidaDesayuno,platillosTipoBebidaDesayuno,confirmar1,"Desayuno");
         /////// COMIDA
-        if(platillosComidaTipoBebida < 1){
-            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 bebidas de tipo comida");
-            confirmar = false;
-        }
-        if(platillosComidaTipoComida < 1){
-            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 platillos de tipo comida");
-            confirmar = false;
-        }
+        
+        confirmar2 = comprobacionPlatillosFinal(platillosTipoComidaComida,platillosTipoBebidaComida,confirmar2,"Comida");
         
         ////// CENA
         
-//        if(platillosCenaTipoBebida < 1){
-//            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 bebidas de tipo cena");
-//            confirmar = false;
-//        }
-        if(platillosCenaTipoComida < 1){
-            JOptionPane.showMessageDialog(null, "Debe haber al menos 3 platillos de tipo cena");
-            confirmar = false;
-        }
-        
-        
-        if(confirmar){
+        confirmar3 = comprobacionPlatillosFinal(platillosTipoComidaCena,platillosTipoBebidaCena,confirmar3,"Cena");
+
+        if(confirmar1 == true && confirmar2 == true && confirmar3 == true){
             arrayPlatillos.clear();
             
             for(int i = 0; i< listaPlatillos.getSize() ; i++){
@@ -488,6 +370,202 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         }
         
     }
+
+    private void contarValoresInciales(int cat_Id ,int[]platilloComida, int[] platilloBebida,String tipo) {
+        switch(cat_Id){
+                        case 1:
+                            platilloComida[0]++; // Para todos
+                            break;
+                        case 2:
+                            platilloComida[1]++; // Solo esta en comida
+                            break;
+                        case 3:
+                            if(tipo.equals("Desayuno") || tipo.equals("Cena"))
+                                 platilloComida[1]++;
+                            else if(tipo.equals("Comida"))
+                                 platilloComida[2]++; 
+                            break;
+                        case 4:
+                            if(tipo.equals("Desayuno"))  //Solo comida y desayuno
+                                platilloComida[2]++;
+                            else
+                                platilloComida[3]++;
+                            break;
+                        case 5:
+                            if(tipo.equals("Desayuno"))
+                            platilloComida[3]++;            //comida y desayuno
+                            else
+                                platilloComida[4]++;
+                            break;
+                        case 6:
+                            if(tipo.equals("Desayuno"))
+                                platilloComida[4]++;
+                            else if(tipo.equals("Comida"))
+                                platilloComida[5]++;
+                            else
+                                platilloComida[2]++;
+                            break;
+                        case 7:
+                            platilloBebida[0]++;
+                            break;
+                        case 8:
+                            platilloBebida[0]++;
+                            break;
+                        case 9:
+                            platilloBebida[0]++;
+                            break;
+    }
     
 }
+
+    private boolean comprarMaximoPlatillos(int categoria, int[] platilloComida, int[] platilloBebida, String tipo) {
+        boolean agregar = false;
+        switch(categoria){
+                        case 1:
+                            agregar = comprobarMaximoif(platilloComida[0], platilloComida,agregar , tipo,"platillo", 0);
+                            break;
+                        case 2:
+                            agregar = comprobarMaximoif(platilloComida[1], platilloComida,agregar , tipo,"platillo", 1);
+                            break;
+                        case 3:
+                            if(tipo.equals("Desayuno") || tipo.equals("Cena"))
+                                agregar = comprobarMaximoif(platilloComida[1], platilloComida,agregar , tipo,"platillo", 1);
+                            else if(tipo.equals("Comida"))
+                                agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
+                            break;
+                        case 4:
+                            if(tipo.equals("Desayuno"))
+                                agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
+                            else
+                                agregar = comprobarMaximoif(platilloComida[3], platilloComida,agregar , tipo,"platillo", 3);
+                            break;
+                        case 5:
+                            if(tipo.equals("Desayuno"))
+                                agregar = comprobarMaximoif(platilloComida[3], platilloComida,agregar , tipo,"platillo", 3);
+                            else
+                                agregar = comprobarMaximoif(platilloComida[4], platilloComida,agregar , tipo,"platillo", 4);
+                            break;
+                        case 6:
+                            if(tipo.equals("Desayuno"))
+                                agregar = comprobarMaximoif(platilloComida[4], platilloComida,agregar , tipo,"platillo", 4);
+                            else if(tipo.equals("Comida"))
+                                agregar = comprobarMaximoif(platilloComida[5], platilloComida,agregar , tipo,"platillo", 5);
+                            else
+                                agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
+                            break;
+                        case 7:
+                            agregar = comprobarMaximoif(platilloBebida[0], platilloBebida,agregar , tipo,"bebida", 0);
+                            break;
+                        case 8:
+                            agregar = comprobarMaximoif(platilloBebida[0], platilloBebida,agregar , tipo,"bebida", 0);
+                            break;
+                        case 9:
+                            agregar = comprobarMaximoif(platilloBebida[0], platilloBebida,agregar , tipo,"bebida", 0);
+                            break;
+            }
+        
+        return agregar;
+    }
+
+    private boolean comprobarMaximoif(int platillo , int[]platilloArreglo, boolean agregar, String tipo,String tipoComida, int i) {
+        if(platillo < 5){
+              platilloArreglo[i]++;
+              agregar = true;
+       }else{
+           JOptionPane.showMessageDialog(null, "No se puede agregar mas de 5" + tipoComida + " de tipo " + tipo);
+            }
+    return agregar;
+    }
+    
+    private void elimianrValores(int cat_Id ,int[]platilloComida, int[] platilloBebida,String tipo) {
+        switch(cat_Id){
+                        case 1:
+                            platilloComida[0]--;
+                            break;
+                        case 2:
+                            platilloComida[1]--;
+                            break;
+                        case 3:
+                            if(tipo.equals("Desayuno") || tipo.equals("Cena"))
+                                platilloComida[1]--;
+                            else
+                                platilloComida[2]--;
+                            break;
+                        case 4:
+                            if(tipo.equals("Desayuno"))
+                                platilloComida[2]--;
+                            else
+                                platilloComida[3]--;
+                            break;
+                        case 5:
+                            if(tipo.equals("Desayuno"))
+                                platilloComida[3]--;
+                            else
+                                platilloComida[4]--;
+                            break;
+                        case 6:
+                            if(tipo.equals("Desayuno"))
+                                platilloComida[4]--;
+                            else if(tipo.equals("Comida"))
+                                platilloComida[5]--;
+                            else
+                                platilloComida[2]--;
+                            break;
+                        case 7:
+                            platilloBebida[0]--;
+                            break;
+                        case 8:
+                            platilloBebida[0]--;
+                            break;
+                        case 9:
+                            platilloBebida[0]--;
+                            break;
+    }
+    
+}
+
+    private boolean comprobacionPlatillosFinal(int[] platilloComida, int[] platilloBebida, boolean confirmar , String tipo) {
+        boolean conPlatillos = false;
+        boolean conBebidad = false;
+        for(int i = 0; i < platilloComida.length; i++){
+            
+            if(platilloComida[i] < 1){
+                if(tipo.equals("Desayuno")){
+                JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Desayuno cosas de tipo: Entradas,Plato Fuerte,Ensaladas,Complementos y Postre" );
+                }else if(tipo.equals("Comida")){
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Comida cosas de tipo: Entradas,Sopas, Plato Fuerte,Ensaladas,Complementos y Postre " );
+                }
+                else 
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Cena cosas de tipo: Entradas, Plato Fuerte y Postre " );
+                conPlatillos = false;
+                break;
+            }else{
+                conPlatillos = true;
+            }
+        }
+        if(conPlatillos){
+        for(int i = 0;i< platilloBebida.length; i++){
+            if(platilloBebida[i] < 1){
+                if(tipo.equals("Desayuno"))
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 cosas en Desayuno de tipo: Bebidas Calientes"); 
+                else if(tipo.equals("Comida"))
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 cosas en Comida de tipo: Bebidas Frias  ");
+                else
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 cosas en Cena de tipo: Bebidas Alcoholicas");
+                
+                conBebidad = false;
+                break;
+            }else{
+                conBebidad = true;
+            }
+        }
+        }
+        
+        if(conBebidad == true && conPlatillos ==true)
+            return true;
+        else
+            return false;
+    }
+}
+
     
