@@ -529,4 +529,60 @@ public class RestauranteDAO {
             System.out.println(e);
         }
     }
+    
+    public static ArrayList<Tickets> mostrarTicketsCliente(int idCliente){
+        Tickets ticketCliente;
+        ArrayList<Tickets> arrayTickets = new ArrayList<>();
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "CALL TicketsDeCliente(?)";    
+            ps = conexion.prepareStatement(query);
+            ps.setInt(1,idCliente);
+            rs = ps.executeQuery();
+            
+            System.out.println(arrayTickets.size());
+            while(rs.next()){
+                ticketCliente = new Tickets(rs.getInt("Tic_Id"),(double) rs.getInt("Tic_Total"),rs.getDate("Tic_Fecha"),null);
+                arrayTickets.add(ticketCliente);
+            }
+            System.out.println(arrayTickets.size());
+            return arrayTickets;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                return arrayTickets;
+        }
+    }
+    
+    public static ArrayList<PlatillosTickets> mostrarPlatillosDeTickets(int idTicket){
+        Platillos platillo;
+        PlatillosTickets platilloDeTicket;
+        Tickets ticket;
+        ArrayList<PlatillosTickets> arrayTickets = new ArrayList<>();
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "CALL PlatillosDeTickets(?)";    
+            ps = conexion.prepareStatement(query);
+            ps.setInt(1, idTicket);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                ticket = new Tickets(rs.getInt("PT_Ticket_Id"));
+                platillo = new Platillos(rs.getInt("Pla_Id"), rs.getString("Pla_Nombre"), rs.getInt("Pla_Precio"));
+                platilloDeTicket = new PlatillosTickets(rs.getInt("PT_Id"), platillo, ticket, rs.getInt("Cantidad_Platillo"));
+                arrayTickets.add(platilloDeTicket);
+            }
+            return arrayTickets;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                return arrayTickets;
+        }
+    }
 }

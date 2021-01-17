@@ -24,6 +24,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private static ArrayList<PlatillosTickets> platillosEnCarrito;
     private static Tickets ticketGenerado;
     private ComprarCarrito comprarCarrito;
+    private HistorialTickets historialTickets;
 
    
     
@@ -361,7 +362,12 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     }//GEN-LAST:event_btnCarritoActionPerformed
 
     private void btnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistActionPerformed
-        
+        btnMenuActionPerformed(evt);
+        historialTickets = new HistorialTickets(clienteLogueado);
+        historialTickets.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
+        panelRemplazo.removeAll();
+        panelRemplazo.add(historialTickets);
+        panelRemplazo.updateUI();
     }//GEN-LAST:event_btnHistActionPerformed
 
      @Override

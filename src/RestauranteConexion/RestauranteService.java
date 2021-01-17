@@ -99,4 +99,12 @@ public class RestauranteService {
     public static void agregarPlatillosEnTickets(ArrayList<PlatillosTickets> arrayPlatillos){
         RestauranteDAO.agregarPlatillosTicket(arrayPlatillos);
     }
+    
+    public static ArrayList<Tickets> mostrarTicketsDeClientesService(int idCliente){
+        return RestauranteDAO.mostrarTicketsCliente(idCliente);
+    }
+    
+    public static ArrayList<PlatillosTickets> mostrarPlatillosDeTicketsService(int idTicket){
+        return RestauranteDAO.mostrarPlatillosDeTickets(idTicket);
+    }
 }

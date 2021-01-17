@@ -1,5 +1,9 @@
 package Swing;
 
+import Tablas.Clientes;
+import Tablas.PlatillosTickets;
+import Tablas.Tickets;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 
 
@@ -7,9 +11,24 @@ public class HistorialTickets extends javax.swing.JPanel {
     
     private DefaultListModel modeloTickets;
     private DefaultListModel modeloDePlatillos;
- 
-    public HistorialTickets() {
+    private ArrayList<Tickets> ticketsDeCliente;
+    private ArrayList<PlatillosTickets> platillosDeTicket;
+    private Clientes logueado;
+    
+    public HistorialTickets(Clientes clienteLogueado) {
         initComponents();
+        this.logueado = clienteLogueado;
+        modeloTickets = new DefaultListModel();
+        modeloDePlatillos = new DefaultListModel();
+        System.out.println("Sirve gg " + logueado.getCli_Id());
+        ticketsDeCliente = RestauranteConexion.RestauranteService.mostrarTicketsDeClientesService(logueado.getCli_Id());
+        
+        for (Tickets tickets : ticketsDeCliente) {
+            modeloTickets.addElement(tickets);
+        }
+        
+        listaTickets.setModel(modeloTickets);
+        
     }
 
 
@@ -30,6 +49,11 @@ public class HistorialTickets extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaTickets.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaTicketsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(listaTickets);
 
         add(jScrollPane1);
@@ -49,6 +73,17 @@ public class HistorialTickets extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(0, -150, 1380, 790);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listaTicketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaTicketsMouseClicked
+        modeloDePlatillos.clear();
+        Tickets ticket = (Tickets) modeloTickets.getElementAt(listaTickets.getSelectedIndex());
+        System.out.println("Id Ticket: " + ticket.getTic_Id());
+        platillosDeTicket = RestauranteConexion.RestauranteService.mostrarPlatillosDeTicketsService(ticket.getTic_Id());
+        for (PlatillosTickets platillosTickets : platillosDeTicket) {
+            modeloDePlatillos.addElement(platillosTickets);
+        }
+        listaPlatillos.setModel(modeloDePlatillos);
+    }//GEN-LAST:event_listaTicketsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

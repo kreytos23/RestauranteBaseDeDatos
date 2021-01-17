@@ -9,6 +9,17 @@ public class PlatillosTickets {
     private Tickets PT_Ticket;
     private int cantidad_platillo;
 
+    public PlatillosTickets(int PT_Id, Platillos PT_Platillo, Tickets PT_Ticket, int cantidad_platillo) {
+        this.PT_Id = PT_Id;
+        this.PT_Platillo = PT_Platillo;
+        this.PT_Ticket = PT_Ticket;
+        this.cantidad_platillo = cantidad_platillo;
+    }
+
+    public PlatillosTickets() {
+    }
+    
+    
     public int getPT_Id() {
         return PT_Id;
     }
