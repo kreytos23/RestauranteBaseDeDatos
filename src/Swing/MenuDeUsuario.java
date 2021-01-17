@@ -149,6 +149,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnHist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/recibo.png"))); // NOI18N
         btnHist.setContentAreaFilled(false);
         btnHist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistActionPerformed(evt);
+            }
+        });
         add(btnHist);
         btnHist.setBounds(-70, 330, 50, 40);
 
@@ -354,6 +359,10 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         panelRemplazo.add(comprarCarrito);
         panelRemplazo.updateUI();
     }//GEN-LAST:event_btnCarritoActionPerformed
+
+    private void btnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistActionPerformed
+        
+    }//GEN-LAST:event_btnHistActionPerformed
 
      @Override
     public void run() {
