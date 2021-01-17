@@ -108,9 +108,6 @@ public class Platillos {
 
     @Override
     public String toString() {
-        return Pla_Nombre + " - " + Pla_Menu.getMenu_Tipo();
+        return Pla_Nombre + " - " + Pla_Menu.getMenu_Tipo() + " - " + Pla_Categoria.getCat_Nombre();
     }
-    
-    
-    
 }
