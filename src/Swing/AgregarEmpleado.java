@@ -13,32 +13,11 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     
     public AgregarEmpleado() {
         initComponents();
-        LbPass1.setVisible(false);
-        LbPass2.setVisible(false);
-        LbNombre1.setVisible(false);
-        LbNombre2.setVisible(false);
-        LbApellidoP1.setVisible(false);
-        LbApellidoP2.setVisible(false);
-        LbApellidoM1.setVisible(false);
-        LbApellidoM2.setVisible(false);
-        LbColonia1.setVisible(false);
-        LbColonia2.setVisible(false);
-        LbNoCalle1.setVisible(false);
-        LbNoCalle2.setVisible(false);
-        LbCorreo.setVisible(false);
-        LbTelefono1.setVisible(false);
-        LbTelefono2.setVisible(false);
-        LbTelefono3.setVisible(false);
-        LbCorreoRep.setVisible(false);
-        LbCalle1.setVisible(false);
-        LbCalle2.setVisible(false);
-        LbCampos.setVisible(false);
-        
+        ocultarLabels();
         for(TipoEmpleado tp : tipoEmpleado.values()){
             txtPuesto.addItem(tp.toString());
         }
-        
-        for(int i = 2021 ; i>=1940 ; i--){
+        for(int i = 2002 ; i>=1940 ; i--){
             jcYear.addItem(String.valueOf(i));
         }
         
@@ -334,9 +313,9 @@ public class AgregarEmpleado extends javax.swing.JPanel {
 
         LbTelefono3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbTelefono3.setForeground(new java.awt.Color(255, 0, 0));
-        LbTelefono3.setText("Maximo 10 numeros");
+        LbTelefono3.setText("Deben ser 10 numeros");
         add(LbTelefono3);
-        LbTelefono3.setBounds(1040, 350, 150, 16);
+        LbTelefono3.setBounds(1040, 350, 160, 16);
 
         LbCorreo.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         LbCorreo.setForeground(new java.awt.Color(255, 0, 0));
@@ -378,6 +357,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         String txtFecha;
         String calle;
         int error;
+        ocultarLabels();
         boolean correcto = datosCorrectos();
         
         if(jcMes.getSelectedIndex()< 9){
@@ -407,7 +387,13 @@ public class AgregarEmpleado extends javax.swing.JPanel {
                                            txtColonia.getText(),
                                            calle,
                                            txtTelefono.getText());
+            
+            
             switch(error){
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Se registro correctamente el empleado");
+                    borrarLabels();
+                    break;
                 case 1:
                     LbCorreo.setVisible(true);
                     break;
@@ -416,8 +402,7 @@ public class AgregarEmpleado extends javax.swing.JPanel {
                     LbPass2.setVisible(true);
                     break;
                 case 3:
-                    LbTelefono1.setVisible(true);
-                    LbTelefono2.setVisible(true);
+                    LbTelefono3.setVisible(true);
                     break;
                 case 4:
                     LbCorreoRep.setVisible(true);
@@ -496,7 +481,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
             correcto = false;
         }
         if(!ComprobarNumeros(txtTelefono.getText().trim())){
-            LbTelefono3.setVisible(true);
+            LbTelefono1.setVisible(true);
+            LbTelefono2.setVisible(true);
             correcto = false;
         }
         
@@ -579,4 +565,40 @@ public class AgregarEmpleado extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> txtPuesto;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+    private void ocultarLabels() {
+        LbPass1.setVisible(false);
+        LbPass2.setVisible(false);
+        LbNombre1.setVisible(false);
+        LbNombre2.setVisible(false);
+        LbApellidoP1.setVisible(false);
+        LbApellidoP2.setVisible(false);
+        LbApellidoM1.setVisible(false);
+        LbApellidoM2.setVisible(false);
+        LbColonia1.setVisible(false);
+        LbColonia2.setVisible(false);
+        LbNoCalle1.setVisible(false);
+        LbNoCalle2.setVisible(false);
+        LbCorreo.setVisible(false);
+        LbTelefono1.setVisible(false);
+        LbTelefono2.setVisible(false);
+        LbTelefono3.setVisible(false);
+        LbCorreoRep.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
+        LbCampos.setVisible(false);
+    }
+
+    private void borrarLabels() {
+        txtApellidoM.setText("");
+        txtApellidoP.setText("");
+        txtCalleNom.setText("");
+        txtColonia.setText("");
+        txtCorreo.setText("");
+        txtNoCalle.setText("");
+        txtNombre.setText("");
+        txtPassword.setText("");
+        txtTelefono.setText("");
+    }
+
 }
