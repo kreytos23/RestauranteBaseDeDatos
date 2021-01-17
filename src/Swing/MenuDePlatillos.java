@@ -484,8 +484,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     imagen=new ImageIcon(getClass().getResource("/Imagenes/Platillos/desayuno.png"));
-                     ruta="/Imagenes/Platillos/desayuno.png";
+                    ruta="/Imagenes/Platillos/desayuno.png"; 
+                    imagen=new ImageIcon(getClass().getResource(ruta));
+                     
                      jLabel4.setIcon(imagen);
                      
                      lblPlato.setIcon(iimg);  
@@ -524,7 +525,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     lblPlato.setIcon(iimg);  
+                    ruta="/Imagenes/Platillos/comida.png";
+                     imagen=new ImageIcon(getClass().getResource(ruta)); 
+                    lblPlato.setIcon(iimg);  
                      lblPlato2.setIcon(iimg2);
                      lblEnsalada.setIcon(iimg3);
                      lblEnsalada.setIcon(iimg4);
@@ -532,8 +535,8 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                      lblEntrada2.setIcon(iimg6);
                      lblPostre.setIcon(iimg7);
                      lblPostre2.setIcon(iimg8);
-                     imagen=new ImageIcon(getClass().getResource("/Imagenes/Platillos/comida.png"));
-                     ruta="/Imagenes/Platillos/comida.png";
+                     
+                     
                      jLabel4.setIcon(imagen);
                 } catch (Exception e) {
                 }
@@ -560,6 +563,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                     ruta="/Imagenes/Platillos/cena.png";
+                     imagen=new ImageIcon(getClass().getResource(ruta));
+                     
+                     jLabel4.setIcon(imagen);
                      lblPlato.setIcon(iimg);  
                      lblPlato2.setIcon(iimg2);
                      lblEnsalada.setIcon(iimg3);
@@ -568,9 +575,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                      lblEntrada2.setIcon(iimg6);
                      lblPostre.setIcon(iimg7);
                      lblPostre2.setIcon(iimg8);
-                     imagen=new ImageIcon(getClass().getResource("/Imagenes/Platillos/cena.png"));
-                     ruta="/Imagenes/Platillos/cena.png";
-                     jLabel4.setIcon(imagen);
                 } catch (Exception e) {
                 }
                 break;
@@ -580,14 +584,14 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                 try {
                     lblMenu.setText("Bebidas");
                     cambiarPanelDeMenu(bebidas);
-                    Image img = new ImageIcon(getClass().getResource(platoFuerte.get(0).getPla_Imagen())).getImage();
-                    Image img2 = new ImageIcon(getClass().getResource(platoFuerte.get(1).getPla_Imagen())).getImage();
-                    Image img3 = new ImageIcon(getClass().getResource(ensalada.get(0).getPla_Imagen())).getImage();
-                    Image img4 = new ImageIcon(getClass().getResource(ensalada.get(1).getPla_Imagen())).getImage();
-                    Image img5 = new ImageIcon(getClass().getResource(entradas.get(0).getPla_Imagen())).getImage();
-                    Image img6 = new ImageIcon(getClass().getResource(entradas.get(1).getPla_Imagen())).getImage();
-                    Image img7 = new ImageIcon(getClass().getResource(postres.get(0).getPla_Imagen())).getImage();
-                    Image img8 = new ImageIcon(getClass().getResource(postres.get(1).getPla_Imagen())).getImage();
+                    Image img = new ImageIcon(getClass().getResource(bebidas.get(0).getPla_Imagen())).getImage();
+                    Image img2 = new ImageIcon(getClass().getResource(bebidas.get(1).getPla_Imagen())).getImage();
+                    Image img3 = new ImageIcon(getClass().getResource(bebidas.get(0).getPla_Imagen())).getImage();
+                    Image img4 = new ImageIcon(getClass().getResource(bebidas.get(1).getPla_Imagen())).getImage();
+                    Image img5 = new ImageIcon(getClass().getResource(bebidas.get(0).getPla_Imagen())).getImage();
+                    Image img6 = new ImageIcon(getClass().getResource(bebidas.get(1).getPla_Imagen())).getImage();
+                    Image img7 = new ImageIcon(getClass().getResource(bebidas.get(0).getPla_Imagen())).getImage();
+                    Image img8 = new ImageIcon(getClass().getResource(bebidas.get(1).getPla_Imagen())).getImage();
                     ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg2=new ImageIcon(img2.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg3=new ImageIcon(img3.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
@@ -596,6 +600,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                      ruta="/Imagenes/Platillos/Bebidas.png";                  
+                     imagen=new ImageIcon(getClass().getResource(ruta));
+                     
+                     jLabel4.setIcon(imagen);
                      lblPlato.setIcon(iimg);  
                      lblPlato2.setIcon(iimg2);
                      lblEnsalada.setIcon(iimg3);
@@ -605,10 +613,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                      lblPostre.setIcon(iimg7);
                      lblPostre2.setIcon(iimg8);
                      lblMenu.setText("Bebidas");
-                     
-                     imagen=new ImageIcon(getClass().getResource("/Imagenes/Platillos/Bebidas.png"));
-                     ruta="/Imagenes/Platillos/Bebidas.png";
-                     jLabel4.setIcon(imagen);
                 } catch (Exception e) {
                 }
                 
