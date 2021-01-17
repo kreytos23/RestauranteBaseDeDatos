@@ -812,25 +812,26 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         ensalada.clear();
         postres.clear();
         
-        //laacarguilarceja@gmail.com
+      
         for(Platillos plat:comidas)  {
             int categoria = plat.getPla_Categoria().getCat_Id();
-            //la categoria 9 se puede quitar?
-            entradas.add(plat);
-            platoFuerte.add(plat);
-            ensalada.add(plat);
-            postres.add(plat);
-           /* if(categoria==1 || categoria==2 || categoria==5 ||categoria==9){
-                entradas.add(plat);
-                System.out.println("entradas");
-            }
-            else if(categoria==3 || categoria==7)
-                platoFuerte.add(plat);
             
-            else if(categoria==4 || categoria==8)
+//            entradas.add(plat);
+//            platoFuerte.add(plat);
+//            ensalada.add(plat);
+//            postres.add(plat);
+            if(categoria==1 || categoria==2 || categoria==5 ||categoria==9){
+                entradas.add(plat);
+            }
+            else if(categoria==3 || categoria==7){
+                platoFuerte.add(plat);
+            }
+            else if(categoria==4 || categoria==8){
                 ensalada.add(plat);
-            else if(categoria==6)
-                postres.add(plat);*/
+            }
+            else if(categoria==6){
+                postres.add(plat);  
+            }
            
         }
          System.out.println("Plato fuerte "+platoFuerte.size());

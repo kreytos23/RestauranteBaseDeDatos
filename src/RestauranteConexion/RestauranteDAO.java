@@ -456,4 +456,77 @@ public class RestauranteDAO {
             System.out.println(e);
         }
     }
+    
+    public static int idDeTicket(){
+        int idMaximo = 0;
+        Conexion db_connect = new Conexion();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try(Connection conexion = db_connect.getConnection()){
+            String query = "SELECT * FROM IdDeTicket";    
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idMaximo = rs.getInt("MaxId");
+            }
+            
+            System.out.println("\n" + idMaximo);
+            return idMaximo;
+            
+        }catch(SQLException ex){
+                System.out.println(ex);
+                System.out.println("No se pudo leer los mensajes");
+                return idMaximo;
+        }
+    }
+    
+    public static void agregarTicket(Tickets ticket){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                String query = "CALL AgregarTicket(?,?,?,?)";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, ticket.getTic_Id());
+                ps.setInt(2, (int) ticket.getTic_Total());
+                ps.setDate(3, ticket.getTic_Fecha());
+                ps.setInt(4, ticket.getTic_cliente().getCli_Id());
+                ps.executeUpdate();
+                
+            }catch(SQLException e){
+                System.out.println(e);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+    
+    public static void agregarPlatillosTicket(ArrayList<PlatillosTickets> arrayDePlatillos){
+        Conexion db_connect = new Conexion();
+       
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            try{
+                
+                for (PlatillosTickets arrayDePlatillo : arrayDePlatillos) {
+                    String query = "CALL AgregarTicketPlatillos(?,?,?)";
+                    ps = conexion.prepareStatement(query);
+
+                    ps.setInt(1, arrayDePlatillo.getPT_Ticket().getTic_Id());
+                    ps.setInt(2, arrayDePlatillo.getPT_Platillo().getPla_Id());
+                    ps.setInt(3, arrayDePlatillo.getCantidad_platillo());
+                    ps.executeUpdate();
+                }
+            
+            }catch(SQLException e){
+                System.out.println(e); 
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
 }

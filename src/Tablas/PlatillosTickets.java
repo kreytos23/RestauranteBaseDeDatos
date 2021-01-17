@@ -38,6 +38,11 @@ public class PlatillosTickets {
     public void setCantidad_platillo(int cantidad_platillo) {
         this.cantidad_platillo = cantidad_platillo;
     }
+
+    @Override
+    public String toString() {
+        return "Platillo: " + PT_Platillo.getPla_Nombre() + " Cantidad: " + cantidad_platillo;
+    }
     
     
 }

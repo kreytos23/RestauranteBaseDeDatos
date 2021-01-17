@@ -45,7 +45,7 @@ public class PantallaPrincipalUsuario extends javax.swing.JPanel {
     private void lblPlatillo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlatillo1MouseClicked
         
         ArrayList<Platillos> arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
-        agregarCarrito = new AgregarCarrito(arrayDePlatillos.get(1));
+        agregarCarrito = new AgregarCarrito(arrayDePlatillos.get(1),clienteLogueado);
         agregarCarrito.setBounds(0,0,this.getWidth(),this.getHeight());
         this.removeAll();
         this.add(agregarCarrito);
