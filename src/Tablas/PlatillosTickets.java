@@ -1,5 +1,7 @@
 package Tablas;
 
+import java.text.DecimalFormat;
+
 
 public class PlatillosTickets {
     private int PT_Id;
@@ -41,7 +43,9 @@ public class PlatillosTickets {
 
     @Override
     public String toString() {
-        return "Platillo: " + PT_Platillo.getPla_Nombre() + " Cantidad: " + cantidad_platillo;
+        DecimalFormat formato = new DecimalFormat("###,###.##");
+        return PT_Platillo.getPla_Nombre() + "                              " + cantidad_platillo +
+                "                      $" + formato.format(PT_Platillo.getPla_Precio());
     }
     
     
