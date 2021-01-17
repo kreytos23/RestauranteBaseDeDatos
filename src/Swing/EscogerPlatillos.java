@@ -1,8 +1,10 @@
 package Swing;
 
 import Tablas.Platillos;
+import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -68,6 +70,10 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lbNombrePlatillo.setText(((Platillos)listaPlatillos.getElementAt(0)).getPla_Nombre());
         lblMenu.setText(((Platillos)listaPlatillos.getElementAt(0)).getPla_Menu().getMenu_Tipo());
         lblCategoria.setText(((Platillos)listaPlatillos.getElementAt(0)).getPla_Categoria().getCat_Nombre());
+        Image img = new ImageIcon(getClass().getResource(((Platillos)listaPlatillos.getElementAt(0)).getPla_Imagen())).getImage();
+        ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblDescripcion.setIcon(iimg);
+        lblDescripcion.setText("");
         
     }
 
@@ -295,6 +301,10 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lblCategoria.setText(platilloAux.getPla_Categoria().getCat_Nombre());
         lbNombrePlatillo.setText(platilloAux.getPla_Nombre());
         lblMenu.setText(platilloAux.getPla_Menu().getMenu_Tipo());
+        Image img = new ImageIcon(getClass().getResource(platilloAux.getPla_Imagen())).getImage();
+        ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblDescripcion.setIcon(iimg);
+        lblDescripcion.setText("");
     }//GEN-LAST:event_jlListaPlatillosMouseClicked
 
     private void jlListaPlatillosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlListaPlatillosMenuMouseClicked
@@ -303,6 +313,10 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lblCategoria.setText(platilloAux.getPla_Categoria().getCat_Nombre());
         lbNombrePlatillo.setText(platilloAux.getPla_Nombre());
         lblMenu.setText(platilloAux.getPla_Menu().getMenu_Tipo());
+        Image img = new ImageIcon(getClass().getResource(platilloAux.getPla_Imagen())).getImage();
+        ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblDescripcion.setIcon(iimg);
+        lblDescripcion.setText("");
     }//GEN-LAST:event_jlListaPlatillosMenuMouseClicked
 
     private void btnConfirmarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarMenuActionPerformed
