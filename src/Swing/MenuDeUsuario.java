@@ -25,6 +25,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private static Tickets ticketGenerado;
     private ComprarCarrito comprarCarrito;
     private HistorialTickets historialTickets;
+    private loginCliente loginCliente;
 
    
     
@@ -103,6 +104,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/logout.png"))); // NOI18N
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         add(btnSalir);
         btnSalir.setBounds(-70, 410, 50, 40);
 
@@ -369,6 +375,14 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         panelRemplazo.add(historialTickets);
         panelRemplazo.updateUI();
     }//GEN-LAST:event_btnHistActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        loginCliente = new loginCliente();
+        loginCliente.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(loginCliente);
+        this.updateUI();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
      @Override
     public void run() {
