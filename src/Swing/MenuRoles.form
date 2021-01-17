@@ -36,8 +36,9 @@
     <Component class="javax.swing.JButton" name="btnIniciarSesion">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/MenuRoles/Iniciar_sesion.jpg"/>
+          <Image iconType="3" name="/Imagenes/MenuRoles/Inicio sesion_1.png"/>
         </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Mano"/>
@@ -48,7 +49,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1060" y="60" width="220" height="35"/>
+          <AbsoluteConstraints x="1030" y="40" width="260" height="80"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -68,7 +69,7 @@
     <Component class="javax.swing.JLabel" name="lbFondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"/>
+          <Image iconType="3" name="/Imagenes/MenuRoles/Panel_2.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="    "/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -80,7 +81,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1370" height="768"/>
+          <AbsoluteConstraints x="0" y="70" width="1370" height="768"/>
         </Constraint>
       </Constraints>
     </Component>

@@ -610,6 +610,9 @@
           <Image iconType="3" name="/ImagenesAUsar/Habilitado.png"/>
         </Property>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesAUsar/Habilitado.png"/>
+        </Property>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/ImagenesAUsar/Habilitar en verde.png"/>
         </Property>

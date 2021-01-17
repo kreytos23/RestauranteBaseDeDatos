@@ -1,5 +1,7 @@
 package Swing;
 
+import javax.swing.ImageIcon;
+
 /**
  * @author Cesar Martin
  */
@@ -10,6 +12,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         //this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/ImagenesAUsar/Resta3.png")).getImage());
         menuRoles = new MenuRoles();
         menuRoles.setBounds(panelCambio.getBounds());
         panelCambio.add(menuRoles);

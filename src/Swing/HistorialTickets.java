@@ -38,17 +38,22 @@ public class HistorialTickets extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         listaTickets = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaPlatillos = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
 
+        listaTickets.setBackground(new java.awt.Color(255, 102, 51));
+        listaTickets.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
+        listaTickets.setForeground(new java.awt.Color(255, 255, 255));
         listaTickets.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaTickets.setSelectionBackground(new java.awt.Color(255, 153, 153));
         listaTickets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaTicketsMouseClicked(evt);
@@ -59,11 +64,21 @@ public class HistorialTickets extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(280, 110, 330, 330);
 
+        jLabel2.setFont(new java.awt.Font("Rockwell", 3, 25)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Historial de Tickets");
+        add(jLabel2);
+        jLabel2.setBounds(530, 50, 240, 30);
+
+        listaPlatillos.setBackground(new java.awt.Color(255, 102, 51));
+        listaPlatillos.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
+        listaPlatillos.setForeground(new java.awt.Color(255, 255, 255));
         listaPlatillos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaPlatillos.setSelectionBackground(new java.awt.Color(255, 153, 153));
         jScrollPane2.setViewportView(listaPlatillos);
 
         add(jScrollPane2);
@@ -88,6 +103,7 @@ public class HistorialTickets extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listaPlatillos;
