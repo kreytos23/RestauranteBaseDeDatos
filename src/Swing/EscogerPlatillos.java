@@ -111,7 +111,6 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lblCategoria.setBounds(720, 350, 160, 40);
 
         lbNombrePlatillo.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        lbNombrePlatillo.setForeground(new java.awt.Color(0, 0, 0));
         lbNombrePlatillo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbNombrePlatillo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lbNombrePlatillo);
@@ -120,6 +119,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         btnEliminarPlatillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrar.png"))); // NOI18N
         btnEliminarPlatillo.setBorderPainted(false);
         btnEliminarPlatillo.setContentAreaFilled(false);
+        btnEliminarPlatillo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarPlatillo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrarOsc.png"))); // NOI18N
         btnEliminarPlatillo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton borrarG.png"))); // NOI18N
         btnEliminarPlatillo.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +134,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         btnAgregar.setToolTipText("");
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton AgregarOsc.png"))); // NOI18N
         btnAgregar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton AgregarG.png"))); // NOI18N
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +146,6 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         btnAgregar.setBounds(290, 440, 270, 100);
 
         lblDescripcion.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        lblDescripcion.setForeground(new java.awt.Color(0, 0, 0));
         lblDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescripcion.setText("Foto");
         lblDescripcion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -155,6 +155,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         btnConfirmarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmar.png"))); // NOI18N
         btnConfirmarMenu.setBorderPainted(false);
         btnConfirmarMenu.setContentAreaFilled(false);
+        btnConfirmarMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmarOsc.png"))); // NOI18N
         btnConfirmarMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Boton confirmarG.png"))); // NOI18N
         btnConfirmarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -187,13 +188,11 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         lblMenu.setBounds(530, 350, 160, 40);
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Platillos En Menu");
         add(jLabel4);
         jLabel4.setBounds(930, 20, 340, 50);
 
         jLabel5.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Platillos");
         add(jLabel5);
         jLabel5.setBounds(240, 20, 150, 50);

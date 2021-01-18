@@ -626,4 +626,22 @@ public class RestauranteDAO {
         }
     }
     
+    public static void eliminarTickets(int idTicket){
+        Conexion db_connect = new Conexion();
+        
+        try(Connection conexion = db_connect.getConnection()){
+            PreparedStatement ps = null;
+            
+            try{
+                String query = "CALL EliminarTickets(?)";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, idTicket);
+                ps.executeUpdate();
+            }catch(SQLException e){
+                System.out.println(e);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
 }

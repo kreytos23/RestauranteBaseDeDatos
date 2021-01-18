@@ -111,4 +111,8 @@ public class RestauranteService {
     public static ArrayList<Platillos> traerPlatillosActivosService(){
         return RestauranteDAO.traerPlatillosActivos();
     }
+    
+    public static void eliminarTicketService(int idTicket){
+        RestauranteDAO.eliminarTickets(idTicket);
+    }
 }

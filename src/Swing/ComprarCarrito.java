@@ -73,12 +73,11 @@ public class ComprarCarrito extends javax.swing.JPanel {
         btnComprar.setBackground(new java.awt.Color(255, 51, 0));
         btnComprar.setFont(new java.awt.Font("Rockwell", 1, 21)); // NOI18N
         btnComprar.setForeground(new java.awt.Color(0, 0, 0));
-        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/cargar (1).png"))); // NOI18N
-        btnComprar.setText("     Comprar");
+        btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Cargo (1).png"))); // NOI18N
+        btnComprar.setBorderPainted(false);
         btnComprar.setContentAreaFilled(false);
         btnComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnComprar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnComprar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnComprar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnComprar.setOpaque(true);
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +85,7 @@ public class ComprarCarrito extends javax.swing.JPanel {
             }
         });
         add(btnComprar);
-        btnComprar.setBounds(950, 170, 320, 70);
+        btnComprar.setBounds(950, 160, 190, 90);
 
         lblTotal1.setFont(new java.awt.Font("Rockwell", 3, 25)); // NOI18N
         lblTotal1.setForeground(new java.awt.Color(0, 0, 0));
@@ -112,12 +111,10 @@ public class ComprarCarrito extends javax.swing.JPanel {
         btnEliminarProducto.setBackground(new java.awt.Color(255, 51, 0));
         btnEliminarProducto.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         btnEliminarProducto.setForeground(new java.awt.Color(0, 0, 0));
-        btnEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/eliminar.png"))); // NOI18N
-        btnEliminarProducto.setText("      Eliminar Producto");
+        btnEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Borrar (1).png"))); // NOI18N
         btnEliminarProducto.setContentAreaFilled(false);
         btnEliminarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnEliminarProducto.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEliminarProducto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminarProducto.setOpaque(true);
         btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +122,7 @@ public class ComprarCarrito extends javax.swing.JPanel {
             }
         });
         add(btnEliminarProducto);
-        btnEliminarProducto.setBounds(950, 320, 320, 70);
+        btnEliminarProducto.setBounds(950, 280, 190, 90);
 
         jScrollPane1.setBackground(new java.awt.Color(255, 153, 51));
 

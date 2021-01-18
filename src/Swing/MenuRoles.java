@@ -82,8 +82,8 @@ public class MenuRoles extends javax.swing.JPanel {
                    java.net.URI uri = new java.net.URI("https://www.facebook.com/Restaurante-3-Panaderos-110684760689198");
                    desktop.browse(uri);
                } catch(URISyntaxException | IOException ex){
-                   
-               }
+                   System.out.println(ex); 
+              }
            }
        }
     }//GEN-LAST:event_jLabel2MouseClicked

@@ -28,7 +28,8 @@ public class HistorialTickets extends javax.swing.JPanel {
         }
         
         listaTickets.setModel(modeloTickets);
-        
+        listaTickets.setSelectedIndex(0);
+        listaTicketsMouseClicked(null);
     }
 
 
@@ -36,6 +37,7 @@ public class HistorialTickets extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBorrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaTickets = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
@@ -45,7 +47,19 @@ public class HistorialTickets extends javax.swing.JPanel {
 
         setLayout(null);
 
-        listaTickets.setBackground(new java.awt.Color(255, 102, 51));
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Borrar (1).png"))); // NOI18N
+        btnBorrar.setBorderPainted(false);
+        btnBorrar.setContentAreaFilled(false);
+        btnBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        add(btnBorrar);
+        btnBorrar.setBounds(1060, 190, 190, 90);
+
+        listaTickets.setBackground(new java.awt.Color(255, 51, 0));
         listaTickets.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         listaTickets.setForeground(new java.awt.Color(255, 255, 255));
         listaTickets.setModel(new javax.swing.AbstractListModel<String>() {
@@ -70,14 +84,9 @@ public class HistorialTickets extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(530, 50, 240, 30);
 
-        listaPlatillos.setBackground(new java.awt.Color(255, 102, 51));
+        listaPlatillos.setBackground(new java.awt.Color(255, 51, 0));
         listaPlatillos.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         listaPlatillos.setForeground(new java.awt.Color(255, 255, 255));
-        listaPlatillos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaPlatillos.setSelectionBackground(new java.awt.Color(255, 153, 153));
         jScrollPane2.setViewportView(listaPlatillos);
 
@@ -100,8 +109,18 @@ public class HistorialTickets extends javax.swing.JPanel {
         listaPlatillos.setModel(modeloDePlatillos);
     }//GEN-LAST:event_listaTicketsMouseClicked
 
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        int index = listaTickets.getSelectedIndex();
+        Tickets ticket = (Tickets) modeloTickets.getElementAt(index);
+        RestauranteConexion.RestauranteService.eliminarTicketService(ticket.getTic_Id());
+        modeloTickets.removeElementAt(index);
+        listaTickets.setSelectedIndex(0);
+        listaTicketsMouseClicked(null);
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

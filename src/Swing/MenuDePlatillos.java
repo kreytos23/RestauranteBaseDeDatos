@@ -46,10 +46,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         btnIzqEntradas.setEnabled(false);
         btnIzqEnsalada.setEnabled(false);
         btnIzqPostres.setEnabled(false);
-       /* btnDerPlatoFuerte.setEnabled(true);
-        btnDerEntrada.setEnabled(true);
-        btnDerEnsalada.setEnabled(true);
-        btnDerPostres.setEnabled(true);*/
         indexDeMenu = -1;
         arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosActivosService();
         
@@ -585,6 +581,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         lblPostre.setEnabled(true);
         lblPostre2.setVisible(true);
         lblPostre2.setEnabled(true);
+        jSeparator2.setVisible(true);
         btnIzqPostres.setVisible(true);
         btnDerPostres.setVisible(true);
         jLabel8.setVisible(true);
@@ -774,6 +771,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                      lblPostre2.setVisible(false);
                      btnIzqPostres.setVisible(false);
                      btnDerPostres.setVisible(false);
+                     jSeparator2.setVisible(false);
                      jLabel8.setVisible(false);
                      jLabel4.setIcon(imagen);
                      lblPlato.setIcon(iimg);  
@@ -1143,11 +1141,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
             llenarPaneles(platoFuerte, lblPlato, lblPlato2);
             llenarPaneles(ensalada, lblEnsalada, lblEnsalada2);
             llenarPaneles(postres, lblPostre, lblPostre2);
-            //esto va aqui?
-           /* llenarPaneles(bebidasCalientes, lblEntrada, lblEntrada2);
-            llenarPaneles(bebidasFrias, lblPlato, lblPlato2);
-            llenarPaneles(bebidasAlcoholicas, lblEnsalada, lblEnsalada2);*/
-
         } catch (Exception e) {
                 System.out.println("error llenar paneles");
         }
