@@ -552,7 +552,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         boolean conBebidad = false;
         for(int i = 0; i < platilloComida.length; i++){
             
-            if(platilloComida[i] < 1){
+            if(platilloComida[i] < 2){
                 if(tipo.equals("Desayuno")){
                 JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Desayuno cosas de tipo: Entradas,Plato Fuerte,Ensaladas,Complementos y Postre" );
                 }else if(tipo.equals("Comida")){
@@ -568,7 +568,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         }
         if(conPlatillos){
         for(int i = 0;i< platilloBebida.length; i++){
-            if(platilloBebida[i] < 1){
+            if(platilloBebida[i] < 2){
                 if(tipo.equals("Desayuno"))
                     JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 cosas en Desayuno de tipo: Bebidas Calientes"); 
                 else if(tipo.equals("Comida"))

@@ -17,6 +17,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
     private DecimalFormat formato;
     private int cantidad;
     private PlatillosTickets platilloAgregar;
+    private MenuDePlatillos menuDePlatillos;
     
     public AgregarCarrito(Platillos platilloSeleccionado, Clientes clienteSeleccionado) {
         initComponents();
@@ -39,6 +40,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
     private void initComponents() {
 
         lblFoto = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         btnMenos = new javax.swing.JButton();
         btnMas = new javax.swing.JButton();
         btnComprarAhora = new javax.swing.JButton();
@@ -55,7 +57,19 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblFoto.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         lblFoto.setForeground(new java.awt.Color(0, 0, 0));
         add(lblFoto);
-        lblFoto.setBounds(340, 80, 350, 320);
+        lblFoto.setBounds(230, 80, 350, 320);
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/flecha.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        add(btnRegresar);
+        btnRegresar.setBounds(1290, 10, 60, 60);
 
         btnMenos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Menos.png"))); // NOI18N
         btnMenos.setBorderPainted(false);
@@ -67,7 +81,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
             }
         });
         add(btnMenos);
-        btnMenos.setBounds(880, 350, 60, 60);
+        btnMenos.setBounds(770, 350, 60, 60);
 
         btnMas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Mas.png"))); // NOI18N
         btnMas.setBorderPainted(false);
@@ -79,14 +93,19 @@ public class AgregarCarrito extends javax.swing.JPanel {
             }
         });
         add(btnMas);
-        btnMas.setBounds(1040, 350, 60, 60);
+        btnMas.setBounds(930, 350, 60, 60);
 
         btnComprarAhora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Comprar ahora_1.png"))); // NOI18N
         btnComprarAhora.setBorderPainted(false);
         btnComprarAhora.setContentAreaFilled(false);
         btnComprarAhora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnComprarAhora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarAhoraActionPerformed(evt);
+            }
+        });
         add(btnComprarAhora);
-        btnComprarAhora.setBounds(1030, 430, 160, 70);
+        btnComprarAhora.setBounds(920, 430, 160, 70);
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PagarCarrito/Agregar al carrito_1.png"))); // NOI18N
         btnAgregar.setBorderPainted(false);
@@ -98,7 +117,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
             }
         });
         add(btnAgregar);
-        btnAgregar.setBounds(780, 430, 160, 70);
+        btnAgregar.setBounds(670, 430, 160, 70);
 
         lblInfo.setBackground(new java.awt.Color(255, 102, 51));
         lblInfo.setColumns(20);
@@ -108,7 +127,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         jScrollPane1.setViewportView(lblInfo);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(740, 130, 500, 200);
+        jScrollPane1.setBounds(630, 130, 500, 200);
 
         lblNombre.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(0, 0, 0));
@@ -116,7 +135,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblNombre.setText("jLabel3");
         lblNombre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblNombre);
-        lblNombre.setBounds(780, 50, 260, 50);
+        lblNombre.setBounds(670, 50, 260, 50);
 
         lblPrecio.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblPrecio.setForeground(new java.awt.Color(0, 0, 0));
@@ -124,7 +143,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblPrecio.setText("jLabel4");
         lblPrecio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblPrecio);
-        lblPrecio.setBounds(1060, 50, 140, 50);
+        lblPrecio.setBounds(950, 50, 140, 50);
 
         lblCantidad.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblCantidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -132,7 +151,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         lblCantidad.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblCantidad);
-        lblCantidad.setBounds(935, 355, 110, 50);
+        lblCantidad.setBounds(824, 355, 110, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
@@ -162,12 +181,34 @@ public class AgregarCarrito extends javax.swing.JPanel {
        JOptionPane.showMessageDialog(null, "Agregado Al Carrito", "Hecho",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        menuDePlatillos = new MenuDePlatillos(clienteLogueado);
+        menuDePlatillos.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(menuDePlatillos);
+        this.updateUI();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnComprarAhoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarAhoraActionPerformed
+        platilloAgregar = new PlatillosTickets();
+        platilloAgregar.setCantidad_platillo(cantidad);
+        platilloAgregar.setPT_Platillo(platilloSeleccionado);
+        MenuDeUsuario.getPlatillosEnCarrito().add(platilloAgregar);
+        JOptionPane.showMessageDialog(null, "Agregado Al Carrito", "Hecho",JOptionPane.INFORMATION_MESSAGE);
+        ComprarCarrito comprarCarrito = new ComprarCarrito(clienteLogueado);
+        comprarCarrito.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(comprarCarrito);
+        this.updateUI();
+    }//GEN-LAST:event_btnComprarAhoraActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnComprarAhora;
     private javax.swing.JButton btnMas;
     private javax.swing.JButton btnMenos;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCantidad;
