@@ -31,6 +31,7 @@ public class ComprarCarrito extends javax.swing.JPanel {
         
         for (PlatillosTickets plat : platillosDeCarrito) {
             modeloCarrito.addElement(plat);
+            plat.getPT_Platillo().setPla_Cantidad(plat.getPT_Platillo().getPla_Cantidad() - plat.getCantidad_platillo());
             total += plat.getCantidad_platillo() * plat.getPT_Platillo().getPla_Precio();
         }
         lblTotal.setText("Total:    $ " + formato.format(total));
@@ -168,7 +169,10 @@ public class ComprarCarrito extends javax.swing.JPanel {
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
-      
+        int index = listaCarrito.getSelectedIndex();
+        System.out.println(platillosDeCarrito.get(index));
+        platillosDeCarrito.remove(index);
+        modeloCarrito.removeElementAt(index);
     }//GEN-LAST:event_btnEliminarProductoActionPerformed
 
 
