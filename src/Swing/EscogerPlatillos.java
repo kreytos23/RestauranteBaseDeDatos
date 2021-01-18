@@ -31,7 +31,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     private int[] platillosTipoComidaComida = {0,0,0,0,0,0};
     private int[] platillosTipoBebidaComida = {0};
     
-    private int[] platillosTipoComidaCena = {0,0,0};
+    private int[] platillosTipoComidaCena = {0,0,0,0};
     private int[] platillosTipoBebidaCena = {0};
     
     public EscogerPlatillos() {
@@ -409,8 +409,10 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                         case 4:
                             if(tipo.equals("Desayuno"))  //Solo comida y desayuno
                                 platilloComida[2]++;
-                            else
+                            else if(tipo.equals("Comida"))
                                 platilloComida[3]++;
+                            else
+                                platilloComida[2]++;
                             break;
                         case 5:
                             if(tipo.equals("Desayuno"))
@@ -424,7 +426,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                             else if(tipo.equals("Comida"))
                                 platilloComida[5]++;
                             else
-                                platilloComida[2]++;
+                                platilloComida[3]++;
                             break;
                         case 7:
                             platilloBebida[0]++;
@@ -455,7 +457,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                                 agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
                             break;
                         case 4:
-                            if(tipo.equals("Desayuno"))
+                            if(tipo.equals("Desayuno") || tipo.equals("Cena"))
                                 agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
                             else
                                 agregar = comprobarMaximoif(platilloComida[3], platilloComida,agregar , tipo,"platillo", 3);
@@ -472,7 +474,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                             else if(tipo.equals("Comida"))
                                 agregar = comprobarMaximoif(platilloComida[5], platilloComida,agregar , tipo,"platillo", 5);
                             else
-                                agregar = comprobarMaximoif(platilloComida[2], platilloComida,agregar , tipo,"platillo", 2);
+                                agregar = comprobarMaximoif(platilloComida[3], platilloComida,agregar , tipo,"platillo", 3);
                             break;
                         case 7:
                             agregar = comprobarMaximoif(platilloBebida[0], platilloBebida,agregar , tipo,"bebida", 0);
@@ -513,7 +515,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                                 platilloComida[2]--;
                             break;
                         case 4:
-                            if(tipo.equals("Desayuno"))
+                            if(tipo.equals("Desayuno") || tipo.equals("Cena"))
                                 platilloComida[2]--;
                             else
                                 platilloComida[3]--;
@@ -530,7 +532,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                             else if(tipo.equals("Comida"))
                                 platilloComida[5]--;
                             else
-                                platilloComida[2]--;
+                                platilloComida[3]--;
                             break;
                         case 7:
                             platilloBebida[0]--;
@@ -557,7 +559,7 @@ public class EscogerPlatillos extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Comida cosas de tipo: Entradas,Sopas, Plato Fuerte,Ensaladas,Complementos y Postre " );
                 }
                 else 
-                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Cena cosas de tipo: Entradas, Plato Fuerte y Postre " );
+                    JOptionPane.showMessageDialog(null,"Debe de haber al menos 2 en Cena cosas de tipo: Entradas,Ensaladas, Plato Fuerte y Postre " );
                 conPlatillos = false;
                 break;
             }else{

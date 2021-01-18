@@ -12,26 +12,8 @@ public class AgregarUsuario extends javax.swing.JPanel {
     private Calendario dias;
     public AgregarUsuario() {
         initComponents();
-        LbPass1.setVisible(false);
-        LbPass2.setVisible(false);
-        LbNombre1.setVisible(false);
-        LbNombre2.setVisible(false);
-        LbApellidoP1.setVisible(false);
-        LbApellidoP2.setVisible(false);
-        LbApellidoM1.setVisible(false);
-        LbApellidoM2.setVisible(false);
-        LbColonia1.setVisible(false);
-        LbColonia2.setVisible(false);
-        LbNoCalle1.setVisible(false);
-        LbNoCalle2.setVisible(false);
-        LbTelefono1.setVisible(false);
-        LbTelefono2.setVisible(false);
-        LbTelefono3.setVisible(false);
-        LbCorreo.setVisible(false);
-        LbCalle1.setVisible(false);
-        LbCalle2.setVisible(false);
-        LbError.setVisible(false);
-        LbRepet.setVisible(false);
+        
+        ocultarLabels();
         
         for(int i = 2021 ; i>=1940 ; i--){
             jcYear.addItem(String.valueOf(i));
@@ -353,6 +335,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
         String txtFecha;
         String calle;
         int error;
+        ocultarLabels();
         
         boolean correcto = datosCorrectos();
 
@@ -533,4 +516,28 @@ public class AgregarUsuario extends javax.swing.JPanel {
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+    private void ocultarLabels() {
+        LbPass1.setVisible(false);
+        LbPass2.setVisible(false);
+        LbNombre1.setVisible(false);
+        LbNombre2.setVisible(false);
+        LbApellidoP1.setVisible(false);
+        LbApellidoP2.setVisible(false);
+        LbApellidoM1.setVisible(false);
+        LbApellidoM2.setVisible(false);
+        LbColonia1.setVisible(false);
+        LbColonia2.setVisible(false);
+        LbNoCalle1.setVisible(false);
+        LbNoCalle2.setVisible(false);
+        LbTelefono1.setVisible(false);
+        LbTelefono2.setVisible(false);
+        LbTelefono3.setVisible(false);
+        LbCorreo.setVisible(false);
+        LbCalle1.setVisible(false);
+        LbCalle2.setVisible(false);
+        LbError.setVisible(false);
+        LbRepet.setVisible(false);
+        
+    }
 }
