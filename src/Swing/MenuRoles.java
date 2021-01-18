@@ -38,7 +38,7 @@ public class MenuRoles extends javax.swing.JPanel {
         add(btnIniciarSesion);
         btnIniciarSesion.setBounds(1030, 40, 260, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1);
         jLabel1.setBounds(0, 0, 1366, 147);

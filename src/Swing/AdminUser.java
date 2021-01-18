@@ -77,7 +77,7 @@ public class AdminUser extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(550, 180, 350, 56);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3);
         jLabel3.setBounds(0, 0, 1366, 147);

@@ -140,75 +140,64 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         btnGestEmpleados.setBounds(-170, 260, 45, 35);
 
         lbHora.setFont(new java.awt.Font("Rockwell", 1, 25)); // NOI18N
-        lbHora.setForeground(new java.awt.Color(0, 0, 0));
         lbHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         add(lbHora);
         lbHora.setBounds(1130, 90, 230, 50);
 
         lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setText("Bienvenido de Nuevo!! ");
         add(lblTitulo);
         lblTitulo.setBounds(910, 0, 470, 40);
 
         lblNombre.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
         lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNombre.setText("Nombre");
         add(lblNombre);
         lblNombre.setBounds(920, 40, 440, 60);
 
         lblEsMenu.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblEsMenu.setForeground(new java.awt.Color(0, 0, 0));
         lblEsMenu.setText("* Escoger Menus");
         lblEsMenu.setToolTipText("");
         add(lblEsMenu);
         lblEsMenu.setBounds(-335, 350, 155, 20);
 
         lblMenuPrincipal.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
         lblMenuPrincipal.setText("* Menu Principal");
         lblMenuPrincipal.setToolTipText("");
         add(lblMenuPrincipal);
         lblMenuPrincipal.setBounds(-335, 230, 155, 20);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
-        lblMenu.setForeground(new java.awt.Color(0, 0, 0));
         lblMenu.setText("Menu");
         lblMenu.setToolTipText("");
         add(lblMenu);
         lblMenu.setBounds(-250, 170, 60, 20);
 
         lblAjustes.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblAjustes.setForeground(new java.awt.Color(0, 0, 0));
         lblAjustes.setText("* Ajustes");
         lblAjustes.setToolTipText("");
         add(lblAjustes);
         lblAjustes.setBounds(-335, 390, 155, 20);
 
         lblManuel.setFont(new java.awt.Font("Rockwell", 3, 12)); // NOI18N
-        lblManuel.setForeground(new java.awt.Color(0, 0, 0));
         lblManuel.setText("\"Manuel Co\" Copyright 2021");
         lblManuel.setToolTipText("");
         add(lblManuel);
         lblManuel.setBounds(-335, 470, 180, 20);
 
         lblSalir.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblSalir.setForeground(new java.awt.Color(0, 0, 0));
         lblSalir.setText("* Salir");
         lblSalir.setToolTipText("");
         add(lblSalir);
         lblSalir.setBounds(-335, 430, 155, 20);
 
         lblGestEmpleados.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblGestEmpleados.setForeground(new java.awt.Color(0, 0, 0));
         lblGestEmpleados.setText("* Gestionar Empleados");
         lblGestEmpleados.setToolTipText("");
         add(lblGestEmpleados);
         lblGestEmpleados.setBounds(-335, 270, 170, 20);
 
         lblAgregarEmpleado.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblAgregarEmpleado.setForeground(new java.awt.Color(0, 0, 0));
         lblAgregarEmpleado.setText("* Agregar Empleado");
         lblAgregarEmpleado.setToolTipText("");
         add(lblAgregarEmpleado);
@@ -219,7 +208,7 @@ public class MenuDeAdmin extends javax.swing.JPanel implements Runnable{
         add(lblFondo);
         lblFondo.setBounds(-350, 150, 240, 360);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         add(jLabel2);
         jLabel2.setBounds(0, 0, 1380, 160);
 
