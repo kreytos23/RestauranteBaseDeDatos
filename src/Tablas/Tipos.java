@@ -12,8 +12,6 @@ public class Tipos {
         this.Tipo_Sueldo = Tipo_Sueldo;
         
     }
-
-    
     
     public int getTipo_Id() {
         return Tipo_Id;
@@ -38,6 +36,4 @@ public class Tipos {
     public void setTipo_Sueldo(int Tipo_Sueldo) {
         this.Tipo_Sueldo = Tipo_Sueldo;
     }
-    
-    
 }

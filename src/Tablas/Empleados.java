@@ -2,7 +2,6 @@ package Tablas;
 
 import java.sql.Date;
 
-
 public class Empleados extends Persona{
     private int Emp_Id;
     private Tipos Emp_Tipo;
@@ -47,8 +46,5 @@ public class Empleados extends Persona{
     public String toString() {
         return super.getNombre() + " " + getApellido_Paterno() + " " + getApellido_Materno();
     }
-    
-    
-    
     
 }

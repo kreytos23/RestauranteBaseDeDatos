@@ -50,6 +50,7 @@ public class HistorialTickets extends javax.swing.JPanel {
         btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Borrar (1).png"))); // NOI18N
         btnBorrar.setBorderPainted(false);
         btnBorrar.setContentAreaFilled(false);
+        btnBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +68,7 @@ public class HistorialTickets extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listaTickets.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listaTickets.setSelectionBackground(new java.awt.Color(255, 153, 153));
         listaTickets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,6 +89,7 @@ public class HistorialTickets extends javax.swing.JPanel {
         listaPlatillos.setBackground(new java.awt.Color(255, 51, 0));
         listaPlatillos.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         listaPlatillos.setForeground(new java.awt.Color(255, 255, 255));
+        listaPlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listaPlatillos.setSelectionBackground(new java.awt.Color(255, 153, 153));
         jScrollPane2.setViewportView(listaPlatillos);
 

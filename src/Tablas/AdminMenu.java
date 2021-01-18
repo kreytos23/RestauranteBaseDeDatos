@@ -29,6 +29,4 @@ public class AdminMenu {
     public void setAM_Menu(Menus AM_Menu) {
         this.AM_Menu = AM_Menu;
     }
-    
-    
 }

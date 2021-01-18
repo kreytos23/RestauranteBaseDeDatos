@@ -3,7 +3,6 @@ package Swing;
 import Tablas.Clientes;
 import Tablas.Platillos;
 import Tablas.PlatillosTickets;
-import Tablas.Tickets;
 import java.awt.Image;
 import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
@@ -136,7 +135,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblNombre.setText("jLabel3");
         lblNombre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblNombre);
-        lblNombre.setBounds(670, 50, 260, 50);
+        lblNombre.setBounds(630, 50, 300, 50);
 
         lblPrecio.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblPrecio.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,7 +143,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         lblPrecio.setText("jLabel4");
         lblPrecio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lblPrecio);
-        lblPrecio.setBounds(950, 50, 140, 50);
+        lblPrecio.setBounds(950, 50, 180, 50);
 
         lblCantidad.setFont(new java.awt.Font("Rockwell", 1, 30)); // NOI18N
         lblCantidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,8 +162,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         if(cantidad != 1){
             cantidad--;
             lblCantidad.setText(String.valueOf(cantidad));
-        }
-        
+        } 
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed

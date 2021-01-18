@@ -1,6 +1,5 @@
 package Tablas;
 
-
 public class Platillos {
     private int Pla_Id;
     private String Pla_Nombre;
@@ -29,8 +28,6 @@ public class Platillos {
         this.Pla_Nombre = Pla_Nombre;
         this.Pla_Precio = Pla_Precio;
     }
-    
-    
 
     public void setPla_Imagen(String Pla_Imagen) {
         this.Pla_Imagen = Pla_Imagen;
@@ -39,8 +36,6 @@ public class Platillos {
     public String getPla_Imagen() {
         return Pla_Imagen;
     }
-
-    
     
     public String getPla_Estatus() {
         return Pla_Estatus;

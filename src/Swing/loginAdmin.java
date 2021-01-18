@@ -1,11 +1,8 @@
 package Swing;
 import RestauranteConexion.*;
 import Tablas.*;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 public class loginAdmin extends javax.swing.JPanel {
-
 
     public loginAdmin() {
         initComponents();
@@ -99,11 +96,6 @@ public class loginAdmin extends javax.swing.JPanel {
 
         btnOlvidarPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginCliente/Olvidaste_la_contrasena.jpg"))); // NOI18N
         btnOlvidarPass.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnOlvidarPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOlvidarPassActionPerformed(evt);
-            }
-        });
         add(btnOlvidarPass);
         btnOlvidarPass.setBounds(400, 500, 313, 28);
 
@@ -118,7 +110,6 @@ public class loginAdmin extends javax.swing.JPanel {
         Empleados empleadoRegistrado = RestauranteService.loginEmpleadoService(txtCorreo.getText(), txtPass.getText());
         
         if(empleadoRegistrado == null){
-            //JOptionPane.showMessageDialog(this, "Usuario No Registrado", "Error", JOptionPane.WARNING_MESSAGE);
             LBincorrecto.setVisible(true);
             txtCorreo.setText("");
             txtPass.setText("");
@@ -130,13 +121,7 @@ public class loginAdmin extends javax.swing.JPanel {
             this.add(menuDeAdmin);
             this.updateUI();
         }
-        
-        
     }//GEN-LAST:event_btnAccederActionPerformed
-
-    private void btnOlvidarPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOlvidarPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOlvidarPassActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         AdminUser adminUser = new AdminUser();

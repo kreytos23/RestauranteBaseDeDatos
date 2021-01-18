@@ -29,9 +29,5 @@ public class Clientes extends Persona {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-    
-    
-    
-            
+    }       
 }

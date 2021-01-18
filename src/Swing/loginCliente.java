@@ -3,14 +3,12 @@ import RestauranteConexion.*;
 import Tablas.*;
 
 public class loginCliente extends javax.swing.JPanel {
-
  
     public loginCliente() {
         initComponents();
         LBincorrecto.setVisible(false);
     }
-
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -35,11 +33,6 @@ public class loginCliente extends javax.swing.JPanel {
 
         txtCorreo.setFont(new java.awt.Font("Verdana", 1, 20)); // NOI18N
         txtCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoActionPerformed(evt);
-            }
-        });
         add(txtCorreo);
         txtCorreo.setBounds(394, 280, 580, 60);
 
@@ -133,12 +126,8 @@ public class loginCliente extends javax.swing.JPanel {
 
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(180, 230, 34, 14);
+        jLabel2.setBounds(180, 230, 41, 16);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
-     
-    }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Clientes clienteRegistrado = RestauranteService.loginClienteService(txtCorreo.getText(), txtPass.getText());
@@ -157,13 +146,11 @@ public class loginCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
-        
-            AgregarUsuario agregarUsuario = new AgregarUsuario();
-            agregarUsuario.setBounds(this.getBounds());
-            this.removeAll();
-            this.add(agregarUsuario);
-            this.updateUI();
-        
+        AgregarUsuario agregarUsuario = new AgregarUsuario();
+        agregarUsuario.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(agregarUsuario);
+        this.updateUI();
     }//GEN-LAST:event_btnCrearCuentaActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed

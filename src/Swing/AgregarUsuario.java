@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
 public class AgregarUsuario extends javax.swing.JPanel {
 
     private Calendario dias;
+    private loginCliente loginCliente;
+    
     public AgregarUsuario() {
         initComponents();
-        
         ocultarLabels();
         
         for(int i = 2021 ; i>=1940 ; i--){
@@ -49,6 +50,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
         txtApellidoM = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         txtNoCalle = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
         txtColonia = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
@@ -154,6 +156,18 @@ public class AgregarUsuario extends javax.swing.JPanel {
         txtNoCalle.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtNoCalle);
         txtNoCalle.setBounds(670, 440, 270, 40);
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/felcahanegrita.png"))); // NOI18N
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/flecha.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        add(btnRegresar);
+        btnRegresar.setBounds(1300, 150, 60, 60);
 
         txtColonia.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
         add(txtColonia);
@@ -336,7 +350,6 @@ public class AgregarUsuario extends javax.swing.JPanel {
         String calle;
         int error;
         ocultarLabels();
-        
         boolean correcto = datosCorrectos();
 
         if(jcMes.getSelectedIndex()< 9){
@@ -401,6 +414,14 @@ public class AgregarUsuario extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_jcMesActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        loginCliente = new loginCliente();
+        loginCliente.setBounds(this.getBounds());
+        this.removeAll();
+        this.add(loginCliente);
+        this.updateUI();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private boolean datosCorrectos(){
         boolean correcto = true;
@@ -491,6 +512,7 @@ public class AgregarUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel LbTelefono2;
     private javax.swing.JLabel LbTelefono3;
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

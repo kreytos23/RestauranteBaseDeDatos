@@ -74,11 +74,7 @@ public class GestionarEmpleados extends javax.swing.JPanel {
 
         cbTiposEmpleados.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         cbTiposEmpleados.setForeground(new java.awt.Color(0, 0, 0));
-        cbTiposEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbTiposEmpleadosMouseClicked(evt);
-            }
-        });
+        cbTiposEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cbTiposEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTiposEmpleadosActionPerformed(evt);
@@ -95,6 +91,7 @@ public class GestionarEmpleados extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jlListaEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jlListaEmpleados.setSelectionBackground(new java.awt.Color(255, 153, 153));
         jlListaEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -129,7 +126,6 @@ public class GestionarEmpleados extends javax.swing.JPanel {
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminar.setOpaque(false);
         btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Eliminar2.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,10 +213,6 @@ public class GestionarEmpleados extends javax.swing.JPanel {
             }
         
     }//GEN-LAST:event_cbTiposEmpleadosActionPerformed
-
-    private void cbTiposEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTiposEmpleadosMouseClicked
-        
-    }//GEN-LAST:event_cbTiposEmpleadosMouseClicked
 
     private void jlListaEmpleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlListaEmpleadosMouseClicked
         int index = jlListaEmpleados.getSelectedIndex();

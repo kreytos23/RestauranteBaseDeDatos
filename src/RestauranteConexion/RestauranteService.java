@@ -1,6 +1,5 @@
 package RestauranteConexion;
 
-import Swing.AgregarEmpleado;
 import Tablas.*;
 import java.sql.Date;
 import java.sql.SQLException;

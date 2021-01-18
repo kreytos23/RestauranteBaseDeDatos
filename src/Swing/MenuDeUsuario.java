@@ -2,7 +2,6 @@ package Swing;
 
 import AppPackage.AnimationClass;
 import Tablas.Clientes;
-import Tablas.Platillos;
 import Tablas.PlatillosTickets;
 import Tablas.Tickets;
 import java.util.ArrayList;
@@ -264,12 +263,10 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         AnimationClass carrito = new AnimationClass();
         AnimationClass boton = new AnimationClass();
-
-                    
+        
         if(mostrandoMenu == 0){
             boton.jButtonXRight(-70,140,15,5, btnPlatillos);
             boton.jButtonXRight(-70,140,15,5, btnAjustes);
@@ -317,8 +314,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
             mostrandoMenu = 0;
         }
     }//GEN-LAST:event_btnMenuActionPerformed
-
-  
     
     private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
         btnMenuActionPerformed(evt);
@@ -440,5 +435,4 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
     private javax.swing.JPanel panelRemplazo;
     // End of variables declaration//GEN-END:variables
 
-   
 }

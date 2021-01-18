@@ -27,6 +27,4 @@ public class Menus {
     public void setMenu_Tipo(String Menu_Tipo) {
         this.Menu_Tipo = Menu_Tipo;
     }
-    
-    
 }

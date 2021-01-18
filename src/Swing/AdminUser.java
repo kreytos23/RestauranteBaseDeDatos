@@ -1,7 +1,5 @@
 package Swing;
-/**
- * @author serpi
- */
+
 public class AdminUser extends javax.swing.JPanel {
     
     private loginAdmin loginAdmin;
@@ -31,14 +29,6 @@ public class AdminUser extends javax.swing.JPanel {
         btnAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdmin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AdminUser/BotonAdrojo.png"))); // NOI18N
         btnAdmin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btnGrandes/btnAdminG.png"))); // NOI18N
-        btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnAdminMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAdminMouseExited(evt);
-            }
-        });
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminActionPerformed(evt);
@@ -111,16 +101,6 @@ public class AdminUser extends javax.swing.JPanel {
        this.add(loginCliente);
        this.updateUI();
     }//GEN-LAST:event_btnClienteActionPerformed
-
-    private void btnAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseEntered
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnAdminMouseEntered
-
-    private void btnAdminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseExited
-       
-        
-    }//GEN-LAST:event_btnAdminMouseExited
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         MenuRoles menuRoles = new MenuRoles();

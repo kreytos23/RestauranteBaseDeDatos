@@ -440,7 +440,6 @@ public class AgregarEmpleado extends javax.swing.JPanel {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -600,5 +599,4 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         txtPassword.setText("");
         txtTelefono.setText("");
     }
-
 }

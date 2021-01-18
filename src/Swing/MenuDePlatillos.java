@@ -1,10 +1,7 @@
 package Swing;
 
-
 import Tablas.Clientes;
 import Tablas.Platillos;
-import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.Icon;
@@ -64,11 +61,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         bebidasCalientes = new ArrayList<>();
         bebidasFrias = new ArrayList<>();
         bebidasAlcoholicas = new ArrayList<>();
-       num=1;
-       num2=1;
-       num3=1;
-       num4=1;
-       //recorre el array de platillos
+        num=1;
+        num2=1;
+        num3=1;
+        num4=1;
         for(Platillos plat : arrayDePlatillos){
             int a=plat.getPla_Menu().getMenu_Id();
             switch(a){
@@ -79,7 +75,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     comida.add(plat);
                     break;
                 case 3:
-                    
                     if(!(plat.getPla_Categoria().getCat_Id()==7 || plat.getPla_Categoria().getCat_Id()==8 ||plat.getPla_Categoria().getCat_Id()==9))
                     {
                         cena.add(plat);
@@ -88,11 +83,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
             }
             if(plat.getPla_Categoria().getCat_Id()==7 || plat.getPla_Categoria().getCat_Id()==8 ||plat.getPla_Categoria().getCat_Id()==9){
                 bebidas.add(plat);
-              //  System.out.println(bebidas.get(bebidas.size()));
             }
         }
         System.out.println("tamanio de bebidas"+bebidas.size());
-       btnAvanzarMenuActionPerformed(null);
+        btnAvanzarMenuActionPerformed(null);
       
         if(platoFuerte.size()==0){
             lblPlato.setText("No disponible");
@@ -101,9 +95,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         else{
             Image img = new ImageIcon(getClass().getResource(platoFuerte.get(1).getPla_Imagen())).getImage();
             ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblPlato2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(platoFuerte.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+            lblPlato2.setIcon(img2);
+            img=new ImageIcon(getClass().getResource(platoFuerte.get(0).getPla_Imagen())).getImage();
+            img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
             lblPlato.setIcon(img2);
         }
         if(ensalada.size()==0){
@@ -113,9 +107,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         else{
             Image img = new ImageIcon(getClass().getResource(ensalada.get(1).getPla_Imagen())).getImage();
             ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblEnsalada2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(ensalada.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+            lblEnsalada2.setIcon(img2);
+            img=new ImageIcon(getClass().getResource(ensalada.get(0).getPla_Imagen())).getImage();
+            img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
             lblEnsalada.setIcon(img2);
         }
         if(entradas.size()==0){
@@ -125,9 +119,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         else{
             Image img = new ImageIcon(getClass().getResource(entradas.get(1).getPla_Imagen())).getImage();
             ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblEntrada2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(entradas.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+            lblEntrada2.setIcon(img2);
+            img=new ImageIcon(getClass().getResource(entradas.get(0).getPla_Imagen())).getImage();
+            img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
             lblEntrada.setIcon(img2);
         }
         if(postres.size()==0){
@@ -137,47 +131,11 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         else{
             Image img = new ImageIcon(getClass().getResource(postres.get(1).getPla_Imagen())).getImage();
             ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblPostre2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(postres.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+            lblPostre2.setIcon(img2);
+            img=new ImageIcon(getClass().getResource(postres.get(0).getPla_Imagen())).getImage();
+            img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
             lblPostre.setIcon(img2);
         }
-        /*if(bebidasCalientes.size()==0){
-            lblPlato.setText("No disponible");
-            lblPlato.setText("No disponible");
-        }
-        else{
-            Image img = new ImageIcon(getClass().getResource(bebidasCalientes.get(1).getPla_Imagen())).getImage();
-            ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblPlato2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(bebidasCalientes.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-            lblPlato.setIcon(img2);
-        }
-        if(bebidasFrias.size()==0){
-            lblEnsalada.setText("No disponible");
-            lblEnsalada2.setText("No disponible");
-        }
-        else{
-            Image img = new ImageIcon(getClass().getResource(bebidasFrias.get(1).getPla_Imagen())).getImage();
-            ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblEnsalada2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(bebidasFrias.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-            lblEnsalada.setIcon(img2);
-        }
-        if(bebidasAlcoholicas.size()==0){
-            lblEntrada.setText("No disponible");
-            lblEntrada2.setText("No disponible");
-        }
-        else{
-            Image img = new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(1).getPla_Imagen())).getImage();
-            ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblEntrada2.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(0).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-            lblEntrada.setIcon(img2);
-        }*/
     }
 
     
@@ -238,7 +196,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jSeparator5.setBounds(445, 90, 170, 2);
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 45)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Menu");
         add(jLabel2);
@@ -381,7 +338,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         lblEntrada2.setBounds(550, 380, 150, 130);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 3, 30)); // NOI18N
-        lblMenu.setForeground(new java.awt.Color(0, 0, 0));
         lblMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMenu.setText("Cena");
         add(lblMenu);
@@ -389,7 +345,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
         jLabel4.setBackground(new java.awt.Color(255, 51, 0));
         jLabel4.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Platillos/desayuno.png"))); // NOI18N
         add(jLabel4);
@@ -404,14 +359,12 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel5.setBounds(360, 110, 360, 150);
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Ensalada");
         add(jLabel6);
         jLabel6.setBounds(960, 60, 200, 30);
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Postres");
         add(jLabel7);
@@ -426,7 +379,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel8.setBounds(880, 370, 360, 150);
 
         jLabel9.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Plato Fuerte");
         add(jLabel9);
@@ -449,7 +401,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel11.setBounds(360, 370, 360, 150);
 
         jLabel12.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Entradas");
         add(jLabel12);
@@ -556,13 +507,12 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/PANEL PRINCIPAL.jpg"))); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, -150, 1370, 790);
+        jLabel1.setBounds(0, -160, 1370, 790);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAvanzarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarMenuActionPerformed
         
         indexDeMenu = indexDeMenu >= 3 ? 0 :  indexDeMenu + 1 ;
-        /*se quiere hacer que cuando se presione el boton mande el menu del siguiente*/
         
         num=1;
         num2=1;
@@ -587,11 +537,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel8.setVisible(true);
         switch(indexDeMenu){
             case 0:
-                
                 lblMenu.setText("Desayunos");
                 cambiarPanelDeMenu(desayuno);
                 try{
-                    
                     Image img = new ImageIcon(getClass().getResource(platoFuerte.get(0).getPla_Imagen())).getImage();
                     Image img2 = new ImageIcon(getClass().getResource(platoFuerte.get(1).getPla_Imagen())).getImage();
                     Image img3 = new ImageIcon(getClass().getResource(ensalada.get(0).getPla_Imagen())).getImage();
@@ -611,37 +559,34 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ruta="/Imagenes/Platillos/desayuno.png"; 
                     imagen=new ImageIcon(getClass().getResource(ruta));
                      
-                     jLabel4.setIcon(imagen);
+                    jLabel4.setIcon(imagen);
                      
-                     lblPlato.setIcon(iimg);  
-                     lblPlato2.setIcon(iimg2);
-                     lblEnsalada.setIcon(iimg3);
-                     lblEnsalada2.setIcon(iimg4);
-                     lblEntrada.setIcon(iimg5);
-                     lblEntrada2.setIcon(iimg6);
-                     lblPostre.setIcon(iimg7);
-                     lblPostre2.setIcon(iimg8);
-                     btnIzqPlatoFuerte.setEnabled(false);
-                     btnIzqEntradas.setEnabled(false);
-                     btnIzqEnsalada.setEnabled(false);
-                     btnIzqPostres.setEnabled(false);
-                     if(num==platoFuerte.size()-1)
-                        btnDerPlatoFuerte.setEnabled(false);
-                     if(num2==ensalada.size()-1)
-                        btnDerEnsalada.setEnabled(false);
-                     if(num3==entradas.size()-1)
-                        btnDerEntrada.setEnabled(false);
-                     if(num4==postres.size()-1)
-                        btnDerPostres.setEnabled(false);
-                
-                 
+                    lblPlato.setIcon(iimg);  
+                    lblPlato2.setIcon(iimg2);
+                    lblEnsalada.setIcon(iimg3);
+                    lblEnsalada2.setIcon(iimg4);
+                    lblEntrada.setIcon(iimg5);
+                    lblEntrada2.setIcon(iimg6);
+                    lblPostre.setIcon(iimg7);
+                    lblPostre2.setIcon(iimg8);
+                    btnIzqPlatoFuerte.setEnabled(false);
+                    btnIzqEntradas.setEnabled(false);
+                    btnIzqEnsalada.setEnabled(false);
+                    btnIzqPostres.setEnabled(false);
+                    if(num==platoFuerte.size()-1)
+                       btnDerPlatoFuerte.setEnabled(false);
+                    if(num2==ensalada.size()-1)
+                       btnDerEnsalada.setEnabled(false);
+                    if(num3==entradas.size()-1)
+                       btnDerEntrada.setEnabled(false);
+                    if(num4==postres.size()-1)
+                       btnDerPostres.setEnabled(false);
                 }
                 catch(Exception e){
-                  //  System.out.println("error xd");
-                }
+                    System.out.println(e); 
+               }
                 break;
             case 1:
-                
                 lblMenu.setText("Comida");
                 cambiarPanelDeMenu(comida);
                 try {
@@ -662,40 +607,38 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ruta="/Imagenes/Platillos/comida.png";
-                     imagen=new ImageIcon(getClass().getResource(ruta)); 
-                     lblPlato.setIcon(iimg);  
-                     lblPlato2.setIcon(iimg2);
-                     lblEnsalada.setIcon(iimg3);
-                     lblEnsalada2.setIcon(iimg4);
-                     lblEntrada.setIcon(iimg5);
-                     lblEntrada2.setIcon(iimg6);
-                     lblPostre.setIcon(iimg7);
-                     lblPostre2.setIcon(iimg8);
-                     jLabel4.setIcon(imagen);
-                     btnIzqPlatoFuerte.setEnabled(false);
-                     btnIzqEntradas.setEnabled(false);
-                     btnIzqEnsalada.setEnabled(false);
-                     btnIzqPostres.setEnabled(false);
-                     //si es -1?
-                     if(num==platoFuerte.size()-1)
-                        btnDerPlatoFuerte.setEnabled(false);
-                     if(num2==ensalada.size()-1)
-                        btnDerEnsalada.setEnabled(false);
-                     if(num3==entradas.size()-1)
-                        btnDerEntrada.setEnabled(false);
-                     if(num4==postres.size()-1)
-                        btnDerPostres.setEnabled(false);
+                    imagen=new ImageIcon(getClass().getResource(ruta)); 
+                    lblPlato.setIcon(iimg);  
+                    lblPlato2.setIcon(iimg2);
+                    lblEnsalada.setIcon(iimg3);
+                    lblEnsalada2.setIcon(iimg4);
+                    lblEntrada.setIcon(iimg5);
+                    lblEntrada2.setIcon(iimg6);
+                    lblPostre.setIcon(iimg7);
+                    lblPostre2.setIcon(iimg8);
+                    jLabel4.setIcon(imagen);
+                    btnIzqPlatoFuerte.setEnabled(false);
+                    btnIzqEntradas.setEnabled(false);
+                    btnIzqEnsalada.setEnabled(false);
+                    btnIzqPostres.setEnabled(false);
+                
+                    if(num==platoFuerte.size()-1)
+                       btnDerPlatoFuerte.setEnabled(false);
+                    if(num2==ensalada.size()-1)
+                       btnDerEnsalada.setEnabled(false);
+                    if(num3==entradas.size()-1)
+                       btnDerEntrada.setEnabled(false);
+                    if(num4==postres.size()-1)
+                       btnDerPostres.setEnabled(false);
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
                 break;
             case 2:
-                //no muestra al inicio ni muestra bien las ensaladas
                 ensalada.clear();
                 lblMenu.setText("Cena");
                 cambiarPanelDeMenu(cena);
-                
                 try {
-                    
                     Image img = new ImageIcon(getClass().getResource(platoFuerte.get(0).getPla_Imagen())).getImage();
                     Image img2 = new ImageIcon(getClass().getResource(platoFuerte.get(1).getPla_Imagen())).getImage();
                     Image img3 = new ImageIcon(getClass().getResource(ensalada.get(0).getPla_Imagen())).getImage();
@@ -713,100 +656,87 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                     ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
                     ruta="/Imagenes/Platillos/cena.png";
-                     imagen=new ImageIcon(getClass().getResource(ruta)); 
-                     lblPlato.setIcon(iimg);  
-                     lblPlato2.setIcon(iimg2);
-                     lblEnsalada.setIcon(iimg3);
-                     lblEnsalada2.setIcon(iimg4);
-                     lblEntrada.setIcon(iimg5);
-                     lblEntrada2.setIcon(iimg6);
-                     lblPostre.setIcon(iimg7);
-                     lblPostre2.setIcon(iimg8);
-                     jLabel4.setIcon(imagen);
-                     btnIzqPlatoFuerte.setEnabled(false);
-                     btnIzqEntradas.setEnabled(false);
-                     btnIzqEnsalada.setEnabled(false);
-                     btnIzqPostres.setEnabled(false);
-                     if(num==platoFuerte.size()-1)
-                        btnDerPlatoFuerte.setEnabled(false);
-                     if(num2==ensalada.size()-1)
-                        btnDerEnsalada.setEnabled(false);
-                     if(num3==entradas.size()-1)
-                        btnDerEntrada.setEnabled(false);
-                     if(num4==postres.size()-1)
-                        btnDerPostres.setEnabled(false);
+                    imagen=new ImageIcon(getClass().getResource(ruta)); 
+                    lblPlato.setIcon(iimg);  
+                    lblPlato2.setIcon(iimg2);
+                    lblEnsalada.setIcon(iimg3);
+                    lblEnsalada2.setIcon(iimg4);
+                    lblEntrada.setIcon(iimg5);
+                    lblEntrada2.setIcon(iimg6);
+                    lblPostre.setIcon(iimg7);
+                    lblPostre2.setIcon(iimg8);
+                    jLabel4.setIcon(imagen);
+                    btnIzqPlatoFuerte.setEnabled(false);
+                    btnIzqEntradas.setEnabled(false);
+                    btnIzqEnsalada.setEnabled(false);
+                    btnIzqPostres.setEnabled(false);
+                    if(num==platoFuerte.size()-1)
+                       btnDerPlatoFuerte.setEnabled(false);
+                    if(num2==ensalada.size()-1)
+                       btnDerEnsalada.setEnabled(false);
+                    if(num3==entradas.size()-1)
+                       btnDerEntrada.setEnabled(false);
+                    if(num4==postres.size()-1)
+                       btnDerPostres.setEnabled(false);
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
                 break;
             case 3:
                 lblMenu.setText("Bebidas");
                 cambiarPanelDeMenu(bebidas);
                 try {
-                        platoFuerte=bebidasCalientes;
-                        ensalada=bebidasAlcoholicas;
-                        entradas=bebidasFrias;        
-                     Image img = new ImageIcon(getClass().getResource(bebidasCalientes.get(0).getPla_Imagen())).getImage();
-                     Image img2 = new ImageIcon(getClass().getResource(bebidasCalientes.get(1).getPla_Imagen())).getImage();
-                     Image img3 = new ImageIcon(getClass().getResource(bebidasFrias.get(0).getPla_Imagen())).getImage();
-                     Image img4 = new ImageIcon(getClass().getResource(bebidasFrias.get(1).getPla_Imagen())).getImage();
-                     Image img5 = new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(0).getPla_Imagen())).getImage();
-                     Image img6 = new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(1).getPla_Imagen())).getImage();
-                     //Image img7 = new ImageIcon(getClass().getResource(bebidas.get(0).getPla_Imagen())).getImage();
-                     //Image img8 = new ImageIcon(getClass().getResource(bebidas.get(1).getPla_Imagen())).getImage();
-                     ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ImageIcon iimg2=new ImageIcon(img2.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ImageIcon iimg3=new ImageIcon(img3.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ImageIcon iimg4=new ImageIcon(img4.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ImageIcon iimg5=new ImageIcon(img5.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     //ImageIcon iimg7=new ImageIcon(img7.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     //ImageIcon iimg8=new ImageIcon(img8.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-                     ruta="/Imagenes/Platillos/Bebidas.png";                  
-                     imagen=new ImageIcon(getClass().getResource(ruta));
-                     jLabel9.setText("Bebidas Calientes");
-                     jLabel12.setText("Bebidas Frias");
-                     jLabel6.setText("Bebidas Alcoholicas");
-                     jLabel7.setVisible(false);
-                     lblPostre.setVisible(false);
-                     lblPostre2.setVisible(false);
-                     btnIzqPostres.setVisible(false);
-                     btnDerPostres.setVisible(false);
-                     jSeparator2.setVisible(false);
-                     jLabel8.setVisible(false);
-                     jLabel4.setIcon(imagen);
-                     lblPlato.setIcon(iimg);  
-                     lblPlato2.setIcon(iimg2);
-                     lblEnsalada.setIcon(iimg5);
-                     lblEnsalada2.setIcon(iimg6);
-                     lblEntrada.setIcon(iimg3);
-                     lblEntrada2.setIcon(iimg4);
-                     
-                     lblPostre.setEnabled(false);
-                     lblPostre2.setEnabled(false);
-                     lblMenu.setText("Bebidas");
-                     btnIzqPlatoFuerte.setEnabled(false);
-                     btnIzqEntradas.setEnabled(false);
-                     btnIzqEnsalada.setEnabled(false);
-                     btnIzqPostres.setEnabled(false);
-                   /*  if(num==platoFuerte.size()-2)
-                        btnDerPlatoFuerte.setEnabled(false);
-                     if(num2==ensalada.size()-2)
-                        btnDerEnsalada.setEnabled(false);
-                     if(num3==entradas.size()-2)
-                        btnDerEntrada.setEnabled(false);
-                     if(num4==postres.size()-2)
-                        btnDerPostres.setEnabled(false);*/
+                    platoFuerte=bebidasCalientes;
+                    ensalada=bebidasAlcoholicas;
+                    entradas=bebidasFrias;        
+                    Image img = new ImageIcon(getClass().getResource(bebidasCalientes.get(0).getPla_Imagen())).getImage();
+                    Image img2 = new ImageIcon(getClass().getResource(bebidasCalientes.get(1).getPla_Imagen())).getImage();
+                    Image img3 = new ImageIcon(getClass().getResource(bebidasFrias.get(0).getPla_Imagen())).getImage();
+                    Image img4 = new ImageIcon(getClass().getResource(bebidasFrias.get(1).getPla_Imagen())).getImage();
+                    Image img5 = new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(0).getPla_Imagen())).getImage();
+                    Image img6 = new ImageIcon(getClass().getResource(bebidasAlcoholicas.get(1).getPla_Imagen())).getImage();
+                    ImageIcon iimg=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ImageIcon iimg2=new ImageIcon(img2.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ImageIcon iimg3=new ImageIcon(img3.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ImageIcon iimg4=new ImageIcon(img4.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ImageIcon iimg5=new ImageIcon(img5.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ImageIcon iimg6=new ImageIcon(img6.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+                    ruta="/Imagenes/Platillos/Bebidas.png";                  
+                    imagen=new ImageIcon(getClass().getResource(ruta));
+                    jLabel9.setText("Bebidas Calientes");
+                    jLabel12.setText("Bebidas Frias");
+                    jLabel6.setText("Bebidas Alcoholicas");
+                    jLabel7.setVisible(false);
+                    lblPostre.setVisible(false);
+                    lblPostre2.setVisible(false);
+                    btnIzqPostres.setVisible(false);
+                    btnDerPostres.setVisible(false);
+                    jSeparator2.setVisible(false);
+                    jLabel8.setVisible(false);
+                    jLabel4.setIcon(imagen);
+                    lblPlato.setIcon(iimg);  
+                    lblPlato2.setIcon(iimg2);
+                    lblEnsalada.setIcon(iimg5);
+                    lblEnsalada2.setIcon(iimg6);
+                    lblEntrada.setIcon(iimg3);
+                    lblEntrada2.setIcon(iimg4);
+
+                    lblPostre.setEnabled(false);
+                    lblPostre2.setEnabled(false);
+                    lblMenu.setText("Bebidas");
+                    btnIzqPlatoFuerte.setEnabled(false);
+                    btnIzqEntradas.setEnabled(false);
+                    btnIzqEnsalada.setEnabled(false);
+                    btnIzqPostres.setEnabled(false);
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
-                
                 break;
         }
     }//GEN-LAST:event_btnAvanzarMenuActionPerformed
 
     private void btnIzqPlatoFuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzqPlatoFuerteActionPerformed
-        // TODO add your handling code here:
         int aux = num;
-      //System.out.println(num2);
         btnDerPlatoFuerte.setEnabled(true);            
         Image img = new ImageIcon(getClass().getResource(platoFuerte.get(aux-1).getPla_Imagen())).getImage();
         ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
@@ -820,10 +750,8 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIzqPlatoFuerteActionPerformed
 
     private void btnDerPlatoFuerteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDerPlatoFuerteActionPerformed
-
         int aux = num;
         System.out.println(num);
-        //activa el boton para retroceder
         btnIzqPlatoFuerte.setEnabled(true);         
         Image img = new ImageIcon(getClass().getResource(platoFuerte.get(aux++).getPla_Imagen())).getImage();
         ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
@@ -837,14 +765,12 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDerPlatoFuerteActionPerformed
 
     private void lblPlatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlatoMouseEntered
-        // TODO add your handling code here:
         int aux=num;
         jLabel4.setText(platoFuerte.get(aux-1).getPla_Nombre());
         jLabel4.setIcon(null);
     }//GEN-LAST:event_lblPlatoMouseEntered
 
     private void lblPlatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlatoMouseExited
-        // TODO add your handling code here:
         Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
         ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
         jLabel4.setIcon(img2);
@@ -852,14 +778,12 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_lblPlatoMouseExited
 
     private void lblPlato2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato2MouseEntered
-        // TODO add your handling code here:
         int aux=num;
         jLabel4.setText(platoFuerte.get(aux).getPla_Nombre());
         jLabel4.setIcon(null);
     }//GEN-LAST:event_lblPlato2MouseEntered
 
     private void lblPlato2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato2MouseExited
-        // TODO add your handling code here:
         Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
         ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
         jLabel4.setIcon(img2);
@@ -867,9 +791,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_lblPlato2MouseExited
 
     private void btnIzqEnsaladaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzqEnsaladaActionPerformed
-        // TODO add your handling code here:
         int aux = num2;
-               //System.out.println(num2);
         btnDerEnsalada.setEnabled(true);      
         Image img = new ImageIcon(getClass().getResource(ensalada.get(aux-1).getPla_Imagen())).getImage();
         ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
@@ -883,26 +805,24 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnIzqEnsaladaActionPerformed
 
     private void btnDerEnsaladaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDerEnsaladaActionPerformed
-        // TODO add your handling code here:
-         int aux = num2;
-         System.out.println(num2);
-             //activa el boton para retroceder
-             btnIzqEnsalada.setEnabled(true);         
-             Image img = new ImageIcon(getClass().getResource(ensalada.get(aux++).getPla_Imagen())).getImage();
-            ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-              lblEnsalada.setIcon(img2);
-              img=new ImageIcon(getClass().getResource(ensalada.get(aux++).getPla_Imagen())).getImage();
-              img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-              lblEnsalada2.setIcon(img2);
-           
-              if(num2==ensalada.size()-2)
-                 btnDerEnsalada.setEnabled(false);
-             num2++;
+        int aux = num2;
+        System.out.println(num2);
+        btnIzqEnsalada.setEnabled(true);
+        Image img = new ImageIcon(getClass().getResource(ensalada.get(aux++).getPla_Imagen())).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblEnsalada.setIcon(img2);
+        img=new ImageIcon(getClass().getResource(ensalada.get(aux++).getPla_Imagen())).getImage();
+        img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblEnsalada2.setIcon(img2);
+         
+        if(num2==ensalada.size()-2)
+            btnDerEnsalada.setEnabled(false);
+        num2++;
     }//GEN-LAST:event_btnDerEnsaladaActionPerformed
 
     private void lblEnsaladaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnsaladaMouseEntered
         // TODO add your handling code here:
-         int aux=num2;
+        int aux=num2;
         jLabel4.setText(ensalada.get(aux-1).getPla_Nombre());
         jLabel4.setIcon(null);
     }//GEN-LAST:event_lblEnsaladaMouseEntered
@@ -933,7 +853,6 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private void btnIzqEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzqEntradasActionPerformed
         // TODO add your handling code here:
           int aux = num3;
-       //System.out.println(num2);
           btnDerEntrada.setEnabled(true);      
           Image img = new ImageIcon(getClass().getResource(entradas.get(aux-1).getPla_Imagen())).getImage();
           ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
@@ -949,19 +868,18 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private void btnDerEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDerEntradaActionPerformed
         // TODO add your handling code here:
         int aux = num3;
-         System.out.println(num3);
-         System.out.println(entradas.size());
-       //activa el boton para retroceder
-         btnIzqEntradas.setEnabled(true);       
-         Image img = new ImageIcon(getClass().getResource(entradas.get(aux++).getPla_Imagen())).getImage();
-         ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-         lblEntrada.setIcon(img2);
-         img=new ImageIcon(getClass().getResource(entradas.get(aux++).getPla_Imagen())).getImage();
-         img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-         lblEntrada2.setIcon(img2);
-         if(num3==entradas.size()-2)
-            btnDerEntrada.setEnabled(false);
-         num3++;
+        System.out.println(num3);
+        System.out.println(entradas.size());
+        btnIzqEntradas.setEnabled(true);       
+        Image img = new ImageIcon(getClass().getResource(entradas.get(aux++).getPla_Imagen())).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblEntrada.setIcon(img2);
+        img=new ImageIcon(getClass().getResource(entradas.get(aux++).getPla_Imagen())).getImage();
+        img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblEntrada2.setIcon(img2);
+        if(num3==entradas.size()-2)
+           btnDerEntrada.setEnabled(false);
+        num3++;
     }//GEN-LAST:event_btnDerEntradaActionPerformed
 
     private void lblEntradaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntradaMouseEntered
@@ -973,10 +891,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
     private void lblEntradaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntradaMouseExited
         // TODO add your handling code here:
-         Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
-         ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
-         jLabel4.setIcon(img2);
-         jLabel4.setText("");
+        Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
+        jLabel4.setIcon(img2);
+        jLabel4.setText("");
     }//GEN-LAST:event_lblEntradaMouseExited
 
     private void lblEntrada2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntrada2MouseEntered
@@ -997,35 +915,31 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     private void btnIzqPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzqPostresActionPerformed
         // TODO add your handling code here:
          int aux = num4;
-       //System.out.println(num2);
-         btnDerPostres.setEnabled(true);    
-         Image img = new ImageIcon(getClass().getResource(postres.get(aux-1).getPla_Imagen())).getImage();
-         ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-         lblPostre2.setIcon(img2);
-         img=new ImageIcon(getClass().getResource(postres.get(aux-2).getPla_Imagen())).getImage();
-         img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-         lblPostre.setIcon(img2); 
-         if(num4==2)
-            btnIzqPostres.setEnabled(false);
-         num4--;
+        btnDerPostres.setEnabled(true);    
+        Image img = new ImageIcon(getClass().getResource(postres.get(aux-1).getPla_Imagen())).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblPostre2.setIcon(img2);
+        img=new ImageIcon(getClass().getResource(postres.get(aux-2).getPla_Imagen())).getImage();
+        img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblPostre.setIcon(img2); 
+        if(num4==2)
+           btnIzqPostres.setEnabled(false);
+        num4--;
     }//GEN-LAST:event_btnIzqPostresActionPerformed
 
     private void btnDerPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDerPostresActionPerformed
-        // TODO add your handling code here:
-         int aux = num4;
-         System.out.println(num4);
-             //activa el boton para retroceder
-             btnIzqPostres.setEnabled(true);
-             Image img = new ImageIcon(getClass().getResource(postres.get(aux++).getPla_Imagen())).getImage();
-             ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblPostre.setIcon(img2);
-             img=new ImageIcon(getClass().getResource(postres.get(aux++).getPla_Imagen())).getImage();
-             img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
-             lblPostre2.setIcon(img2);
-           
-             if(num4==postres.size()-2)
-                btnDerPostres.setEnabled(false);
-            num4++;
+        int aux = num4;
+        System.out.println(num4);
+        btnIzqPostres.setEnabled(true);
+        Image img = new ImageIcon(getClass().getResource(postres.get(aux++).getPla_Imagen())).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblPostre.setIcon(img2);
+        img=new ImageIcon(getClass().getResource(postres.get(aux++).getPla_Imagen())).getImage();
+        img2=new ImageIcon(img.getScaledInstance(150, 130, Image.SCALE_SMOOTH));
+        lblPostre2.setIcon(img2);
+        if(num4==postres.size()-2)
+           btnDerPostres.setEnabled(false);
+        num4++;
     }//GEN-LAST:event_btnDerPostresActionPerformed
 
     private void lblPostreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostreMouseEntered
@@ -1037,11 +951,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
 
     private void lblPostreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostreMouseExited
         // TODO add your handling code here:
-         Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
-            ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
-           // labelPrueba.setIcon(img2);
-           
-         jLabel4.setIcon(img2);
+        Image img = new ImageIcon(getClass().getResource(ruta)).getImage();
+        ImageIcon img2=new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
+        jLabel4.setIcon(img2);
         jLabel4.setText("");
     }//GEN-LAST:event_lblPostreMouseExited
 
@@ -1065,7 +977,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_lblPlatoMouseClicked
 
     private void lblPlato2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlato2MouseClicked
-       comprarPlatillo(platoFuerte, num, false);
+        comprarPlatillo(platoFuerte, num, false);
     }//GEN-LAST:event_lblPlato2MouseClicked
 
     private void lblEntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEntradaMouseClicked
@@ -1077,24 +989,23 @@ public class MenuDePlatillos extends javax.swing.JPanel {
     }//GEN-LAST:event_lblEntrada2MouseClicked
 
     private void lblEnsaladaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnsaladaMouseClicked
-         comprarPlatillo(ensalada, num2, true);
+        comprarPlatillo(ensalada, num2, true);
     }//GEN-LAST:event_lblEnsaladaMouseClicked
 
     private void lblEnsalada2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEnsalada2MouseClicked
-         comprarPlatillo(ensalada, num2, false);
+        comprarPlatillo(ensalada, num2, false);
     }//GEN-LAST:event_lblEnsalada2MouseClicked
 
     private void lblPostreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostreMouseClicked
-         comprarPlatillo(postres, num4, true);
+        comprarPlatillo(postres, num4, true);
     }//GEN-LAST:event_lblPostreMouseClicked
 
     private void lblPostre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostre2MouseClicked
-         comprarPlatillo(postres, num4, false);
+        comprarPlatillo(postres, num4, false);
     }//GEN-LAST:event_lblPostre2MouseClicked
 
     private void cambiarPanelDeMenu(ArrayList<Platillos> comidas) {
-        System.out.println("cambiar panel menu comidas "+ comidas.size());
-        //aqui se reinician los array
+        System.out.println("cambiar panel menu comidas " + comidas.size());
         platoFuerte.clear();
         entradas.clear();
         ensalada.clear();
@@ -1102,11 +1013,9 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         bebidasFrias.clear();
         bebidasCalientes.clear();
         bebidasAlcoholicas.clear();
-      //agregas en cada categoria a los array
         for(Platillos plat:comidas)  {
             int categoria = plat.getPla_Categoria().getCat_Id();
             
-//en el primero estaba la 9,en el segundo va el 7, el tercero va 8
             if(categoria==1 || categoria==2 || categoria==5 ){
                 entradas.add(plat);
             }
@@ -1125,55 +1034,39 @@ public class MenuDePlatillos extends javax.swing.JPanel {
                 bebidasFrias.add(plat);
             else if(categoria==9)
                 bebidasAlcoholicas.add(plat);
-            
-           
         }
-         System.out.println("Plato fuerte "+platoFuerte.size());
-            System.out.println("Ensaladas "+ensalada.size());
-            System.out.println("Entradas "+entradas.size());
-            System.out.println("Postre "+postres.size());
-            System.out.println("bebidas calientes  "+bebidasCalientes.size());
-            System.out.println("bebidas frias "+bebidasFrias.size());
-            System.out.println("Alcohol "+bebidasAlcoholicas.size());
-         //asigna un nombre a los label   
-            try {
+        System.out.println("Plato fuerte "+platoFuerte.size());
+        System.out.println("Ensaladas "+ensalada.size());
+        System.out.println("Entradas "+entradas.size());
+        System.out.println("Postre "+postres.size());
+        System.out.println("bebidas calientes  "+bebidasCalientes.size());
+        System.out.println("bebidas frias "+bebidasFrias.size());
+        System.out.println("Alcohol "+bebidasAlcoholicas.size());
+        
+        try {
             llenarPaneles(entradas, lblEntrada, lblEntrada2);
             llenarPaneles(platoFuerte, lblPlato, lblPlato2);
             llenarPaneles(ensalada, lblEnsalada, lblEnsalada2);
             llenarPaneles(postres, lblPostre, lblPostre2);
         } catch (Exception e) {
-                System.out.println("error llenar paneles");
+            System.out.println("error llenar paneles");
         }
-        
     }
 
     private void llenarPaneles(ArrayList<Platillos> comida,JLabel lbl1, JLabel lb2)throws Exception {
-       //System.out.println("comida "+comida.size());
-       if(comida.size()>0){
+        if(comida.size()>0){
         lbl1.setText(comida.get(0).getPla_Nombre());
         lb2.setText(comida.get(1).getPla_Nombre());
+        }
         
+        else{
+            lbl1.setText("No disponible");
+            lb2.setText("No disponible");
+            lbl1.setIcon(null);
+            lb2.setIcon(null);
+            System.out.println("entro al else de llenar panel");
+            System.out.println("indexMenu "+indexDeMenu);
        }
-       else{
-           lbl1.setText("No disponible");
-        lb2.setText("No disponible");
-        lbl1.setIcon(null);
-        lb2.setIcon(null);
-           System.out.println("entro al else de llenar panel");
-           System.out.println("indexMenu "+indexDeMenu);
-       }
-     /*  if(comida==bebidasCalientes){
-           platoFuerte=bebidasCalientes;
-       }
-       else if(comida==bebidasFrias){
-           ensalada=bebidasFrias;
-       }
-       else if(comida==bebidasAlcoholicas){
-           entradas=bebidasAlcoholicas;
-       }*/
-      
-       
-       
     }
     
     void comprarPlatillo(ArrayList<Platillos> comida,int index,boolean izq){

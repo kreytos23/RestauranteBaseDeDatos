@@ -1,12 +1,8 @@
-
 package Swing;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-/**
- * @author serpi
- */
 public class MenuRoles extends javax.swing.JPanel {
 
     private AdminUser adminUser;

@@ -1,6 +1,5 @@
 package Tablas;
 
-
 public abstract class Persona {
     private String Nombre;
     private String Apellido_Paterno;
@@ -88,6 +87,4 @@ public abstract class Persona {
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     }
-    
-    
 }

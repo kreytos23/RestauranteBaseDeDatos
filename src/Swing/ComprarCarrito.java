@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 
 public class ComprarCarrito extends javax.swing.JPanel {
@@ -70,7 +71,6 @@ public class ComprarCarrito extends javax.swing.JPanel {
         add(jSeparator3);
         jSeparator3.setBounds(550, 70, 10, 365);
 
-        btnComprar.setBackground(new java.awt.Color(255, 51, 0));
         btnComprar.setFont(new java.awt.Font("Rockwell", 1, 21)); // NOI18N
         btnComprar.setForeground(new java.awt.Color(0, 0, 0));
         btnComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Cargo (1).png"))); // NOI18N
@@ -78,7 +78,6 @@ public class ComprarCarrito extends javax.swing.JPanel {
         btnComprar.setContentAreaFilled(false);
         btnComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnComprar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnComprar.setOpaque(true);
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarActionPerformed(evt);
@@ -108,14 +107,12 @@ public class ComprarCarrito extends javax.swing.JPanel {
         add(lblTotal);
         lblTotal.setBounds(580, 440, 280, 50);
 
-        btnEliminarProducto.setBackground(new java.awt.Color(255, 51, 0));
         btnEliminarProducto.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
         btnEliminarProducto.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/Borrar (1).png"))); // NOI18N
         btnEliminarProducto.setContentAreaFilled(false);
         btnEliminarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarProducto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminarProducto.setOpaque(true);
         btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarProductoActionPerformed(evt);
@@ -149,6 +146,7 @@ public class ComprarCarrito extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+       formato = new DecimalFormat("###,###.##");
        java.util.Date fechaActual = new java.util.Date();
        Date fechaSQL = new Date(fechaActual.getTime());
        int idTicket = RestauranteService.idTicketService() + 1;
@@ -165,6 +163,11 @@ public class ComprarCarrito extends javax.swing.JPanel {
        
        RestauranteService.agregarTicketService(ticketCompra);
        RestauranteService.agregarPlatillosEnTickets(platillosDeCarrito);
+       JOptionPane.showMessageDialog(null, "Pedido Ordenado","Compra Finalizada",JOptionPane.INFORMATION_MESSAGE);
+       modeloCarrito.removeAllElements();
+       MenuDeUsuario.getPlatillosEnCarrito().clear();
+       total = 0;
+       lblTotal.setText("Total:    $ " + formato.format(0.0));
     }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed

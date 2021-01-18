@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
-
 public class Tickets {
     private int Tic_Id;
     private double Tic_Total;
@@ -24,7 +23,6 @@ public class Tickets {
 
     public Tickets() {
     }
-
     
     public int getTic_Id() {
         return Tic_Id;

@@ -24,20 +24,11 @@ public class AjustesAdmin extends javax.swing.JPanel {
         txtApellidoP.setText(admin.getApellido_Paterno());
         txtApellidoM.setText(admin.getApellido_Materno());
         String fecha[] = admin.getEmp_Fecha_Nacimiento().toString().split("-");
-        ///////////////FECHA////////////////
-        
         jcYear.addItem(fecha[0]);
         jcDia.addItem(fecha[2]);
-        
         Calendario mes = null;
         System.out.println(admin.getEmp_Fecha_Nacimiento().toString());
-        
         ponerMes(mes, fecha[1]);
-                
-        
-        
-        ////////OTROS DATOS//////////////
-        
         txtColonia.setText(admin.getColonia());
         String calleNo[] = admin.getCalle().split("#");
         txtCalleNom.setText(calleNo[0]);
@@ -45,7 +36,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
         txtTelefono.setText(admin.getTelefono());
         txtCorreo.setText(admin.getEmail());
         txtPassword.setText(admin.getPassword());
-        
     }
 
 
@@ -320,6 +310,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         btnTColonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTColonia.setContentAreaFilled(false);
+        btnTColonia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTColonia.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTColonia.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTColonia.setVerifyInputWhenFocusTarget(false);
@@ -333,6 +324,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
 
         btnTCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCalle.setContentAreaFilled(false);
+        btnTCalle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTCalle.setVerifyInputWhenFocusTarget(false);
@@ -348,6 +340,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTNoCalle.setToolTipText("");
         btnTNoCalle.setBorderPainted(false);
         btnTNoCalle.setContentAreaFilled(false);
+        btnTNoCalle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTNoCalle.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTNoCalle.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTNoCalle.setVerifyInputWhenFocusTarget(false);
@@ -362,6 +355,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTTelefono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTTelefono.setBorderPainted(false);
         btnTTelefono.setContentAreaFilled(false);
+        btnTTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTTelefono.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTTelefono.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTTelefono.setVerifyInputWhenFocusTarget(false);
@@ -376,6 +370,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTCorreo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCorreo.setBorderPainted(false);
         btnTCorreo.setContentAreaFilled(false);
+        btnTCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTCorreo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTCorreo.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTCorreo.setVerifyInputWhenFocusTarget(false);
@@ -390,6 +385,7 @@ public class AjustesAdmin extends javax.swing.JPanel {
         btnTPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTPassword.setBorderPainted(false);
         btnTPassword.setContentAreaFilled(false);
+        btnTPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTPassword.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitado.png"))); // NOI18N
         btnTPassword.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesAUsar/Habilitar en verde.png"))); // NOI18N
         btnTPassword.setVerifyInputWhenFocusTarget(false);

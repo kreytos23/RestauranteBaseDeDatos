@@ -2,7 +2,6 @@ package Tablas;
 
 import java.text.DecimalFormat;
 
-
 public class PlatillosTickets {
     private int PT_Id;
     private Platillos PT_Platillo;
@@ -18,7 +17,6 @@ public class PlatillosTickets {
 
     public PlatillosTickets() {
     }
-    
     
     public int getPT_Id() {
         return PT_Id;
@@ -58,6 +56,4 @@ public class PlatillosTickets {
         return PT_Platillo.getPla_Nombre() + "                              " + cantidad_platillo +
                 "                      $" + formato.format(PT_Platillo.getPla_Precio());
     }
-    
-    
 }

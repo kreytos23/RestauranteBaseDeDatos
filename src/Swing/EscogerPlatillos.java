@@ -35,15 +35,11 @@ public class EscogerPlatillos extends javax.swing.JPanel {
     private int[] platillosTipoBebidaCena = {0};
     
     public EscogerPlatillos() {
+        
         initComponents();
-        
-        
         arrayPlatillos = RestauranteConexion.RestauranteService.traerPlatillosService();
         jlListaPlatillos.setModel(listaPlatillos);
         jlListaPlatillosMenu.setModel(listaPlatillosMenu);
-        
- 
-        //USANDO LAS NUEVAS CATEGORIAS
         
         for(int i= 0; i< arrayPlatillos.size(); i++){
             
@@ -329,14 +325,9 @@ public class EscogerPlatillos extends javax.swing.JPanel {
         
         boolean confirmar1 = false,confirmar2 = false, confirmar3 =false;
         
-        ////// DESAYUNO
-        
         confirmar1 = comprobacionPlatillosFinal(platillosTipoComidaDesayuno,platillosTipoBebidaDesayuno,confirmar1,"Desayuno");
-        /////// COMIDA
         
         confirmar2 = comprobacionPlatillosFinal(platillosTipoComidaComida,platillosTipoBebidaComida,confirmar2,"Comida");
-        
-        ////// CENA
         
         confirmar3 = comprobacionPlatillosFinal(platillosTipoComidaCena,platillosTipoBebidaCena,confirmar3,"Cena");
 
