@@ -123,7 +123,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         add(btnCarrito);
         btnCarrito.setBounds(-70, 250, 50, 40);
 
-        btnPlatillos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/recibo.png"))); // NOI18N
+        btnPlatillos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosMenu/restaurante (1).png"))); // NOI18N
         btnPlatillos.setContentAreaFilled(false);
         btnPlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPlatillos.addActionListener(new java.awt.event.ActionListener() {
@@ -331,7 +331,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
 
     private void btnPlatillosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlatillosActionPerformed
         btnMenuActionPerformed(evt);
-        menuDePlatillos = new MenuDePlatillos();
+        menuDePlatillos = new MenuDePlatillos(clienteLogueado);
         menuDePlatillos.setBounds(0,0,panelRemplazo.getWidth(),panelRemplazo.getHeight());
         panelRemplazo.removeAll();
         panelRemplazo.add(menuDePlatillos);

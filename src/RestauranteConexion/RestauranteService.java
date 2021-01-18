@@ -107,4 +107,8 @@ public class RestauranteService {
     public static ArrayList<PlatillosTickets> mostrarPlatillosDeTicketsService(int idTicket){
         return RestauranteDAO.mostrarPlatillosDeTickets(idTicket);
     }
+    
+    public static ArrayList<Platillos> traerPlatillosActivosService(){
+        return RestauranteDAO.traerPlatillosActivos();
+    }
 }
