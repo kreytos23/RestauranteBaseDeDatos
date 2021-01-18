@@ -46,6 +46,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         btnIzqEntradas.setEnabled(false);
         btnIzqEnsalada.setEnabled(false);
         btnIzqPostres.setEnabled(false);
+       /* btnDerPlatoFuerte.setEnabled(true);
+        btnDerEntrada.setEnabled(true);
+        btnDerEnsalada.setEnabled(true);
+        btnDerPostres.setEnabled(true);*/
         indexDeMenu = -1;
         arrayDePlatillos = RestauranteConexion.RestauranteService.traerPlatillosActivosService();
         
@@ -568,6 +572,10 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         num2=1;
         num3=1;
         num4=1;
+        btnDerPlatoFuerte.setEnabled(true);
+        btnDerEntrada.setEnabled(true);
+        btnDerEnsalada.setEnabled(true);
+        btnDerPostres.setEnabled(true);
         jLabel9.setText("Plato Fuerte");
         jLabel12.setText("Entradas");
         jLabel6.setText("Ensalada");

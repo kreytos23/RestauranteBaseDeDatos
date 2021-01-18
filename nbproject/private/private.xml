@@ -5,6 +5,13 @@
         <group>
 <<<<<<< HEAD
 <<<<<<< HEAD
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/MenuDeAdmin.java</file>
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/MenuDePlatillos.java</file>
+            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/MenuDeUsuario.java</file>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/Tablas/Platillos.java</file>
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/Swing/AgregarUsuario.java</file>
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/Swing/AgregarEmpleado.java</file>
@@ -12,6 +19,7 @@
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/RestauranteConexion/Conexion.java</file>
             <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/RestauranteConexion/RestauranteService.java</file>
 =======
+>>>>>>> 7e9dcf798ca09a27e0b63fcfccd3561f9421df89
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/loginCliente.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/RestauranteDAO.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/EscogerPlatillos.java</file>
@@ -35,6 +43,7 @@
             <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/EscogerPlatillos.java</file>
             <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/RestauranteConexion/Conexion.java</file>
 >>>>>>> 0c74047e9e5214e45a0283364c989664653f16c5
+>>>>>>> fc8dfed99d2e5c7df916bde21bcbba2d03957781
         </group>
     </open-files>
 </project-private>
