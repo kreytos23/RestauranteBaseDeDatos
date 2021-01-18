@@ -420,7 +420,6 @@ public class AjustesAdmin extends javax.swing.JPanel {
         int error;
         quitarLabels();
         boolean correcto = datosCorrectos();
-
         calle = txtCalleNom.getText() + " #" + txtNoCalle.getText();
         
         if(correcto){
@@ -436,19 +435,22 @@ public class AjustesAdmin extends javax.swing.JPanel {
                 error = RestauranteService.actualizarEmpleadoService(admin, true);
             }
             switch(error){
+                case 0:
+                    JOptionPane.showMessageDialog(null,"Se creo correctamente");
+                    break;
                 case 1:
-                LbCorreo.setVisible(true);
-                break;
+                    LbCorreo.setVisible(true);
+                    break;
                 case 2:
-                LbPass1.setVisible(true);
-                LbPass2.setVisible(true);
-                break;
+                    LbPass1.setVisible(true);
+                    LbPass2.setVisible(true);
+                    break;
                 case 3:
-                LbTelefono3.setVisible(true);
-                break;
+                    LbTelefono3.setVisible(true);
+                    break;
                 case 4:
-                LbCorreoRep.setVisible(true);
-                break;
+                    LbCorreoRep.setVisible(true);
+                    break;
             }
         }
     }//GEN-LAST:event_btnAgregarActionPerformed

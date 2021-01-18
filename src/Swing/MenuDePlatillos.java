@@ -362,7 +362,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Ensalada");
         add(jLabel6);
-        jLabel6.setBounds(960, 60, 200, 30);
+        jLabel6.setBounds(900, 60, 310, 30);
 
         jLabel7.setFont(new java.awt.Font("Rockwell", 3, 22)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -382,7 +382,7 @@ public class MenuDePlatillos extends javax.swing.JPanel {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Plato Fuerte");
         add(jLabel9);
-        jLabel9.setBounds(440, 60, 180, 30);
+        jLabel9.setBounds(400, 60, 260, 30);
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 1, 15)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
