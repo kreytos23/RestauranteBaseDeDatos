@@ -146,7 +146,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnMenuPrincipal.setBounds(-70, 210, 50, 40);
 
         lblPlatillos.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblPlatillos.setForeground(new java.awt.Color(0, 0, 0));
         lblPlatillos.setText("* Ver Menus");
         lblPlatillos.setToolTipText("");
         lblPlatillos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -165,7 +164,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         btnHist.setBounds(-70, 330, 50, 40);
 
         lblMenuPrincipal.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
         lblMenuPrincipal.setText("* Menu Principal");
         lblMenuPrincipal.setToolTipText("");
         lblMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -173,20 +171,17 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblMenuPrincipal.setBounds(-190, 220, 122, 20);
 
         lbHora.setFont(new java.awt.Font("Rockwell", 1, 25)); // NOI18N
-        lbHora.setForeground(new java.awt.Color(0, 0, 0));
         lbHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         add(lbHora);
         lbHora.setBounds(1130, 90, 230, 50);
 
         lblNombre.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
         lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNombre.setText("Nombre");
         add(lblNombre);
         lblNombre.setBounds(920, 40, 440, 60);
 
         lblMenu.setFont(new java.awt.Font("Rockwell", 3, 20)); // NOI18N
-        lblMenu.setForeground(new java.awt.Color(0, 0, 0));
         lblMenu.setText("Menu");
         lblMenu.setToolTipText("");
         lblMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -194,13 +189,11 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblMenu.setBounds(-130, 170, 60, 20);
 
         lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 40)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setText("Bienvenido de Nuevo!! ");
         add(lblTitulo);
         lblTitulo.setBounds(910, 0, 470, 40);
 
         lblAjustes.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblAjustes.setForeground(new java.awt.Color(0, 0, 0));
         lblAjustes.setText("* Ajustes");
         lblAjustes.setToolTipText("");
         lblAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -208,7 +201,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblAjustes.setBounds(-190, 380, 150, 20);
 
         lblManuel.setFont(new java.awt.Font("Rockwell", 3, 12)); // NOI18N
-        lblManuel.setForeground(new java.awt.Color(0, 0, 0));
         lblManuel.setText("\"Manuel Co\" Copyright 2021");
         lblManuel.setToolTipText("");
         lblManuel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -216,7 +208,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblManuel.setBounds(-190, 460, 180, 20);
 
         lblSalir.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblSalir.setForeground(new java.awt.Color(0, 0, 0));
         lblSalir.setText("* Salir");
         lblSalir.setToolTipText("");
         lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -224,7 +215,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblSalir.setBounds(-190, 420, 150, 20);
 
         lblHist.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblHist.setForeground(new java.awt.Color(0, 0, 0));
         lblHist.setText("* Historial");
         lblHist.setToolTipText("");
         lblHist.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -232,7 +222,6 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         lblHist.setBounds(-190, 340, 150, 20);
 
         lblCarrito.setFont(new java.awt.Font("Rockwell", 3, 15)); // NOI18N
-        lblCarrito.setForeground(new java.awt.Color(0, 0, 0));
         lblCarrito.setText("* Ver Carrito");
         lblCarrito.setToolTipText("");
         lblCarrito.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -245,7 +234,7 @@ public class MenuDeUsuario extends javax.swing.JPanel implements Runnable{
         add(lblFondo);
         lblFondo.setBounds(-210, 150, 200, 340);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel2);
         jLabel2.setBounds(0, 0, 1370, 150);

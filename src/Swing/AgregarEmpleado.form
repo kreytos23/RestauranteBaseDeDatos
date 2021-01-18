@@ -642,11 +642,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Maximo 10 numeros"/>
+        <Property name="text" type="java.lang.String" value="Deben ser 10 numeros"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1040" y="350" width="150" height="16"/>
+          <AbsoluteConstraints x="1040" y="350" width="160" height="16"/>
         </Constraint>
       </Constraints>
     </Component>

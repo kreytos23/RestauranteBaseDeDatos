@@ -109,7 +109,7 @@ public class loginCliente extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(310, 630, 200, 40);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel3);
@@ -133,7 +133,7 @@ public class loginCliente extends javax.swing.JPanel {
 
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(180, 230, 41, 16);
+        jLabel2.setBounds(180, 230, 34, 14);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
