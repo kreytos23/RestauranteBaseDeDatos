@@ -3,47 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/laura/Proyecto/src/Swing/MenuPrincipal.java</file>
-            <file>file:/C:/Users/laura/Proyecto/src/RestauranteConexion/Conexion.java</file>
-=======
-<<<<<<< HEAD
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/loginCliente.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/RestauranteDAO.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/EscogerPlatillos.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/HistorialTickets.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/PantallaPrincipalUsuario.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/Conexion.java</file>
-            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/EscogerPlatillos.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuDeUsuario.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AgregarCarrito.java</file>
-            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AgregarEmpleado.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/GestionarEmpleados.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/RestauranteConexion/RestauranteService.java</file>
-            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AgregarUsuario.java</file>
-            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AjustesAdmin.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuDeAdmin.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuPrincipal.java</file>
-            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/AjustesUsuario.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/ComprarCarrito.java</file>
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Tickets.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/Platillos.java</file>
             <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Swing/MenuDePlatillos.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/Tablas/Platillos.java</file>
-            <file>file:/C:/Users/victo/Documents/Base%20de%20Datos/Techno%20Team/AppJava/src/RestauranteConexion/Conexion.java</file>
-=======
->>>>>>> 774b7ac4d4cb4cc5e50e2812fdbf5ecb69bc6f8e
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Tablas/Platillos.java</file>
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/AdminUser.java</file>
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/MenuDePlatillos.java</file>
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/AjustesUsuario.java</file>
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/Swing/MenuDeUsuario.java</file>
-<<<<<<< HEAD
-            <file>file:/C:/Users/super/OneDrive/Documentos/UPIITA/BD/src/RestauranteConexion/Conexion.java</file>
-=======
->>>>>>> 0a10abb4a6ccbff22e8314d470f73731ef44433b
->>>>>>> 9c435a4cffd88ef17ba16ed3e1a1b803b4523ea3
->>>>>>> ecca9aee12e8398e2d74bf8bb105403ed1f7a3d4
->>>>>>> 774b7ac4d4cb4cc5e50e2812fdbf5ecb69bc6f8e
+            <file>file:/C:/Users/serpi/Documents/NetBeansProjects/Restaurante/src/Tablas/PlatillosTickets.java</file>
         </group>
     </open-files>
 </project-private>
