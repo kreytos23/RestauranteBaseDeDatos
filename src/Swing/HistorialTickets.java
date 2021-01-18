@@ -23,13 +23,14 @@ public class HistorialTickets extends javax.swing.JPanel {
         System.out.println("Sirve gg " + logueado.getCli_Id());
         ticketsDeCliente = RestauranteConexion.RestauranteService.mostrarTicketsDeClientesService(logueado.getCli_Id());
         
-        for (Tickets tickets : ticketsDeCliente) {
+        if(!ticketsDeCliente.isEmpty()){
+            for (Tickets tickets : ticketsDeCliente) {
             modeloTickets.addElement(tickets);
+            }
+            listaTickets.setModel(modeloTickets);
+            listaTickets.setSelectedIndex(0);
+            listaTicketsMouseClicked(null);
         }
-        
-        listaTickets.setModel(modeloTickets);
-        listaTickets.setSelectedIndex(0);
-        listaTicketsMouseClicked(null);
     }
 
 

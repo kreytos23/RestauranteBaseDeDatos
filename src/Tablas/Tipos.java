@@ -1,6 +1,5 @@
 package Tablas;
 
-
 public class Tipos {
     private int Tipo_Id;
     private String Tipo_Nombre;
