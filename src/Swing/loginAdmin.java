@@ -75,7 +75,7 @@ public class loginAdmin extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(565, 170, 320, 47);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/encabezadoInicio.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MenuRoles/EncabezadoPanel.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         add(jLabel4);
         jLabel4.setBounds(0, 0, 1363, 146);
