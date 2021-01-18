@@ -32,6 +32,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
         Image img = new ImageIcon(getClass().getResource(this.platilloSeleccionado.getPla_Imagen())).getImage();
         ImageIcon img2 = new ImageIcon(img.getScaledInstance(314, 240, Image.SCALE_SMOOTH));
         this.lblFoto.setIcon(img2);
+        this.clienteLogueado = clienteSeleccionado;
     }
 
  
@@ -190,11 +191,7 @@ public class AgregarCarrito extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnComprarAhoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarAhoraActionPerformed
-        platilloAgregar = new PlatillosTickets();
-        platilloAgregar.setCantidad_platillo(cantidad);
-        platilloAgregar.setPT_Platillo(platilloSeleccionado);
-        MenuDeUsuario.getPlatillosEnCarrito().add(platilloAgregar);
-        JOptionPane.showMessageDialog(null, "Agregado Al Carrito", "Hecho",JOptionPane.INFORMATION_MESSAGE);
+        btnAgregarActionPerformed(evt);
         ComprarCarrito comprarCarrito = new ComprarCarrito(clienteLogueado);
         comprarCarrito.setBounds(this.getBounds());
         this.removeAll();

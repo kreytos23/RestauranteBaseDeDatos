@@ -22,15 +22,17 @@ public class ComprarCarrito extends javax.swing.JPanel {
     
     public ComprarCarrito(Clientes logueado) {
         initComponents();
+        
         modeloCarrito = new DefaultListModel();
         formato = new DecimalFormat("###,###.##");
         this.logueado = logueado;
         total = 0;
         platillosDeCarrito = MenuDeUsuario.getPlatillosEnCarrito();
         listaCarrito.setModel(modeloCarrito);
-        
+        System.out.println("Cantidad Id " + logueado.getCli_Id());
         for (PlatillosTickets plat : platillosDeCarrito) {
             modeloCarrito.addElement(plat);
+            System.out.println("Cantidad Id " + plat.getPT_Platillo().getPla_Cantidad());
             plat.getPT_Platillo().setPla_Cantidad(plat.getPT_Platillo().getPla_Cantidad() - plat.getCantidad_platillo());
             total += plat.getCantidad_platillo() * plat.getPT_Platillo().getPla_Precio();
         }
